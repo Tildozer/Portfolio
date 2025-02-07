@@ -5,9 +5,6 @@ export interface ThemeSettings {
   techStackContainerBackgroundColor: string;
   textColor: string;
   sliderPosition: string;
-  githubLogoColor: string;
-  linkedinLogoColor: string;
-  footerLinkBackgroundColor: string;
   techStackChildrenBackgroundColor: string;
 }
 
@@ -19,9 +16,6 @@ export type Links = React.RefObject<HTMLAnchorElement>;
 export interface ThemeTransitionItems {
   slider: Slider;
   background: Background;
-  githubContainer: Links;
-  linkedinContainer: Links;
-  footerContainer: Background;
   techStackContainer: Background;
 }
 
@@ -31,9 +25,7 @@ export const lightModeSettings: ThemeSettings = {
   techStackChildrenBackgroundColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
   textColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
   sliderPosition: "0.75rem",
-  footerLinkBackgroundColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
-  githubLogoColor: "rgb(251 146 60 / var(--tw-text-opacity)",
-  linkedinLogoColor: "#0077b5",
+
 };
 
 export const darkModeSettings: ThemeSettings = {
@@ -42,7 +34,4 @@ export const darkModeSettings: ThemeSettings = {
   techStackChildrenBackgroundColor: "rgb(100 116 139 / var(--tw-bg-opacity)",
   textColor: "rgb(234 179 8 / var(--tw-text-opacity)",
   sliderPosition: "1.75rem",
-  footerLinkBackgroundColor: "rgb(71 85 105 / var(--tw-bg-opacity)",
-  githubLogoColor: "rgb(34 211 238 / var(--tw-text-opacity)",
-  linkedinLogoColor: "rgb(255, 255, 255)",
 };

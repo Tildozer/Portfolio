@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { MutableRefObject } from "react";
+import React, { MutableRefObject } from "react";
 
 interface ScrollPosition {
   previous: number;
@@ -7,7 +7,7 @@ interface ScrollPosition {
 }
 
 export const setFooterEventListeners = (
-  footerContainer: React.MutableRefObject<HTMLDivElement>,
+  footerContainer: React.RefObject<HTMLDivElement>,
 ) => {
   const lastKnownScrollPosition: ScrollPosition = {
     previous: window.scrollY,

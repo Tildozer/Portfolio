@@ -28,29 +28,8 @@ const transition = (settings: ThemeSettings, items: ThemeTransitionItems) => {
   });
 
   gsap.fromTo(items.slider.current, { rotateZ: 0 }, { rotateZ: 360 });
-  // Background
-  gsap.to(items.background.current, {
-    backgroundColor: settings.backgroundColor,
-    color: settings.textColor,
-    duration: transitionDuration,
-  });
-  // Footer
-  gsap.to(items.footerContainer.current, {
-    backgroundColor: settings.backgroundColor,
-    duration: transitionDuration,
-  });
 
-  gsap.to(items.githubContainer.current, {
-    backgroundColor: settings.footerLinkBackgroundColor,
-    color: settings.githubLogoColor,
-    duration: transitionDuration,
-  });
 
-  gsap.to(items.linkedinContainer.current, {
-    backgroundColor: settings.footerLinkBackgroundColor,
-    color: settings.linkedinLogoColor,
-    duration: transitionDuration,
-  });
   if (items.techStackContainer.current) {
     techStackTransition(
       items.techStackContainer,

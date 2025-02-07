@@ -14,7 +14,6 @@ import {
   themeTransition,
   Slider,
   Background,
-  Links,
   ThemeTransitionItems,
 } from "./theme";
 
@@ -22,10 +21,6 @@ interface DarkModeContextProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
   slider: Slider;
-  background: Background;
-  githubContainer: Links;
-  linkedinContainer: Links;
-  footerContainer: Background;
   techStackContainer: Background | null;
 }
 
@@ -34,17 +29,22 @@ const DarkModeContext = createContext<DarkModeContextProps | undefined>(
 );
 
 export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const toggleLocalStorage = () => {
+    if(localStorage.theme === "dark") {
+      localStorage.theme = "light";
+      return false;
+    }
+      localStorage.theme = "dark";
+      return true;
+    };
+
+  const [darkMode, setDarkMode] = useState(toggleLocalStorage);
   const [isPressed, setIsPressed] = useState(false);
 
   const slider: Slider = useRef(null!);
   const background: Background = useRef(null!);
-  const githubContainer: Links = useRef(null!);
-  const linkedinContainer: Links = useRef(null!);
-  const footerContainer: Background = useRef(null!);
   const techStackContainer: Background | null = useRef(null!);
 
-  const toggleLocalStorage = () => darkMode ? (localStorage.theme = "light") : (localStorage.theme = "dark");
 
   const toggleDarkMode = () => {
     setIsPressed(true);
@@ -68,9 +68,6 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const refrences: ThemeTransitionItems = {
     slider,
     background,
-    githubContainer,
-    linkedinContainer,
-    footerContainer,
     techStackContainer,
   };
 
@@ -90,10 +87,6 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         darkMode,
         toggleDarkMode,
         slider,
-        background,
-        footerContainer,
-        githubContainer,
-        linkedinContainer,
         techStackContainer,
       }}
     >
