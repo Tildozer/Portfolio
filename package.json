@@ -9,6 +9,9 @@
     "lint": "next lint",
     "pretty": "prettier --write . --plugin=prettier-plugin-tailwindcss"
   },
+  "prisma" : {
+    "schema": "./db/prisma/schema.prisma"
+  },
   "dependencies": {
     "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^8.17.14",
@@ -31,6 +34,7 @@
     "postcss": "^8",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "prisma": "^6.3.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
