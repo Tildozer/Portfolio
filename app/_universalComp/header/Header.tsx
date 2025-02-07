@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { Nav, ThemeSwitch } from ".";
 import { useDarkMode } from "../../_providers/DarkModeProvider";

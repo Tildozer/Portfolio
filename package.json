@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretty": "prettier --write . --plugin=prettier-plugin-tailwindcss"
   },
   "dependencies": {
     "@react-three/drei": "^9.121.4",
@@ -26,6 +27,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.23",
     "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -25,7 +25,6 @@ export const lightModeSettings: ThemeSettings = {
   techStackChildrenBackgroundColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
   textColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
   sliderPosition: "0.75rem",
-
 };
 
 export const darkModeSettings: ThemeSettings = {

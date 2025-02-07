@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, {
   createContext,
@@ -30,21 +30,20 @@ const DarkModeContext = createContext<DarkModeContextProps | undefined>(
 
 export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const toggleLocalStorage = () => {
-    if(localStorage.theme === "dark") {
+    if (localStorage.theme === "dark") {
       localStorage.theme = "light";
       return false;
     }
-      localStorage.theme = "dark";
-      return true;
-    };
+    localStorage.theme = "dark";
+    return true;
+  };
 
-  const [darkMode, setDarkMode] = useState(toggleLocalStorage);
+  const [darkMode, setDarkMode] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
   const slider: Slider = useRef(null!);
   const background: Background = useRef(null!);
   const techStackContainer: Background | null = useRef(null!);
-
 
   const toggleDarkMode = () => {
     setIsPressed(true);
@@ -94,8 +93,6 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     </DarkModeContext.Provider>
   );
 };
-
-
 
 export const useDarkMode = (): DarkModeContextProps => {
   const context = useContext(DarkModeContext);

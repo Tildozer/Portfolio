@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {Header} from "./_universalComp/header/";
+import { Header } from "./_universalComp/header/";
 import Footer from "./_universalComp/Footer";
 import { DarkModeProvider } from "./_providers/DarkModeProvider";
 
@@ -28,15 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
-          <DarkModeProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <DarkModeProvider>
           <Header />
           {children}
           <Footer />
-    </DarkModeProvider>
-        </body>
-      </html>
+        </DarkModeProvider>
+      </body>
+    </html>
   );
 }

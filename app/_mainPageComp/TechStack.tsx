@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDarkMode } from "../_providers/DarkModeProvider";
-import type { TechnicalSkill } from "./TechIcon"
-import {TechIcon} from "./";
-
-
+import type { TechnicalSkill } from "./TechIcon";
+import { TechIcon } from "./";
 
 const TechStack = () => {
   const { techStackContainer } = useDarkMode();
@@ -29,7 +27,9 @@ const TechStack = () => {
         ref={techStackContainer}
         className="grid max-h-96 min-h-[9.25rem] w-full grid-flow-col grid-rows-3 content-start gap-2 self-center overflow-x-scroll border-2 border-l-0 border-r-0 border-solid border-slate-950 bg-orange-200 p-4 text-6xl text-yellow-500 dark:bg-blue-900 dark:text-black sm:grid-rows-1 sm:justify-start lg:justify-center lg:overflow-hidden"
       >
-        {techs.length ? techs.map(skill => <TechIcon key={skill.id} tech={skill}/>) : null}
+        {techs.length
+          ? techs.map((skill) => <TechIcon key={skill.id} tech={skill} />)
+          : null}
       </div>
     </div>
   );

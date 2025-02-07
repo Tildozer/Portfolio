@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { ReactNode, useEffect, useRef, MutableRefObject } from "react";
 // import { gsap } from "gsap";

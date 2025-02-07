@@ -4,7 +4,6 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TestCube } from ".";
 
-
 const Experince = () => {
   const { camera, gl } = useThree();
   const cubeRef = useRef<THREE.Mesh>(null!);

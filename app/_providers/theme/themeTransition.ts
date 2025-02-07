@@ -29,7 +29,6 @@ const transition = (settings: ThemeSettings, items: ThemeTransitionItems) => {
 
   gsap.fromTo(items.slider.current, { rotateZ: 0 }, { rotateZ: 360 });
 
-
   if (items.techStackContainer.current) {
     techStackTransition(
       items.techStackContainer,
