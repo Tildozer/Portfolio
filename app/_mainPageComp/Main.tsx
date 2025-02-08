@@ -16,7 +16,7 @@ const Main = () => {
               far: 200,
               position: [2.5, 4, 6],
             }}
-            className="bg-slate-400 dark:bg-black"
+            className="bg-slate-100 transition-all duration-500 dark:bg-black"
           >
             <Experince />
           </Canvas>

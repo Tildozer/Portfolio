@@ -48,7 +48,7 @@ export const setFooterEventListeners = (
         showFooter();
       } else if (window.scrollY > 0) {
         gsap.to(footerContainer.current, {
-          bottom: "-2rem",
+          bottom: "-10rem",
           display: "hidden",
           duration: 0.15,
         });

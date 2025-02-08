@@ -32,7 +32,6 @@ const transition = (settings: ThemeSettings, items: ThemeTransitionItems) => {
   if (items.techStackContainer.current) {
     techStackTransition(
       items.techStackContainer,
-      settings.techStackContainerBackgroundColor,
       settings.techStackChildrenBackgroundColor,
     );
   }
@@ -40,10 +39,8 @@ const transition = (settings: ThemeSettings, items: ThemeTransitionItems) => {
 
 export const techStackTransition = (
   container: Background,
-  backgroundColor: string,
   childrenColor: string,
 ) => {
-  gsap.to(container.current, { backgroundColor, duration: transitionDuration });
   gsap.to(container.current.children, {
     backgroundColor: childrenColor,
     duration: transitionDuration,

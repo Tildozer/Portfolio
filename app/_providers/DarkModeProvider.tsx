@@ -78,6 +78,7 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     } else {
       darkModeCheck();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkMode]);
 
   return (
