@@ -1,7 +1,6 @@
 import { MutableRefObject } from "react";
 
 export interface ThemeSettings {
-  backgroundColor: string;
   techStackContainerBackgroundColor: string;
   textColor: string;
   sliderPosition: string;
@@ -20,7 +19,6 @@ export interface ThemeTransitionItems {
 }
 
 export const lightModeSettings: ThemeSettings = {
-  backgroundColor: "rgb(226 232 240 / var(--tw-bg-opacity)",
   techStackContainerBackgroundColor: "rgb(254 215 170 / var(--tw-bg-opacity)",
   techStackChildrenBackgroundColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
   textColor: "rgb(0 0 0 / var(--tw-bg-opacity)",
@@ -28,7 +26,6 @@ export const lightModeSettings: ThemeSettings = {
 };
 
 export const darkModeSettings: ThemeSettings = {
-  backgroundColor: "rgb(15 23 42 / var(--tw-bg-opacity)",
   techStackContainerBackgroundColor: "rgb(30 58 138 / var(--tw-bg-opacity)",
   techStackChildrenBackgroundColor: "rgb(100 116 139 / var(--tw-bg-opacity)",
   textColor: "rgb(234 179 8 / var(--tw-text-opacity)",

@@ -15,7 +15,7 @@ const Underline = ({ link, width }: Props) => {
 
   useEffect(() => {
     setHeaderEventListeners(container, underline, width);
-  }, []);
+  }, [width]);
 
   return (
     <div className="pl-4 sm:pl-0" ref={container}>

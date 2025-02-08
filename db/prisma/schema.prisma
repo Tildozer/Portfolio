@@ -11,6 +11,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  // url      = "postgresql://tildozer@localhost:5432/portfolio"
 }
 
 model TechStack {

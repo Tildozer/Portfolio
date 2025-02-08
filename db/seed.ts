@@ -4,11 +4,9 @@ const prisma = new PrismaClient();
 import { Projects } from "@prisma/client";
 
 const deleteTables = async () => {
-  await Promise.all([
-    prisma.projectDescription.deleteMany({}),
-    prisma.projects.deleteMany({}),
-    prisma.techStack.deleteMany({}),
-  ]);
+  await prisma.projectDescription.deleteMany();
+  await prisma.projects.deleteMany();
+  await prisma.techStack.deleteMany();
 };
 
 const seedProjects = async () => {
@@ -97,64 +95,80 @@ const seedProjects = async () => {
 };
 
 const seedTechStack = async () => {
-  const techStack = prisma.techStack.createMany({
-    data: [
-      {
+  const techStack = await Promise.all([
+    prisma.techStack.create({
+      data: {
         name: "Javascript",
         iconName: "SiJavascript",
         color: "#f7df1e",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "Typescript",
         iconName: "TbBrandTypescript",
         color: "#007acc",
         url: "https://www.typescriptlang.org/docs/",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "CSS",
         iconName: "TbBrandCss3",
         color: "#264de4",
         url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "Tailwind",
         iconName: "TbBrandTailwind",
         color: "#06b6d4",
         url: "https://tailwindcss.com/docs/installation",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "HTML",
         iconName: "SiHtml5",
         color: "#e34c26",
         url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "C++",
         iconName: "TbBrandCpp",
         color: "#FFFFFF",
         url: "https://devdocs.io/cpp/",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "Flutter",
         iconName: "SiFlutter",
         color: "#027DFD",
         url: "https://docs.flutter.dev/",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "Jest",
         iconName: "SiJest",
         color: "#32CD32",
         url: "https://jestjs.io/docs/getting-started",
       },
-      {
+    }),
+    prisma.techStack.create({
+      data: {
         name: "Dart",
         iconName: "SiDart",
         color: "#0175C2",
         url: "https://dart.dev/guides",
       },
-    ],
-  });
+    }),
+  ]);
 
   console.log("---- Tech Stack ----");
   console.log(techStack);

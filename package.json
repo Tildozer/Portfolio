@@ -2,11 +2,13 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "seed": "tsx ./db/seed",
     "pretty": "prettier --write . --plugin=prettier-plugin-tailwindcss"
   },
   "prisma": {
@@ -23,7 +25,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.4.0",
-    "three": "^0.173.0"
+    "three": "^0.173.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
     "@types/node": "^20",

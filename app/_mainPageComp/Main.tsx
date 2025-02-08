@@ -8,7 +8,16 @@ const Main = () => {
       <div className="flex animate-fadeInOnce flex-col">
         <TechStack />
         <div className="mb-20 h-[85vh]">
-          <Canvas className="bg-slate-400 dark:bg-black">
+          <Canvas
+            shadows
+            camera={{
+              fov: 45,
+              near: 0.1,
+              far: 200,
+              position: [2.5, 4, 6],
+            }}
+            className="bg-slate-400 dark:bg-black"
+          >
             <Experince />
           </Canvas>
         </div>

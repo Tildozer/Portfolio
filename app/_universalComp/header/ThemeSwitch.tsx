@@ -1,13 +1,10 @@
 import React from "react";
+import { useDarkMode } from "../../_providers/DarkModeProvider";
 import { PiSunBold, PiMoonBold } from "react-icons/pi";
 
-type Props = {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-  slider: React.MutableRefObject<HTMLDivElement>;
-};
+const ThemeSwitch = () => {
+  const { darkMode, toggleDarkMode, slider } = useDarkMode();
 
-const ThemeSwitch = ({ darkMode, toggleDarkMode, slider }: Props) => {
   return (
     <div className="flex flex-row text-[.45rem] text-slate-900 dark:text-yellow-500 2xs:mr-4">
       <label
@@ -27,7 +24,7 @@ const ThemeSwitch = ({ darkMode, toggleDarkMode, slider }: Props) => {
           {darkMode ? <PiMoonBold /> : <PiSunBold />}
         </div>
       </label>
-      <span className="ml-2 mt-1 select-none text-[.65rem]">
+      <span className="duration-250 ml-2 mt-1 select-none text-[.65rem] text-white transition-all dark:text-yellow-500">
         {darkMode ? "Dark" : "Light"} mode
       </span>
     </div>
