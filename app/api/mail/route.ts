@@ -57,7 +57,7 @@ const sendMailHandler = async (client: string, content: MailObj) => {
 
 const getHTMLMessage = (client: string, content: MailObj) => {
   return `
-      <h1>Inqury from, ${content.name}!</h1>
+      <h1>Inquiry from, ${content.name}!</h1>
     <div>${content.htmlStr}</div>
     `;
 };
@@ -68,7 +68,7 @@ export default async function handler(
 ) {
   try {
     const content: MailObj = req.body;
-    await sendMail("Anthonys resume", content);
+    await sendMail("Anthony's resume", content);
 
     res.send({ message: "Email sent" });
   } catch (error) {

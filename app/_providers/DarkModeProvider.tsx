@@ -56,7 +56,7 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
   };
 
-  const refrences: ThemeTransitionItems = {
+  const references: ThemeTransitionItems = {
     slider,
     background,
     techStackContainer,
@@ -64,7 +64,7 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => {
     if (isPressed) {
-      themeTransition(refrences);
+      themeTransition(references);
       setTimeout(darkModeCheck, 100);
       setIsPressed(false);
     } else {

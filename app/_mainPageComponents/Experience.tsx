@@ -4,7 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TestCube } from ".";
 
-const Experince = () => {
+const Experience = () => {
   const { camera, gl } = useThree();
   const cubeRef = useRef<THREE.Mesh>(null!);
   const groupRef = useRef<THREE.Group>(null!);
@@ -26,10 +26,10 @@ const Experince = () => {
       <directionalLight position={[1, 2, 3]} />
       <ambientLight intensity={0.3} />
       <group ref={groupRef}>
-        <TestCube refrence={cubeRef} />
+        <TestCube reference={cubeRef} />
       </group>
     </>
   );
 };
 
-export default Experince;
+export default Experience;
