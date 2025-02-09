@@ -21,6 +21,7 @@
     "@types/three": "^0.173.0",
     "axios": "^1.7.9",
     "gsap": "^3.12.7",
+    "js-cookie": "^3.0.5",
     "next": "14.2.23",
     "nodemailer": "^6.10.0",
     "react": "^18",
@@ -31,6 +32,7 @@
     "tsx": "^4.19.2"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",

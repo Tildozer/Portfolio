@@ -7,13 +7,12 @@ import {
   // Logo
 } from ".";
 import { gsap } from "gsap";
+import cookies from "js-cookie";
 
 export const themeTransition = (items: ThemeTransitionItems) => {
-  if (localStorage.theme === "dark") {
-    console.log("dark");
+  if (cookies.get("theme") === "dark") {
     transition(darkModeSettings, items);
   } else {
-    console.log("light");
     transition(lightModeSettings, items);
   }
 };

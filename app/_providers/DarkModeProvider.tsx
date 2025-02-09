@@ -9,6 +9,7 @@ import React, {
   ReactNode,
   FC,
 } from "react";
+import cookie from "js-cookie";
 
 import {
   themeTransition,
@@ -29,15 +30,6 @@ const DarkModeContext = createContext<DarkModeContextProps | undefined>(
 );
 
 export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const toggleLocalStorage = () => {
-    if (localStorage.theme === "dark") {
-      localStorage.theme = "light";
-      return false;
-    }
-    localStorage.theme = "dark";
-    return true;
-  };
-
   const [darkMode, setDarkMode] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -48,14 +40,14 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const toggleDarkMode = () => {
     setIsPressed(true);
     setDarkMode((prevMode) => !prevMode);
-    toggleLocalStorage();
+    cookie.set("theme", darkMode ? "light" : "dark", { expires: 365 });
   };
 
   const darkModeCheck = () => {
+    const theme = cookie.get("theme");
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      theme === "dark" ||
+      (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
       setDarkMode(true);
@@ -80,6 +72,10 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkMode]);
+
+  useEffect(() => {
+    darkModeCheck();
+  }, []);
 
   return (
     <DarkModeContext.Provider
