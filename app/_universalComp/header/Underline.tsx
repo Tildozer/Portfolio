@@ -8,7 +8,7 @@ const Underline = ({ underline }: Props) => {
   return (
     <div
       ref={underline}
-      className="h-1 w-0 rounded-md bg-slate-800 dark:bg-slate-400"
+      className="h-1 w-0 rounded-md bg-orange-600 dark:bg-slate-400"
     ></div>
   );
 };

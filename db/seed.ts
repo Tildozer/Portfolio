@@ -15,7 +15,7 @@ const seedProjects = async () => {
       data: {
         name: "Strangers Things",
         githubUrl: "https://github.com/Tildozer/strangersThngs",
-        projectUrl: "https://rekanstructed.onrender.com/",
+        projectUrl: "https://strangersproj.netlify.app/",
       },
     }),
     prisma.projects.create({

@@ -16,7 +16,7 @@ const Experince = () => {
     // state.camera.position.x = Math.sin(angle) * 8;
     // state.camera.position.z = Math.cos(angle) * 8;
     // state.camera.lookAt(0, 0, 0)
-    groupRef.current.rotation.y += delta;
+    // groupRef.current.rotation.y += delta;
     // console.log("tick");
   });
 
