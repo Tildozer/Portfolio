@@ -1,7 +1,7 @@
 import Link from "next/link.js";
 import React from "react";
 import { Descriptions } from ".";
-import { Project } from "./Projects";
+import { Project } from "../page";
 
 type Props = {
   project: Project;

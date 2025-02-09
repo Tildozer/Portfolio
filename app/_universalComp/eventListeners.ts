@@ -76,9 +76,8 @@ export const setFooterEventListeners = (
 };
 
 export const setHeaderEventListeners = (
-  container: MutableRefObject<HTMLDivElement>,
+  container: MutableRefObject<HTMLAnchorElement>,
   underline: MutableRefObject<HTMLDivElement>,
-  width: string,
 ) => {
   const containerElement = container.current;
   const underlineElement = underline.current;
@@ -88,7 +87,7 @@ export const setHeaderEventListeners = (
       gsap.fromTo(
         underlineElement,
         { width: "0rem" },
-        { width: width, opacity: 1, duration: 0.5 },
+        { width: "100%", opacity: 1, duration: 0.5 },
       );
       containerElement.removeEventListener("mouseover", mouseOverHandler);
       containerElement.addEventListener("mouseleave", mouseLeaveEvent);

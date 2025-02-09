@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDarkMode } from "../_providers/DarkModeProvider";
 import type { TechnicalSkill } from "./TechIcon";
-import { TechIcon } from "./";
+import { TechIcon } from ".";
 import axios from "axios";
 
 const TechStack = () => {
