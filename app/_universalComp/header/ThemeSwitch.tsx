@@ -6,7 +6,7 @@ const ThemeSwitch = () => {
   const { darkMode, toggleDarkMode, slider } = useDarkMode();
 
   return (
-    <div className="flex flex-row text-[.45rem] text-slate-900 dark:text-yellow-500 2xs:mr-4">
+    <div className="flex flex-row text-slate-900 dark:text-yellow-500 2xs:mr-4">
       <label
         onClick={toggleDarkMode}
         className="m-2 mt-3 h-2 w-12 rounded-md bg-slate-800 dark:bg-slate-400"
@@ -24,7 +24,7 @@ const ThemeSwitch = () => {
           {darkMode ? <PiMoonBold /> : <PiSunBold />}
         </div>
       </label>
-      <span className="duration-250 ml-2 mt-1 select-none text-[.65rem] text-orange-200 transition-all dark:text-yellow-500">
+      <span className="duration-250 ml-2 mt-1 w-20 select-none text-[.65rem] text-orange-200 transition-all dark:text-yellow-500">
         {darkMode ? "Dark" : "Light"} mode
       </span>
     </div>

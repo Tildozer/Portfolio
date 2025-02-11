@@ -8,6 +8,7 @@ import React, {
   useRef,
   ReactNode,
   FC,
+  useMemo,
 } from "react";
 import cookie from "js-cookie";
 
@@ -56,11 +57,14 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
   };
 
-  const references: ThemeTransitionItems = {
-    slider,
-    background,
-    techStackContainer,
-  };
+  const references: ThemeTransitionItems = useMemo(
+    () => ({
+      slider,
+      background,
+      techStackContainer,
+    }),
+    [slider, background, techStackContainer],
+  );
 
   useEffect(() => {
     if (isPressed) {

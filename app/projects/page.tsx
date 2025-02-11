@@ -31,8 +31,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="bg-color min-h-screen w-full overflow-x-hidden bg-slate-100 dark:bg-slate-900 dark:text-slate-400">
-      <div className="flex w-full flex-col items-center justify-center pb-20 pl-3 pr-3 pt-10">
+    <div className="bg-color min-h-screen w-full overflow-x-hidden bg-slate-100 transition-all duration-500 dark:bg-slate-900 dark:text-slate-400">
+      <div className="flex flex-col items-stretch pb-20 pl-3 pt-10">
         {projects.length ? (
           projects.map((project) => (
             <ProjectLink key={project.id} project={project} />

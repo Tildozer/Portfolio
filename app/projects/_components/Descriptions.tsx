@@ -7,10 +7,10 @@ type Props = {
 
 const Descriptions = ({ descriptions }: Props) => {
   return (
-    <ul className="ml-2">
+    <ul className="">
       {descriptions.map(({ description, id }) => {
         return (
-          <li key={id} className="ml-4 mr-4 max-w-2xl list-disc pb-4 pt-2">
+          <li key={id} className="max-w-2xl pb-4 pt-2">
             {description}
           </li>
         );
