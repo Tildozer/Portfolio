@@ -9,7 +9,7 @@ const ThemeSwitch = () => {
     <div className="flex flex-row text-slate-900 dark:text-yellow-500 2xs:mr-4">
       <label
         onClick={toggleDarkMode}
-        className="m-2 mt-3 h-2 w-12 rounded-md bg-slate-800 dark:bg-slate-400"
+        className="m-2 mt-3 h-2 w-12 rounded-md bg-slate-800 transition-all duration-500 dark:bg-slate-400"
       >
         <input
           className="absolute left-3 top-3 h-4 w-12 opacity-0 hover:cursor-pointer"

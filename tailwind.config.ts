@@ -53,7 +53,8 @@ const config: Config = {
       },
       animation: {
         wiggle: "wiggle 0.5s ease-in-out 2",
-        fadeInOnce: "fadeIn 1s 1",
+        fadeInOnce: "fadeIn 2s 1",
+        slowSpin: "spin 1.5s linear infinite",
       },
     },
   },

@@ -18,6 +18,7 @@ import {
   Background,
   ThemeTransitionItems,
 } from "./theme";
+import { useIsLoadingInfo } from "./IsLoadingProvider";
 
 interface DarkModeContextProps {
   darkMode: boolean;
@@ -31,6 +32,7 @@ const DarkModeContext = createContext<DarkModeContextProps | undefined>(
 );
 
 export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const { isLoading, setIsLoading } = useIsLoadingInfo();
   const [darkMode, setDarkMode] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -50,7 +52,9 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
       theme === "dark" ||
       (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      document.documentElement.classList.add("dark");
+      if (!document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.add("dark");
+      }
       setDarkMode(true);
     } else {
       document.documentElement.classList.remove("dark");
@@ -74,12 +78,13 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     } else {
       darkModeCheck();
     }
+    if (isLoading) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 200);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkMode]);
-
-  useEffect(() => {
-    darkModeCheck();
-  }, []);
 
   return (
     <DarkModeContext.Provider

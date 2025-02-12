@@ -7,8 +7,6 @@ export const GET = async () => {
   try {
     const techStack = await prisma.techStack.findMany();
 
-    console.log(techStack);
-
     return NextResponse.json(techStack);
   } catch (error) {
     throw error;

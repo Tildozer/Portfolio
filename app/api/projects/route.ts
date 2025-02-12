@@ -9,6 +9,9 @@ export async function GET() {
       include: {
         ProjectDescription: true,
       },
+      orderBy: {
+        id: "desc",
+      },
     });
 
     return NextResponse.json(projects);

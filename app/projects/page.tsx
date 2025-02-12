@@ -21,7 +21,6 @@ const Projects = () => {
 
   const getProjects = async () => {
     const { data: projectArr } = await axios.get("/api/projects");
-    console.log(projectArr);
 
     setProjects(projectArr);
   };
@@ -32,10 +31,10 @@ const Projects = () => {
 
   return (
     <div className="bg-color min-h-screen w-full overflow-x-hidden bg-slate-100 transition-all duration-500 dark:bg-slate-900 dark:text-slate-400">
-      <div className="flex flex-col items-stretch pb-20 pl-3 pt-10">
+      <div className="flex flex-col items-stretch pb-20 pt-10 sm:pl-3">
         {projects.length ? (
-          projects.map((project) => (
-            <ProjectLink key={project.id} project={project} />
+          projects.map((project, idx) => (
+            <ProjectLink key={project.id} project={project} i={idx} />
           ))
         ) : (
           <div className="h-[110vh] w-full"></div>

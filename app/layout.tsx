@@ -4,6 +4,7 @@ import { Header } from "./_universalComp/header/";
 import Footer from "./_universalComp/Footer";
 import { DarkModeProvider } from "./_providers/DarkModeProvider";
 import { Recursive } from "next/font/google";
+import { IsLoadingProvider } from "./_providers/IsLoadingProvider";
 
 export const metadata: Metadata = {
   title: "Anthony's Portfolio",
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${recursive.className}`}>
-        <DarkModeProvider>
-          <Header />
-          {children}
-          <Footer />
-        </DarkModeProvider>
+        <IsLoadingProvider>
+          <DarkModeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </DarkModeProvider>
+        </IsLoadingProvider>
       </body>
     </html>
   );
