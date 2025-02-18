@@ -10,18 +10,19 @@ import React, {
 } from "react";
 
 const EmailForm = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (ev: FormEvent<HTMLButtonElement>) => {
     ev.preventDefault();
-    console.log({ email, subject, message });
 
-    const conformation = await axios.post("http://localhost:3001/mail", {
+    const conformation = await axios.post("api/mail", {
       email,
       subject,
       message,
+      name,
     });
 
     if (conformation) {
@@ -36,13 +37,21 @@ const EmailForm = () => {
 
   return (
     <form className="flex w-1/2 max-w-[32rem] flex-col items-center gap-6 text-black placeholder:text-slate-600">
-      <input
-        className="w-full"
-        type="email"
-        placeholder="Email..."
-        value={email}
-        onChange={(ev) => handleChange(ev, setEmail)}
-      />
+      <div className="flex w-full justify-between">
+        <input
+          className="mr-2 w-1/2"
+          placeholder="Name..."
+          value={name}
+          onChange={(ev) => handleChange(ev, setName)}
+        />
+        <input
+          className="ml-2 w-1/2"
+          type="email"
+          placeholder="Email..."
+          value={email}
+          onChange={(ev) => handleChange(ev, setEmail)}
+        />
+      </div>
       <input
         className="w-full"
         type="text"
