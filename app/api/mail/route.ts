@@ -1,5 +1,31 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer, { SentMessageInfo } from "nodemailer";
+import Cors from "cors";
+
+// Initialize the cors middleware
+const cors = Cors({
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+  origin: process.env.NEXT_PUBLIC_API_URL,
+  optionsSuccessStatus: 200,
+});
+
+// Helper method to wait for a middleware to execute before continuing
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+function runMiddleware(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  fn: Function,
+) {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 type responseData = {
   message: string;
@@ -57,8 +83,7 @@ const sendMailHandler = async (client: string, content: MailObj) => {
 
 const getHTMLMessage = (client: string, content: MailObj) => {
   return `
-      <h1>Inquiry from, ${content.name}!</h1>
-    <div>${content.htmlStr}</div>
+    <h1>${content.subject}</h1>
     `;
 };
 
@@ -66,12 +91,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<responseData>,
 ) {
+  // Run the middleware
+  await runMiddleware(req, res, cors);
+
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+
   try {
     const content: MailObj = req.body;
     await sendMail("Anthony's resume", content);
-
-    res.send({ message: "Email sent" });
+    return res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    throw error;
+    console.error("Error sending email:", error);
+    return res.status(500).json({ message: "Error sending email" });
   }
 }
