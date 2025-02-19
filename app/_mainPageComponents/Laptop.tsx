@@ -11,7 +11,13 @@ export default function Model() {
   );
 
   return (
-    <group ref={group} dispose={null} position-y={-1.2}>
+    <group
+      ref={group}
+      dispose={null}
+      rotation-y={0.75}
+      rotation-x={-0.25}
+      position-y={-1.5}
+    >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
         <mesh
           geometry={nodes.Circle001.geometry}

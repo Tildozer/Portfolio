@@ -7,7 +7,7 @@ const LaptopScreen = () => {
       transform
       wrapperClass="laptop-screen"
       distanceFactor={4.05}
-      position={[-0.01, 1.5, -1.4]}
+      position={[0.02, 1.5, -1.4]}
       rotation-x={-0.256}
       style={{ userSelect: "none" }}
     >
@@ -15,7 +15,7 @@ const LaptopScreen = () => {
         height={198}
         width={290}
         className="rounded-md"
-        src="https://bruno-simon.com/html/"
+        src="https://marble-run-tawny.vercel.app/"
       />
     </Html>
   );
