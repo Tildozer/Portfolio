@@ -36,16 +36,16 @@ const EmailForm = () => {
   ) => set(ev.target.value);
 
   return (
-    <form className="flex w-1/2 max-w-[32rem] flex-col items-center gap-6 text-black placeholder:text-slate-600">
+    <form className="flex w-1/2 max-w-[32rem] animate-fadeInOnce flex-col items-center gap-6 text-black placeholder:text-slate-600">
       <div className="flex w-full justify-between">
         <input
-          className="mr-2 w-1/2"
+          className="mr-2 w-1/2 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
           placeholder="Name..."
           value={name}
           onChange={(ev) => handleChange(ev, setName)}
         />
         <input
-          className="ml-2 w-1/2"
+          className="ml-2 w-1/2 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
           type="email"
           placeholder="Email..."
           value={email}
@@ -53,7 +53,7 @@ const EmailForm = () => {
         />
       </div>
       <input
-        className="w-full"
+        className="w-full rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
         type="text"
         name="subject"
         placeholder="Subject..."
@@ -61,7 +61,7 @@ const EmailForm = () => {
         onChange={(ev) => handleChange(ev, setSubject)}
       />
       <textarea
-        className="h-32 w-full"
+        className="h-32 w-full rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
         name="message"
         placeholder="Message..."
         value={message}
@@ -69,7 +69,7 @@ const EmailForm = () => {
       />
       <button
         onClick={(ev) => handleSubmit(ev)}
-        className="bg-slate-500 dark:bg-slate-200"
+        className="rounded-md border-2 border-black bg-slate-500 pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:bg-slate-200 dark:focus:border-yellow-500"
         type="submit"
       >
         submit
