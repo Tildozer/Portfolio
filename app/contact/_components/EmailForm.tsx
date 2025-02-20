@@ -8,6 +8,8 @@ import React, {
   SetStateAction,
   ChangeEvent,
 } from "react";
+import { toast } from "react-toastify";
+import { SuccessToast, ErrorToast } from "./";
 
 const EmailForm = () => {
   const [name, setName] = useState("");
@@ -17,16 +19,30 @@ const EmailForm = () => {
 
   const handleSubmit = async (ev: FormEvent<HTMLButtonElement>) => {
     ev.preventDefault();
+    if (!name || !email || !subject || !message) {
+      toast.error(<ErrorToast err={"Please fill out all fields!"} />);
+      return;
+    }
 
-    const conformation = await axios.post("api/mail", {
-      email,
-      subject,
-      message,
-      name,
-    });
+    const conformation: { message?: string; error?: string } = await axios.post(
+      "api/mail",
+      {
+        email,
+        subject,
+        message,
+        name,
+      },
+    );
 
-    if (conformation) {
+    if (conformation.message) {
       console.log(conformation);
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      toast(<SuccessToast />);
+    } else {
+      toast.error(<ErrorToast err={"Email failed to send!"} />);
     }
   };
 
@@ -36,7 +52,7 @@ const EmailForm = () => {
   ) => set(ev.target.value);
 
   return (
-    <form className="flex w-1/2 max-w-[32rem] animate-fadeInOnce flex-col items-center gap-6 text-black placeholder:text-slate-600">
+    <form className="flex w-1/2 max-w-[32rem] animate-fadeInOnce flex-col items-center gap-6 rounded-md p-10 text-black placeholder:text-slate-600">
       <div className="flex w-full justify-between">
         <input
           className="mr-2 w-1/2 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"

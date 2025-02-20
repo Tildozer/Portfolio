@@ -1,7 +1,9 @@
 import { Html } from "@react-three/drei";
-import React from "react";
+// import React, { useEffect, useRef } from "react";
 
 const LaptopScreen = () => {
+  // const iframeRef = useRef<HTMLIFrameElement>(null);
+
   return (
     <Html
       transform
@@ -12,6 +14,7 @@ const LaptopScreen = () => {
       style={{ userSelect: "none" }}
     >
       <iframe
+        // ref={iframeRef}
         height={198}
         width={290}
         className="rounded-md"

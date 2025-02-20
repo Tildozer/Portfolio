@@ -1,5 +1,5 @@
 import React from "react";
-import { EmailForm } from "./_components";
+import { EmailForm, Toast } from "./_components";
 
 const Contact = () => {
   return (
@@ -10,6 +10,7 @@ const Contact = () => {
         <span>I will get back to you as soon as possible.</span>
       </div>
       <EmailForm />
+      <Toast />
     </div>
   );
 };

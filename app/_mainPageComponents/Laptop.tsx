@@ -6,9 +6,11 @@ import * as THREE from "three";
 export default function Model() {
   const group = useRef<THREE.Group>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { nodes, materials }: any = useGLTF(
+  const model: any = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf",
   );
+
+  const { nodes, materials } = model;
 
   return (
     <group
