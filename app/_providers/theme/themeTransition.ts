@@ -3,9 +3,8 @@ import {
   darkModeSettings,
   ThemeSettings,
   ThemeTransitionItems,
-  Background,
-  // Logo
 } from ".";
+
 import { gsap } from "gsap";
 import cookies from "js-cookie";
 
@@ -27,21 +26,4 @@ const transition = (settings: ThemeSettings, items: ThemeTransitionItems) => {
   });
 
   gsap.fromTo(items.slider.current, { rotateZ: 0 }, { rotateZ: 360 });
-
-  if (items.techStackContainer.current) {
-    techStackTransition(
-      items.techStackContainer,
-      settings.techStackChildrenBackgroundColor,
-    );
-  }
-};
-
-export const techStackTransition = (
-  container: Background,
-  childrenColor: string,
-) => {
-  gsap.to(container.current.children, {
-    backgroundColor: childrenColor,
-    duration: transitionDuration,
-  });
 };

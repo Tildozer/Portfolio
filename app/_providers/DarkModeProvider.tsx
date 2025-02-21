@@ -1,5 +1,4 @@
 "use client";
-
 import React, {
   createContext,
   useContext,
@@ -12,19 +11,13 @@ import React, {
 } from "react";
 import cookie from "js-cookie";
 
-import {
-  themeTransition,
-  Slider,
-  Background,
-  ThemeTransitionItems,
-} from "./theme";
+import { themeTransition, Slider } from "./theme";
 import { useIsLoadingInfo } from "./IsLoadingProvider";
 
 interface DarkModeContextProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
   slider: Slider;
-  techStackContainer: Background | null;
 }
 
 const DarkModeContext = createContext<DarkModeContextProps | undefined>(
@@ -37,8 +30,6 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const slider: Slider = useRef(null!);
-  const background: Background = useRef(null!);
-  const techStackContainer: Background | null = useRef(null!);
 
   const toggleDarkMode = () => {
     setIsPressed(true);
@@ -61,13 +52,11 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
   };
 
-  const references: ThemeTransitionItems = useMemo(
+  const references: { slider: Slider } = useMemo(
     () => ({
       slider,
-      background,
-      techStackContainer,
     }),
-    [slider, background, techStackContainer],
+    [slider],
   );
 
   useEffect(() => {
@@ -92,7 +81,6 @@ export const DarkModeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         darkMode,
         toggleDarkMode,
         slider,
-        techStackContainer,
       }}
     >
       {children}

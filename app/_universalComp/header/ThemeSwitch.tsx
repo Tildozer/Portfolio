@@ -6,7 +6,7 @@ const ThemeSwitch = () => {
   const { darkMode, toggleDarkMode, slider } = useDarkMode();
 
   return (
-    <div className="flex flex-row text-slate-900 dark:text-yellow-500 2xs:mr-4">
+    <div className="flex flex-row text-slate-900 dark:text-yellow-500 2xs:mr-4 lg:mr-28">
       <label
         onClick={toggleDarkMode}
         className="m-2 mt-3 h-2 w-12 rounded-md bg-slate-800 transition-all duration-500 dark:bg-slate-400"

@@ -6,14 +6,9 @@ export interface ThemeSettings {
 }
 
 export type Slider = MutableRefObject<HTMLDivElement>;
-export type Background = MutableRefObject<HTMLDivElement>;
-export type Links = React.RefObject<HTMLAnchorElement>;
-// export type Logo = MutableRefObject<HTMLDivElement>;
 
 export interface ThemeTransitionItems {
   slider: Slider;
-  background: Background;
-  techStackContainer: Background;
 }
 
 export const lightModeSettings: ThemeSettings = {
