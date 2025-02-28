@@ -17,7 +17,7 @@ const Certificates = () => {
     },
   ];
   return (
-    <div className="mb-10 mt-4 flex flex-col items-center">
+    <div className="mb-10 mt-4 flex animate-fadeInOnce flex-col items-center text-black dark:text-yellow-500">
       <span className="self-start text-3xl md:ml-6 lg:ml-24 xl:ml-0 xl:self-center">
         Certificates:{" "}
       </span>

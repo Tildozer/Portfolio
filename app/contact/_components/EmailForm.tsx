@@ -85,7 +85,7 @@ const EmailForm = () => {
       />
       <button
         onClick={(ev) => handleSubmit(ev)}
-        className="rounded-md border-2 border-black bg-slate-500 pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:bg-slate-200 dark:focus:border-yellow-500"
+        className="rounded-md border-2 border-black bg-slate-500 pl-2 pr-2 shadow-sm shadow-black transition-all duration-200 focus:outline-none active:translate-y-1 active:bg-orange-600 active:shadow-none dark:border-slate-500 dark:bg-slate-200 dark:active:bg-yellow-500"
         type="submit"
       >
         submit
