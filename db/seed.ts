@@ -22,7 +22,7 @@ const seedProjects = async () => {
       data: {
         name: "Re-KANstructed",
         githubUrl: "https://github.com/Team-Kan/Lego-shopper",
-        projectUrl: "https://rekanstructed.onrender.com/",
+        projectUrl: "https://lego-shopper-dd1u.onrender.com/",
       },
     }),
     prisma.projects.create({

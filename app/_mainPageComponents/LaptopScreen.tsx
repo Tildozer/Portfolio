@@ -17,7 +17,7 @@ const LaptopScreen = () => {
         // ref={iframeRef}
         height={198}
         width={290}
-        className="rounded-md"
+        className="select-none rounded-md"
         src="https://marble-run-tawny.vercel.app/"
       />
     </Html>

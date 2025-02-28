@@ -37,21 +37,19 @@ const Text = () => {
         duration: 0.5,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkMode]);
 
   return (
     <group position={[-4, 1.5, 0]} rotation={[-0.1, 0.8, 0]}>
       <mesh material={material}>
         <textGeometry
-          args={["Welcome to", { font, size: 0.5, height: 0.1, depth: 0.1 }]}
+          args={["Discover", { font, size: 0.5, height: 0.1, depth: 0.1 }]}
         />
       </mesh>
       <mesh position={[0, -0.5, 0]} material={material}>
         <textGeometry
-          args={[
-            "my portfolio!",
-            { font, size: 0.5, height: 0.1, depth: 0.15 },
-          ]}
+          args={["my work!", { font, size: 0.5, height: 0.1, depth: 0.15 }]}
         />
       </mesh>
     </group>

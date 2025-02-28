@@ -1,34 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   crossOrigin: "anonymous",
-  async headers() {
-    return [
-      {
-        source: "/api/:path*",
-        headers: [
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "https://stmp.gmail.com",
-          },
-          {
-            key: "Access-Control-Allow-Methods",
-            value: "GET, POST, PUT, DELETE, OPTIONS",
-          },
-          {
-            key: "Access-Control-Allow-Headers",
-            value: "Content-Type, Authorization",
-          },
-        ],
-      },
-    ];
+  experimental: {
+    optimizePackageImports: [
+      "./app/_mainPageComponents/index",
+      "./app/_universalComp/header/index",
+      "./app/contact/_components/index",
+      "./app/projects/_components/index",
+    ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://stmp.gmail.com/:path*",
-      },
-    ];
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+
+    return config;
   },
 };
 
