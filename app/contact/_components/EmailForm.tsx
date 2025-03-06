@@ -24,7 +24,7 @@ const EmailForm = () => {
       return;
     }
 
-    const conformation: { message?: string; error?: string } = await axios.post(
+    const conformation: { status: number } = await axios.post(
       "api/mail",
       {
         email,
@@ -34,7 +34,8 @@ const EmailForm = () => {
       },
     );
 
-    if (conformation.message) {
+    console.log(conformation.status === 200);
+    if (conformation) {
       console.log(conformation);
       setName("");
       setEmail("");
