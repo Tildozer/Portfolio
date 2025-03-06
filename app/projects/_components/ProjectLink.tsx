@@ -32,14 +32,18 @@ const ProjectLink = ({
           {name}
         </h1>
         <span className="text-lg text-orange-600 dark:text-yellow-500">
-          <Link
-            href={githubUrl}
-            target="_blank"
-            className="hover:text-blue-500 hover:underline hover:underline-offset-4 dark:hover:text-blue-300"
-          >
-            Repository
-          </Link>
-          <span> | </span>
+          {githubUrl ? (
+            <>
+              <Link
+                href={githubUrl}
+                target="_blank"
+                className="hover:text-blue-500 hover:underline hover:underline-offset-4 dark:hover:text-blue-300"
+              >
+                Repository
+              </Link>
+              <span> | </span>
+            </>
+          ) : null}
           <Link
             href={projectUrl}
             target="_blank"

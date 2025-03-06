@@ -20,8 +20,8 @@ model TechStack {
 model Projects {
   id                 Int     @id @default(autoincrement())
   name               String  @unique @db.VarChar(100)
-  githubUrl          String  @unique @db.VarChar(255)
-  projectUrl         String  @db.VarChar(255)
+  githubUrl          String?  @unique @db.VarChar(255)
+  projectUrl         String  @db.VarChar(255) 
 
   ProjectDescription ProjectDescription[]
 }

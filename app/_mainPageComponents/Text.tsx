@@ -49,7 +49,7 @@ const Text = () => {
       </mesh>
       <mesh position={[0, -0.5, 0]} material={material}>
         <textGeometry
-          args={["my work!", { font, size: 0.5, height: 0.1, depth: 0.15 }]}
+          args={["my work", { font, size: 0.5, height: 0.1, depth: 0.15 }]}
         />
       </mesh>
     </group>

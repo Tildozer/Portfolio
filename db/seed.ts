@@ -1,7 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-import { Projects } from "@prisma/client";
 
 const deleteTables = async () => {
   await prisma.projectDescription.deleteMany();
@@ -10,33 +9,75 @@ const deleteTables = async () => {
 };
 
 const seedProjects = async () => {
-  const projects: Projects[] = await Promise.all([
-    prisma.projects.create({
-      data: {
-        name: "Strangers Things",
-        githubUrl: "https://github.com/Tildozer/strangersThngs",
-        projectUrl: "https://strangersproj.netlify.app/",
-      },
-    }),
-    prisma.projects.create({
-      data: {
-        name: "Re-KANstructed",
-        githubUrl: "https://github.com/Team-Kan/Lego-shopper",
-        projectUrl: "https://lego-shopper-dd1u.onrender.com/",
-      },
-    }),
-    prisma.projects.create({
-      data: {
-        name: "Galaxy generator",
-        githubUrl: "https://github.com/Tildozer/galaxyGenerator",
-        projectUrl: "https://galaxy-generator-opal.vercel.app/",
-      },
-    }),
-  ]);
-  const [strangersThings, reKanstructed, galaxyGenerator] = projects;
+  const connect4 = await prisma.projects.create({
+    data: {
+      name: "Connect 4",
+      projectUrl: "https://radiant-tiramisu-b23987.netlify.app/",
+      githubUrl: "https://github.com/Tildozer/theArcade",
+    },
+  });
+  const artCollector = await prisma.projects.create({
+    data: {
+      name: "The Art Collector",
+      projectUrl: "https://dainty-scone-cd4407.netlify.app/",
+      githubUrl: "https://github.com/Tildozer/UNIV_Art_Collector_React_Starter",
+    },
+  });
+  const strangersThings = await prisma.projects.create({
+    data: {
+      name: "Strangers Things",
+      githubUrl: "https://github.com/Tildozer/strangersThngs",
+      projectUrl: "https://strangersproj.netlify.app/",
+    },
+  });
+  const reKanstructed = await prisma.projects.create({
+    data: {
+      name: "Re-KANstructed",
+      githubUrl: "https://github.com/Team-Kan/Lego-shopper",
+      projectUrl: "https://lego-shopper-dd1u.onrender.com/",
+    },
+  });
+  const galaxyGenerator = await prisma.projects.create({
+    data: {
+      name: "Galaxy generator",
+      githubUrl: "https://github.com/Tildozer/galaxyGenerator",
+      projectUrl: "https://galaxy-generator-opal.vercel.app/",
+    },
+  });
+
+  // const [connect4, artCollector, strangersThings, reKanstructed, galaxyGenerator] = projects;
 
   const aboutProjects = await prisma.projectDescription.createMany({
     data: [
+      // Connect 4
+      {
+        projectId: connect4.id,
+        description:
+          "This project was developed during my time at Fullstack Academy. It was my first time building out game logic",
+      },
+      {
+        projectId: connect4.id,
+        description:
+          "It was created with pure javaScript and HTML, and I learned how to manipulate the DOM to create a game board and pieces",
+      },
+      {
+        projectId: connect4.id,
+        description:
+          "I also learned how to use CSS to style the game board and pieces",
+      },
+
+      // The Art Collector
+      {
+        projectId: artCollector.id,
+        description:
+          "This project was my first experience with interacting with an API. I used the Harvard Art Museum API to pull in art pieces and display them on the page.",
+      },
+      {
+        projectId: artCollector.id,
+        description:
+          "I learned how to use React to create a single page application that allows users to search for art pieces by keyword.",
+      },
+
       // Strangers Things
       {
         projectId: strangersThings.id,
@@ -53,6 +94,7 @@ const seedProjects = async () => {
         description:
           "Successfully integrated react-router-DOM to facilitate navigation for visitors within a single-page application.",
       },
+
       //  Re-KANstructed
       {
         projectId: reKanstructed.id,
@@ -69,6 +111,7 @@ const seedProjects = async () => {
         description:
           "We utilized Excalidraw to plan our front-end design prior to coding, ensuring alignment among team members. This approach facilitated a smooth development process, allowing us to implement additional features such as email confirmation using NodeMailer.",
       },
+
       // Galaxy generator
       {
         projectId: galaxyGenerator.id,
@@ -89,7 +132,6 @@ const seedProjects = async () => {
   });
 
   console.log("---- Projects ----");
-  console.log(projects);
   console.log("---- Projects Descriptions ----");
   console.log(aboutProjects);
 };
