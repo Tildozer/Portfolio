@@ -24,15 +24,12 @@ const EmailForm = () => {
       return;
     }
 
-    const conformation: { status: number } = await axios.post(
-      "api/mail",
-      {
-        email,
-        subject,
-        message,
-        name,
-      },
-    );
+    const conformation: { status: number } = await axios.post("api/mail", {
+      email,
+      subject,
+      message,
+      name,
+    });
 
     console.log(conformation.status === 200);
     if (conformation) {
@@ -54,15 +51,15 @@ const EmailForm = () => {
 
   return (
     <form className="flex w-1/2 max-w-[32rem] animate-fadeInOnce flex-col items-center gap-6 rounded-md p-6 text-black placeholder:text-slate-600">
-      <div className="flex w-full justify-between">
+      <div className="ml-1 flex w-fit flex-col justify-center sm:ml-0 sm:flex-row sm:justify-between">
         <input
-          className="mr-2 w-1/2 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
+          className="mb-6 mr-2 w-1/2 min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
           placeholder="Name..."
           value={name}
           onChange={(ev) => handleChange(ev, setName)}
         />
         <input
-          className="ml-2 w-1/2 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
+          className="w-1/2 min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500 sm:ml-2"
           type="email"
           placeholder="Email..."
           value={email}
@@ -70,7 +67,7 @@ const EmailForm = () => {
         />
       </div>
       <input
-        className="w-full rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
+        className="w-full min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
         type="text"
         name="subject"
         placeholder="Subject..."
@@ -78,7 +75,7 @@ const EmailForm = () => {
         onChange={(ev) => handleChange(ev, setSubject)}
       />
       <textarea
-        className="h-32 w-full rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
+        className="h-32 w-full min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
         name="message"
         placeholder="Message..."
         value={message}
@@ -86,7 +83,7 @@ const EmailForm = () => {
       />
       <button
         onClick={(ev) => handleSubmit(ev)}
-        className="rounded-md border-2 border-black bg-slate-500 pl-2 pr-2 shadow-sm shadow-black transition-all duration-200 focus:outline-none active:translate-y-1 active:bg-orange-600 active:shadow-none dark:border-slate-500 dark:bg-slate-200 dark:active:bg-yellow-500"
+        className="min-w-48 rounded-md border-2 border-black bg-slate-500 pl-2 pr-2 shadow-sm shadow-black transition-all duration-200 focus:outline-none active:translate-y-1 active:bg-orange-600 active:shadow-none dark:border-slate-500 dark:bg-slate-200 dark:active:bg-yellow-500"
         type="submit"
       >
         submit

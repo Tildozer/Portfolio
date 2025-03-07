@@ -1,23 +1,19 @@
 import { Html } from "@react-three/drei";
-// import React, { useEffect, useRef } from "react";
 
 const LaptopScreen = () => {
-  // const iframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <Html
       transform
       wrapperClass="laptop-screen"
-      distanceFactor={4.05}
+      distanceFactor={4.0}
       position={[0.02, 1.5, -1.4]}
       rotation-x={-0.256}
-      style={{ userSelect: "none" }}
+      style={{ userSelect: "none", zIndex: 10 }}
     >
       <iframe
-        // ref={iframeRef}
         height={198}
         width={290}
-        className="select-none rounded-md"
+        className="z-10 select-none rounded-md"
         src="https://marble-run-tawny.vercel.app/"
       />
     </Html>

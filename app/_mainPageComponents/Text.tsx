@@ -1,10 +1,10 @@
+import gsap from "gsap";
+import * as THREE from "three";
 import React, { useEffect } from "react";
 import { extend } from "@react-three/fiber";
+import { useDarkMode } from "../_providers/DarkModeProvider";
 import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
 import grechenFuemen from "../../public/fonts/Grechen Fuemen_Regular.json";
-import * as THREE from "three";
-import { useDarkMode } from "../_providers/DarkModeProvider";
-import gsap from "gsap";
 
 extend({ TextGeometry });
 

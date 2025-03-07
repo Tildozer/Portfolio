@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.laptop-screen {
+  z-index: 10 !important;
+}

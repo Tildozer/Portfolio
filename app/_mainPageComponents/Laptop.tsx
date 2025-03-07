@@ -1,7 +1,7 @@
+import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
-import * as THREE from "three";
 
 export default function Model() {
   const group = useRef<THREE.Group>(null);
