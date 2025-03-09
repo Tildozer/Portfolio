@@ -20,6 +20,11 @@ const Nav = () => {
     },
     {
       id: 3,
+      path: "/credentials",
+      name: "Credentials",
+    },
+    {
+      id: 4,
       path: "/contact",
       name: "Contact me",
     },

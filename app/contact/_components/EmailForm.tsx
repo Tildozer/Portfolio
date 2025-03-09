@@ -59,7 +59,7 @@ const EmailForm = () => {
           onChange={(ev) => handleChange(ev, setName)}
         />
         <input
-          className="w-1/2 min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500 sm:ml-2 mb-6"
+          className="mb-6 w-1/2 min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500 sm:ml-2"
           type="email"
           placeholder="Email..."
           value={email}
