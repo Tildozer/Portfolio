@@ -1,4 +1,3 @@
-import React from "react";
 import { MdMarkEmailRead } from "react-icons/md";
 
 const SuccessToast = () => {

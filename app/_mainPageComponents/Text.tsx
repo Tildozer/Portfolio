@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import * as THREE from "three";
-import React, { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { extend } from "@react-three/fiber";
 import { useDarkMode } from "../_providers/DarkModeProvider";
 import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
@@ -18,7 +18,7 @@ const Text = () => {
     },
   };
 
-  const materialRef = React.useRef<THREE.MeshBasicMaterial>();
+  const materialRef = useRef<THREE.MeshBasicMaterial>();
 
   const font = new FontLoader().parse(fontData);
 

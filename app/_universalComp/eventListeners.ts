@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import React, { MutableRefObject } from "react";
+import { MutableRefObject } from "react";
 
 interface ScrollPosition {
   previous: number;

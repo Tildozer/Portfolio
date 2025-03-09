@@ -1,4 +1,3 @@
-import React from "react";
 import { useDarkMode } from "../../_providers/DarkModeProvider";
 import { PiSunBold, PiMoonBold } from "react-icons/pi";
 

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { EmailForm, Toast, Experience } from "./_components";
 import { Canvas } from "@react-three/fiber";
 
@@ -13,7 +12,7 @@ const Contact = () => {
           <span>I will get back to you as soon as possible.</span>
           <EmailForm />
         </div>
-        <div className="h-[60vh] w-full">
+        <div className="mb-24 h-[60vh] w-full">
           <Canvas>
             <Experience />
           </Canvas>

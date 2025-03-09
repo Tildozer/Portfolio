@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 type Props = {
@@ -17,6 +16,7 @@ const CertContainer = ({ alt, src, description }: Props) => {
         width={800}
         height={400}
         alt={alt}
+        loading="lazy"
       />
     </div>
   );

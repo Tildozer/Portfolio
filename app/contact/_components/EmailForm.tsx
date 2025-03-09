@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import React, {
+import {
   useState,
   FormEvent,
   Dispatch,

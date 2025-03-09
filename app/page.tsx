@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { Experience, TechStack } from "./_mainPageComponents";
 import { Canvas } from "@react-three/fiber";

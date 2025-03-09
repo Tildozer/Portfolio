@@ -1,4 +1,3 @@
-import React from "react";
 import { Float, PresentationControls } from "@react-three/drei";
 
 type Props = {

@@ -1,5 +1,5 @@
 import Link from "next/link.js";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Descriptions } from ".";
 import { Project } from "../page";
 

@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { Underline } from ".";
 import Link from "next/link.js";
 import { LinkSettings } from "./Nav.jsx";
