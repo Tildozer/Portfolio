@@ -3,16 +3,26 @@ import {
   PerspectiveCamera,
   useGLTF,
   Center,
+  useAnimations,
   // useHelper,
   // OrbitControls
 } from "@react-three/drei";
-// import { useControls, folder } from "leva";
+import { useControls, folder } from "leva";
+import { useEffect } from "react";
 // import * as THREE from "three";
 // import { CameraUpdater } from "./";
 // import { useRef } from "react";
 
 const Experience = () => {
   const { scene, animations } = useGLTF("/models/letTildozerAnimations.glb");
+  const {actions, names } = useAnimations(animations, scene);
+
+  const {animation} = useControls({
+    animation: {
+      value: "",
+      options: names,
+    }
+  })
 
   // const { camPosition, camRotation, fov } = useControls({
   //   camera: folder({
@@ -55,6 +65,14 @@ const Experience = () => {
   // const light = useRef<THREE.DirectionalLight>(null);
   // useHelper(light, THREE.DirectionalLightHelper, 2, "cyan");
   const y90DegRotation = 90 * (Math.PI / 180);
+
+  useEffect(() => {
+    actions[animation]?.reset().fadeIn(0.5).play();
+
+    return () => {
+      actions[animation]?.fadeOut(0.5);
+    };
+  }, [animation]);
 
   return (
     <>
