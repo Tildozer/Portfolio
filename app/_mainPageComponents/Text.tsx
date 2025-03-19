@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import * as THREE from "three";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { extend } from "@react-three/fiber";
 import { useDarkMode } from "../_providers/DarkModeProvider";
 import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
@@ -8,7 +8,11 @@ import grechenFuemen from "../../public/fonts/Grechen Fuemen_Regular.json";
 
 extend({ TextGeometry });
 
-const Text = () => {
+type Props = {
+  ref: React.RefObject<THREE.Group>;
+};
+
+const Text = ({ ref }: Props) => {
   const { darkMode } = useDarkMode();
   const fontData = {
     ...grechenFuemen,
@@ -41,7 +45,7 @@ const Text = () => {
   }, [darkMode]);
 
   return (
-    <group position={[-4, 1.5, 0]} rotation={[-0.1, 0.8, 0]}>
+    <group ref={ref} position={[-4, 1.5, 0]} rotation={[-0.1, 0.8, 0]}>
       <mesh material={material}>
         <textGeometry
           args={["Discover", { font, size: 0.5, height: 0.1, depth: 0.1 }]}
