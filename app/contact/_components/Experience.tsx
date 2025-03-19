@@ -7,22 +7,28 @@ import {
   // useHelper,
   // OrbitControls
 } from "@react-three/drei";
-import { useControls, folder } from "leva";
+import {} from // useControls,
+// folder
+"leva";
 import { useEffect } from "react";
 // import * as THREE from "three";
 // import { CameraUpdater } from "./";
-// import { useRef } from "react";
+import {
+  useState,
+  // useRef
+} from "react";
+import * as THREE from "three";
 
 const Experience = () => {
   const { scene, animations } = useGLTF("/models/letTildozerAnimations.glb");
-  const {actions, names } = useAnimations(animations, scene);
-
-  const {animation} = useControls({
-    animation: {
-      value: "",
-      options: names,
-    }
-  })
+  const { actions, names } = useAnimations(animations, scene);
+  const [hasTriggeredAnimation, setHasTriggeredAnimation] = useState(false);
+  // const {animation} = useControls({
+  //   animation: {
+  //     value: "",
+  //     options: names,
+  //   }
+  // })
 
   // const { camPosition, camRotation, fov } = useControls({
   //   camera: folder({
@@ -67,19 +73,45 @@ const Experience = () => {
   const y90DegRotation = 90 * (Math.PI / 180);
 
   useEffect(() => {
-    actions[animation]?.reset().fadeIn(0.5).play();
+    const actionAnimation = actions[names[0]] as THREE.AnimationAction;
 
-    return () => {
-      actions[animation]?.fadeOut(0.5);
+    if (!actionAnimation) return;
+
+    const onAnimationFinished = () => {
+      setTimeout(() => {
+        setHasTriggeredAnimation(false);
+      }, 2000);
     };
-  }, [animation]);
+
+    if (!hasTriggeredAnimation) {
+      actionAnimation.reset().fadeIn(0.5);
+      actionAnimation.loop = THREE.LoopOnce;
+      actionAnimation.clampWhenFinished = true;
+
+      const mixer = actionAnimation.getMixer();
+      const finishHandler = mixer.addEventListener(
+        "finished",
+        onAnimationFinished,
+      ) as unknown as (event: THREE.Event) => void;
+
+      setTimeout(() => {
+        actionAnimation.play();
+        setHasTriggeredAnimation(true);
+      }, 1000);
+
+      // Cleanup
+      return () => {
+        mixer.removeEventListener("finished", finishHandler);
+      };
+    }
+  }, [actions, names, hasTriggeredAnimation]);
 
   return (
     <>
       <PerspectiveCamera
         makeDefault
         fov={60}
-        position-x={1.9}
+        position-x={2.1}
         rotation-y={y90DegRotation}
         near={0.1}
         far={200}
