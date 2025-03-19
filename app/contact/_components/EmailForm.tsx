@@ -51,7 +51,7 @@ const EmailForm = () => {
 
   return (
     <form className="flex w-full animate-fadeInOnce flex-col items-center gap-6 rounded-md p-6 text-black placeholder:text-slate-600 md:w-1/2 md:max-w-[32rem]">
-      <div className="ml-1 flex w-fit flex-col justify-center sm:ml-0 sm:flex-row sm:justify-between">
+      <div className="ml-1 flex w-3/4 flex-col justify-center sm:ml-0 sm:flex-row sm:justify-between md:w-fit">
         <input
           className="mb-6 min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500 sm:mr-2 md:w-1/2"
           placeholder="Name..."
