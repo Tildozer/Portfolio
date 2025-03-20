@@ -31,9 +31,7 @@ const EmailForm = () => {
       name,
     });
 
-    console.log(conformation.status === 200);
     if (conformation) {
-      console.log(conformation);
       setName("");
       setEmail("");
       setSubject("");
