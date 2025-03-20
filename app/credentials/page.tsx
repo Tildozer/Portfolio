@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { CertContainer } from "./_components";
+import Loading from "../_providers/Loading";
 
 const Credentials = () => {
   const certificates = [
@@ -28,7 +29,7 @@ const Credentials = () => {
       <span className="self-start text-3xl md:ml-6 lg:ml-24 xl:ml-0 xl:self-center">
         Certificates:{" "}
       </span>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         {certificates.map((certificate, idx) => (
           <CertContainer key={idx} {...certificate} />
         ))}
