@@ -1,4 +1,3 @@
-import React from "react";
 import { Description } from "../page";
 
 type Props = {

@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { PiGithubLogoDuotone, PiLinkedinLogoFill } from "react-icons/pi";
 import { setFooterEventListeners } from "./eventListeners";
 import Link from "next/link.js";

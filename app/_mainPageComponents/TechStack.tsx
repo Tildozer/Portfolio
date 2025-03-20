@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { TechnicalSkill } from "./TechIcon";
 import { TechIcon } from ".";
 import axios from "axios";
