@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "./_universalComp/header/";
 import Footer from "./_universalComp/Footer";
 import { DarkModeProvider } from "./_providers/DarkModeProvider";
-import { Recursive } from "next/font/google";
+import { Rock_Salt } from "next/font/google";
 import { IsLoadingProvider } from "./_providers/IsLoadingProvider";
 
 export const metadata: Metadata = {
@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   description: "A site showcasing Anthony's projects and skills.",
 };
 
-const recursive = Recursive({ subsets: ["latin"] });
+// const recursive = Recursive({ subsets: ["latin"] });
+const rockSalt = Rock_Salt({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased ${recursive.className}`}>
+      <body className={`antialiased ${rockSalt.className}`}>
         <IsLoadingProvider>
           <DarkModeProvider>
             <Header />

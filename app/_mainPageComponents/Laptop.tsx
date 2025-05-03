@@ -1,7 +1,8 @@
 import * as THREE from "three";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
+import gsap from "gsap";
 
 export default function Model() {
   const group = useRef<THREE.Group>(null);
@@ -11,12 +12,30 @@ export default function Model() {
   );
 
   const { nodes, materials } = model;
+  const topScreen = useRef<THREE.Group>(null);
+  const [showScreen, setShowScreen] = useState(false);
+
+  useEffect(() => {
+    console.log(topScreen.current?.rotation);
+    const radians = (180 * Math.PI) / 180;
+    topScreen.current?.rotation.set(radians, 0, 0);
+    setTimeout(() => {
+      console.log("here");
+      gsap.to(topScreen.current!.rotation, {
+        x: (90 * Math.PI) / 180,
+        duration: 1.5,
+      });
+      setTimeout(() => {
+        setShowScreen(true);
+      }, 1500);
+    }, 2000);
+  }, []);
 
   return (
     <group
       ref={group}
       dispose={null}
-      rotation-y={0.75}
+      // rotation-y={0.75}
       rotation-x={-0.25}
       position-y={-1.5}
     >
@@ -99,6 +118,7 @@ export default function Model() {
           />
         </group>
         <group
+          ref={topScreen}
           position={[0.01, -0.47, -10.41]}
           rotation={[1.31, 0, 0]}
           scale={5.8}
@@ -152,8 +172,8 @@ export default function Model() {
           />
         </group>
       </group>
-      <ScreenLight />
-      <LaptopScreen />
+      {showScreen && <ScreenLight />}
+      <LaptopScreen className={showScreen ? "" : "hidden"} />
     </group>
   );
 }

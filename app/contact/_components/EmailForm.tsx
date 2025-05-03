@@ -73,7 +73,7 @@ const EmailForm = () => {
         onChange={(ev) => handleChange(ev, setSubject)}
       />
       <textarea
-        className="h-32 w-full min-w-48 rounded-md border-2 border-black pl-2 pr-2 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
+        className="h-32 w-full min-w-48 rounded-md border-2 border-black p-2 pb-0 focus:border-orange-600 focus:outline-none dark:border-slate-500 dark:focus:border-yellow-500"
         name="message"
         placeholder="Message..."
         value={message}

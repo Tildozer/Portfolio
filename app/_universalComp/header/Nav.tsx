@@ -26,7 +26,7 @@ const Nav = () => {
     {
       id: 4,
       path: "/contact",
-      name: "Contact me",
+      name: "Contact",
     },
   ];
 

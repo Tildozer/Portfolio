@@ -1,5 +1,4 @@
 export { default as Experience } from "./Experience";
-export { default as Controls } from "./Controls";
 export { default as Laptop } from "./Laptop";
 export { default as LaptopScreen } from "./LaptopScreen";
 export { default as ScreenLight } from "./ScreenLight";

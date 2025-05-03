@@ -1,9 +1,9 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { Laptop, Controls, Text } from "./";
+import { Laptop, Text } from "./";
 import { useThree } from "@react-three/fiber";
 import { Color, PerspectiveCamera, Group } from "three";
-import { ContactShadows, Environment } from "@react-three/drei";
+import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 
 const Experience = () => {
   const camera = useThree((state) => state.camera) as PerspectiveCamera;
@@ -36,11 +36,9 @@ const Experience = () => {
     <>
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
-
-      <Controls>
-        <Text ref={text} />
-        <Laptop />
-      </Controls>
+      <OrbitControls />
+      <Text ref={text} />
+      <Laptop />
       <ContactShadows position-y={-1.6} opacity={0.4} scale={10} blur={1.6} />
     </>
   );
