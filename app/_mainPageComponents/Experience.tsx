@@ -15,7 +15,7 @@ const Experience = () => {
       if (window.innerWidth > 1037) {
         if (camera.fov === 75) gsap.to(camera, { fov: 45, duration: 0.5 });
         if (text.current?.position.x === -2) {
-          gsap.to(text.current!.position, { x: -3, y: 1.5, duration: 0.5 });
+          gsap.to(text.current!.position, { x: -2.4, y: 1.5, duration: 0.5 });
         }
       } else if (window.innerWidth <= 1037) {
         if (camera.fov === 45) gsap.to(camera, { fov: 75, duration: 0.5 });
