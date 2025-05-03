@@ -29,6 +29,8 @@ export default function Model() {
         setShowScreen(true);
       }, 1500);
     }, 2000);
+
+    return setShowScreen(false);
   }, []);
 
   return (
@@ -36,7 +38,7 @@ export default function Model() {
       ref={group}
       dispose={null}
       rotation={[-0.06, 0.42, 0]}
-      position={[0, -2.5, -1]}
+      position={[0, -3, -1]}
       scale={1.25}
     >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
@@ -68,12 +70,6 @@ export default function Model() {
           geometry={nodes.Circle001_6.geometry}
           material={materials.Keyboard}
         />
-        {/* <mesh
-          geometry={nodes.FrontCameraRing001.geometry}
-          material={materials["CameraRIngBlack.002"]}
-          position={[-0.15, 19.57, -16.15]}
-          scale={5.8}
-        /> */}
         <mesh
           geometry={nodes.KeyboardKeyHole.geometry}
           material={nodes.KeyboardKeyHole.material}

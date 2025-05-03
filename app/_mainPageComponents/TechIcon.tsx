@@ -70,7 +70,7 @@ const TechIcon = ({ tech: { id, name, iconName, color, url } }: Props) => {
       href={url}
       target="_blank"
       key={id}
-      className={`group flex min-w-[6rem] flex-col items-center justify-center break-all rounded-md border-2 border-solid border-slate-600 bg-black p-2 shadow-sm shadow-black transition-all duration-500 hover:-translate-y-3 hover:border-yellow-500 hover:shadow-md hover:shadow-black dark:bg-slate-500`}
+      className={`group flex h-24 min-w-24 flex-col items-center justify-center break-all rounded-md border-2 border-solid border-slate-600 bg-black p-2 shadow-sm shadow-black transition-all duration-500 hover:-translate-y-3 hover:border-yellow-500 hover:shadow-md hover:shadow-black dark:bg-slate-500 md:h-36`}
     >
       <span
         className={`text-${color} ${giveIconBackground(
