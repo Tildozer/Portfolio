@@ -16,13 +16,13 @@ export default function Model() {
   const [showScreen, setShowScreen] = useState(false);
 
   useEffect(() => {
-    console.log(topScreen.current?.rotation);
-    const radians = (180 * Math.PI) / 180;
-    topScreen.current?.rotation.set(radians, 0, 0);
+    const radian = (180 * Math.PI) / 180;
+    topScreen.current?.rotation.set(radian, 0, 0);
+
     setTimeout(() => {
-      console.log("here");
+      const newRadian = (75 * Math.PI) / 180;
       gsap.to(topScreen.current!.rotation, {
-        x: (90 * Math.PI) / 180,
+        x: newRadian,
         duration: 1.5,
       });
       setTimeout(() => {
@@ -35,9 +35,9 @@ export default function Model() {
     <group
       ref={group}
       dispose={null}
-      // rotation-y={0.75}
-      rotation-x={-0.25}
-      position-y={-1.5}
+      rotation={[-0.06, 0.42, 0]}
+      position={[0, -2.5, -1]}
+      scale={1.25}
     >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
         <mesh
@@ -68,12 +68,12 @@ export default function Model() {
           geometry={nodes.Circle001_6.geometry}
           material={materials.Keyboard}
         />
-        <mesh
+        {/* <mesh
           geometry={nodes.FrontCameraRing001.geometry}
           material={materials["CameraRIngBlack.002"]}
           position={[-0.15, 19.57, -16.15]}
           scale={5.8}
-        />
+        /> */}
         <mesh
           geometry={nodes.KeyboardKeyHole.geometry}
           material={nodes.KeyboardKeyHole.material}
@@ -172,8 +172,12 @@ export default function Model() {
           />
         </group>
       </group>
-      {showScreen && <ScreenLight />}
-      <LaptopScreen className={showScreen ? "" : "hidden"} />
+      {showScreen && (
+        <>
+          <ScreenLight />
+          <LaptopScreen />
+        </>
+      )}
     </group>
   );
 }

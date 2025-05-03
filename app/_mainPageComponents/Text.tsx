@@ -48,7 +48,11 @@ const Text = forwardRef<THREE.Group>((props, ref) => {
   });
 
   return (
-    <group ref={ref} position={[-3, 2.2, 0]} rotation={[-0.1, 0.9, -0.1]}>
+    <group
+      ref={ref}
+      position={[-3, 1.5, 2]}
+      rotation={[-0.1, 0.9, 15 * (Math.PI / 180)]}
+    >
       <mesh material={holographicMaterial}>
         <textGeometry
           args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}

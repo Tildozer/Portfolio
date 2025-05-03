@@ -12,15 +12,15 @@ const Experience = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1037) {
         if (camera.fov === 75) gsap.to(camera, { fov: 45, duration: 0.5 });
         if (text.current?.position.x === -2) {
-          gsap.to(text.current!.position, { x: -3, duration: 0.5 });
+          gsap.to(text.current!.position, { x: -3, y: 1.5, duration: 0.5 });
         }
-      } else if (window.innerWidth <= 768) {
+      } else if (window.innerWidth <= 1037) {
         if (camera.fov === 45) gsap.to(camera, { fov: 75, duration: 0.5 });
         if (text.current?.position.x === -3) {
-          gsap.to(text.current!.position, { x: -2, duration: 0.5 });
+          gsap.to(text.current!.position, { x: -2, y: 2.5, duration: 0.5 });
         }
       }
     };
@@ -36,10 +36,10 @@ const Experience = () => {
     <>
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
       <Text ref={text} />
       <Laptop />
-      <ContactShadows position-y={-1.6} opacity={0.4} scale={10} blur={1.6} />
+      <ContactShadows position-y={-3} opacity={0.4} scale={10} blur={1.6} />
     </>
   );
 };

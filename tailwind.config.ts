@@ -50,11 +50,23 @@ const config: Config = {
           "90%": { opacity: "1" },
           "0%": { opacity: "0" },
         },
+        expand: {
+          "0%": {
+            height: "0%",
+            borderRadius: "0rem",
+          },
+          "100%": {
+            height: "100%",
+            // width: "100%"
+            borderRadius: "0.375rem",
+          },
+        },
       },
       animation: {
         wiggle: "wiggle 0.5s ease-in-out 2",
         fadeInOnce: "fadeIn 2s 1",
         slowSpin: "spin 1.5s linear infinite",
+        expand: "expand 1.5s ease-in-out 1",
       },
     },
   },
