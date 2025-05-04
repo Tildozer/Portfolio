@@ -79,7 +79,7 @@ const TechIcon = ({ tech: { id, name, iconName, color, url } }: Props) => {
       >
         {setIcon(iconName)}
       </span>
-      <span className="pt-1 text-xs transition-transform duration-500 group-hover:scale-110">
+      <span className="pt-1 text-xs transition-transform duration-500 group-hover:scale-110 md:text-lg lg:text-xl">
         {name}
       </span>
     </Link>

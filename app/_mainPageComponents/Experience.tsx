@@ -14,18 +14,46 @@ const Experience = () => {
   const camera = useThree((state) => state.camera) as PerspectiveCamera;
   const background = useRef<Color>(null);
   const text = useRef<Group>(null);
+  const smallScreenSettings = { x: -1.4, y: 2.8, fov: 75, scale: 1.25 };
+  const largeScreenSettings = { x: -2, y: 1.8, fov: 45, scale: 0.9 };
 
   useEffect(() => {
+    camera.fov =
+      window.innerWidth > 1037
+        ? largeScreenSettings.fov
+        : smallScreenSettings.fov;
+
     const handleResize = () => {
+      const duration = 0.25;
       if (window.innerWidth > 1037) {
-        if (camera.fov === 75) gsap.to(camera, { fov: 45, duration: 0.25 });
-        if (text.current?.position.x === -2) {
-          gsap.to(text.current!.position, { x: -2.4, y: 1.5, duration: 0.25 });
+        if (text.current?.position.x === smallScreenSettings.x) {
+          gsap.to(text.current!.position, {
+            x: largeScreenSettings.x,
+            y: largeScreenSettings.y,
+            duration,
+          });
+          gsap.to(camera, { fov: largeScreenSettings.fov, duration });
+          gsap.to(text.current!.scale, {
+            x: largeScreenSettings.scale,
+            y: largeScreenSettings.scale,
+            z: largeScreenSettings.scale,
+            duration,
+          });
         }
       } else if (window.innerWidth <= 1037) {
-        if (camera.fov === 45) gsap.to(camera, { fov: 75, duration: 0.25 });
-        if (text.current?.position.x === -3) {
-          gsap.to(text.current!.position, { x: -2, y: 2.5, duration: 0.25 });
+        if (text.current?.position.x === largeScreenSettings.x) {
+          gsap.to(text.current!.position, {
+            x: smallScreenSettings.x,
+            y: smallScreenSettings.y,
+            duration,
+          });
+          gsap.to(camera, { fov: smallScreenSettings.fov, duration });
+          gsap.to(text.current!.scale, {
+            x: smallScreenSettings.scale,
+            y: smallScreenSettings.scale,
+            z: smallScreenSettings.scale,
+            duration,
+          });
         }
       }
     };
@@ -43,7 +71,12 @@ const Experience = () => {
       <color ref={background} attach="background" args={["#1d1f2a"]} />
       {/* <OrbitControls /> */}
       <Float rotationIntensity={0.8}>
-        <Text ref={text} />
+        <Text
+          ref={text}
+          settings={
+            window.innerWidth > 1037 ? largeScreenSettings : smallScreenSettings
+          }
+        />
         <Laptop />
       </Float>
       <ContactShadows position-y={-3} opacity={0.4} scale={10} blur={1.6} />

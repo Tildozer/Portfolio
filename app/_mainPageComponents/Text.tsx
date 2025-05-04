@@ -10,7 +10,15 @@ import random2D from "./_shaders/includes/random2D.glsl";
 
 extend({ TextGeometry });
 
-const Text = forwardRef<THREE.Group>((props, ref) => {
+type Props = {
+  settings: {
+    x: number;
+    y: number;
+    scale: number;
+  };
+};
+
+const Text = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
   const { darkMode } = useDarkMode();
   const fontData = {
     ...grechenFuemen,
@@ -51,7 +59,8 @@ const Text = forwardRef<THREE.Group>((props, ref) => {
     <group
       renderOrder={2}
       ref={ref}
-      position={[-2.4, 1.5, 2]}
+      scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
+      position={[settings.x, settings.y, 2]}
       rotation={[-0.1, 0.9, 15 * (Math.PI / 180)]}
     >
       <mesh material={holographicMaterial}>
