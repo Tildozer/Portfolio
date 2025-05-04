@@ -1,4 +1,5 @@
 import { Html } from "@react-three/drei";
+import {IconBar} from ".";
 
 type Props = {
   img: HTMLImageElement;
@@ -23,19 +24,17 @@ const LaptopScreen = ({ img }: Props) => {
         zIndex: 0,
       }}
     >
-      <div
-        className={`flex h-full w-full animate-expand items-center justify-center overflow-hidden rounded-lg bg-white`}
-      >
         <div
-          className="relative flex h-full w-full items-center justify-center rounded-md"
+          className="relative flex animate-expand h-full w-full justify-center rounded-md"
           style={{
             backgroundImage: `url(${img.src})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
-      </div>
+        >
+          <IconBar />
+        </div>
     </Html>
   );
 };

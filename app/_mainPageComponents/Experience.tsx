@@ -14,8 +14,8 @@ const Experience = () => {
   const camera = useThree((state) => state.camera) as PerspectiveCamera;
   const background = useRef<Color>(null);
   const text = useRef<Group>(null);
-  const smallScreenSettings = { x: -1.4, y: 2.8, fov: 75, scale: 1.25 };
-  const largeScreenSettings = { x: -2, y: 1.8, fov: 45, scale: 0.9 };
+  const smallScreenSettings = { x: -1, y: -3, fov: 75, scale: 1 };
+  const largeScreenSettings = { x: 0, y: -1.5, fov: 45, scale: 0.5};
 
   useEffect(() => {
     camera.fov =

@@ -7,7 +7,6 @@ import grechenFuemen from "../../public/fonts/Grechen Fuemen_Regular.json";
 import vertexShader from "./_shaders/holographic/vertex.glsl";
 import fragmentShader from "./_shaders/holographic/fragment.glsl";
 import random2D from "./_shaders/includes/random2D.glsl";
-
 extend({ TextGeometry });
 
 type Props = {
@@ -56,24 +55,24 @@ const Text = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
   });
 
   return (
-    <group
-      renderOrder={2}
-      ref={ref}
-      scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
-      position={[settings.x, settings.y, 2]}
-      rotation={[-0.1, 0.9, 15 * (Math.PI / 180)]}
-    >
-      <mesh material={holographicMaterial}>
-        <textGeometry
-          args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}
-        />
-      </mesh>
-      <mesh position={[0, -0.5, 0]} material={holographicMaterial}>
-        <textGeometry
-          args={["my work", { font, size: 0.75, height: 0.1, depth: 0.15 }]}
-        />
-      </mesh>
-    </group>
+      <group
+        renderOrder={2}
+        ref={ref}
+        scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
+        position={[settings.x, settings.y, 2]}
+        rotation={[-15 * (Math.PI/ 180), 0.5, 0]}
+      >
+        <mesh material={holographicMaterial}>
+          <textGeometry
+            args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}
+          />
+        </mesh>
+        <mesh position={[0, -0.5, 0]} material={holographicMaterial}>
+          <textGeometry
+            args={["my work", { font, size: 0.75, height: 0.1, depth: 0.15 }]}
+          />
+        </mesh>
+      </group>
   );
 });
 

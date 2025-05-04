@@ -4,6 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
 import gsap from "gsap";
 
+
 const preloadLaptopScreenImage = () => {
   const img = new Image();
   img.src =
@@ -18,13 +19,12 @@ const preloadLaptopScreenImage = () => {
 };
 
 const Laptop = () => {
-  const group = useRef<THREE.Group>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const model: any = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf",
   );
-
   const { nodes, materials } = model;
+
   const topScreen = useRef<THREE.Group>(null);
   const [showScreen, setShowScreen] = useState(false);
   const [loadedImg, setLoadedImg] = useState<HTMLImageElement | null>(null);
@@ -69,11 +69,10 @@ const Laptop = () => {
 
   return (
     <group
-      ref={group}
       dispose={null}
       rotation={[-0.06, 0.42, 0]}
       position={[0, -3, -1]}
-      scale={1.25}
+      scale={2}
     >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
         <mesh
