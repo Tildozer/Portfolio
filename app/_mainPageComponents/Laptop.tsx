@@ -4,7 +4,20 @@ import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
 import gsap from "gsap";
 
-export default function Model() {
+const preloadLaptopScreenImage = () => {
+  const img = new Image();
+  img.src =
+    "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/09735855-eefe-46f9-6831-932a7decd600/public";
+  return new Promise<HTMLImageElement>((resolve) => {
+    if (img.complete) {
+      resolve(img);
+    } else {
+      img.onload = () => resolve(img);
+    }
+  });
+};
+
+const Laptop = () => {
   const group = useRef<THREE.Group>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const model: any = useGLTF(
@@ -14,8 +27,28 @@ export default function Model() {
   const { nodes, materials } = model;
   const topScreen = useRef<THREE.Group>(null);
   const [showScreen, setShowScreen] = useState(false);
+  const [loadedImg, setLoadedImg] = useState<HTMLImageElement | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
+    preloadLaptopScreenImage()
+      .then((img) => {
+        if (isMounted) {
+          setLoadedImg(img);
+        }
+      })
+      .catch((err) =>
+        console.error("Failed to load laptop screen image:", err),
+      );
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loadedImg) return;
+
     const radian = (180 * Math.PI) / 180;
     topScreen.current?.rotation.set(radian, 0, 0);
 
@@ -31,8 +64,8 @@ export default function Model() {
         });
     }, 1500);
 
-    return setShowScreen(false);
-  }, []);
+    return () => setShowScreen(false);
+  }, [loadedImg]);
 
   return (
     <group
@@ -169,16 +202,18 @@ export default function Model() {
           />
         </group>
       </group>
-      {showScreen && (
+      {showScreen && loadedImg && (
         <>
           <ScreenLight />
-          <LaptopScreen />
+          <LaptopScreen img={loadedImg} />
         </>
       )}
     </group>
   );
-}
+};
 
 useGLTF.preload(
   "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf",
 );
+
+export default Laptop;
