@@ -21,14 +21,15 @@ export default function Model() {
 
     setTimeout(() => {
       const newRadian = (75 * Math.PI) / 180;
-      gsap.to(topScreen.current!.rotation, {
-        x: newRadian,
-        duration: 1.5,
-      });
-      setTimeout(() => {
-        setShowScreen(true);
-      }, 1500);
-    }, 2000);
+      gsap
+        .to(topScreen.current!.rotation, {
+          x: newRadian,
+          duration: 1,
+        })
+        .then(() => {
+          setShowScreen(true);
+        });
+    }, 1500);
 
     return setShowScreen(false);
   }, []);

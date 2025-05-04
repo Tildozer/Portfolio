@@ -7,20 +7,20 @@ const Credentials = () => {
     {
       description:
         "FullstackAcademy: Certificate of completion for the FullstackAcademy bootcamp",
-      src: "/fullStackAcademy.jpg",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/dea8f8d4-5064-4af3-d81f-5bb72c6fa600/public",
       alt: "Certificate for completing FullstackAcademy",
     },
     {
       description:
         "Three.js Journey: Certificate of completion for the Three.js Journey course",
-      src: "/ThreeJsJourney.png",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/fecf772e-6628-4d56-5153-f14effc39f00/public",
       alt: "Certificate for completing Three.js Journey",
       // link: "https://threejs-journey.com/certificate/view/30160"
     },
     {
       description:
         "AlgoExpert: Certificate of completion for 100 critical tech interview algorithms",
-      src: "/algoExpert.jpg",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/d7dd8e53-fe5e-4da4-ffae-96772577ae00/public",
       alt: "Certificate for completing 100 of the top tech interview algorithms",
     },
   ];

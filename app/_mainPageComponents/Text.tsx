@@ -49,6 +49,7 @@ const Text = forwardRef<THREE.Group>((props, ref) => {
 
   return (
     <group
+      renderOrder={2}
       ref={ref}
       position={[-2.4, 1.5, 2]}
       rotation={[-0.1, 0.9, 15 * (Math.PI / 180)]}

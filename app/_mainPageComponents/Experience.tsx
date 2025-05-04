@@ -3,7 +3,12 @@ import { useEffect, useRef } from "react";
 import { Laptop, Text } from "./";
 import { useThree } from "@react-three/fiber";
 import { Color, PerspectiveCamera, Group } from "three";
-import { ContactShadows, Environment } from "@react-three/drei";
+import {
+  ContactShadows,
+  Environment,
+  Float,
+  // OrbitControls
+} from "@react-three/drei";
 
 const Experience = () => {
   const camera = useThree((state) => state.camera) as PerspectiveCamera;
@@ -13,14 +18,14 @@ const Experience = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1037) {
-        if (camera.fov === 75) gsap.to(camera, { fov: 45, duration: 0.5 });
+        if (camera.fov === 75) gsap.to(camera, { fov: 45, duration: 0.25 });
         if (text.current?.position.x === -2) {
-          gsap.to(text.current!.position, { x: -2.4, y: 1.5, duration: 0.5 });
+          gsap.to(text.current!.position, { x: -2.4, y: 1.5, duration: 0.25 });
         }
       } else if (window.innerWidth <= 1037) {
-        if (camera.fov === 45) gsap.to(camera, { fov: 75, duration: 0.5 });
+        if (camera.fov === 45) gsap.to(camera, { fov: 75, duration: 0.25 });
         if (text.current?.position.x === -3) {
-          gsap.to(text.current!.position, { x: -2, y: 2.5, duration: 0.5 });
+          gsap.to(text.current!.position, { x: -2, y: 2.5, duration: 0.25 });
         }
       }
     };
@@ -36,8 +41,11 @@ const Experience = () => {
     <>
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
-      <Text ref={text} />
-      <Laptop />
+      {/* <OrbitControls /> */}
+      <Float rotationIntensity={0.8}>
+        <Text ref={text} />
+        <Laptop />
+      </Float>
       <ContactShadows position-y={-3} opacity={0.4} scale={10} blur={1.6} />
     </>
   );
