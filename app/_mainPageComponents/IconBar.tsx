@@ -28,7 +28,7 @@ const iconInfo = [
 
 const IconBar = () => {
   return (
-    <div className="h-1/8 flex w-[60%] gap-1 self-end bg-[#a1b2d2] bg-opacity-70 text-3xl text-white">
+    <div className="h-1/8 flex w-[60%] gap-1 self-end bg-[#a1b2d2] bg-opacity-70 text-4xl text-white horizontal-lines icon-text-shadow">
       {iconInfo.map((icon, index) => (
         <Icon key={index} iconInfo={icon} />
       ))}
