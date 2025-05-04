@@ -4,7 +4,6 @@ import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
 import gsap from "gsap";
 
-
 const preloadLaptopScreenImage = () => {
   const img = new Image();
   img.src =

@@ -15,7 +15,7 @@ const Experience = () => {
   const background = useRef<Color>(null);
   const text = useRef<Group>(null);
   const smallScreenSettings = { x: -1, y: -3, fov: 75, scale: 1 };
-  const largeScreenSettings = { x: 0, y: -1.5, fov: 45, scale: 0.5};
+  const largeScreenSettings = { x: 0, y: -1.5, fov: 45, scale: 0.5 };
 
   useEffect(() => {
     camera.fov =

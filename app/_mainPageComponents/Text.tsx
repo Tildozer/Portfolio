@@ -55,24 +55,24 @@ const Text = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
   });
 
   return (
-      <group
-        renderOrder={2}
-        ref={ref}
-        scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
-        position={[settings.x, settings.y, 2]}
-        rotation={[-15 * (Math.PI/ 180), 0.5, 0]}
-      >
-        <mesh material={holographicMaterial}>
-          <textGeometry
-            args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}
-          />
-        </mesh>
-        <mesh position={[0, -0.5, 0]} material={holographicMaterial}>
-          <textGeometry
-            args={["my work", { font, size: 0.75, height: 0.1, depth: 0.15 }]}
-          />
-        </mesh>
-      </group>
+    <group
+      renderOrder={2}
+      ref={ref}
+      scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
+      position={[settings.x, settings.y, 2]}
+      rotation={[-15 * (Math.PI / 180), 0.5, 0]}
+    >
+      <mesh material={holographicMaterial}>
+        <textGeometry
+          args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}
+        />
+      </mesh>
+      <mesh position={[0, -0.5, 0]} material={holographicMaterial}>
+        <textGeometry
+          args={["my work", { font, size: 0.75, height: 0.1, depth: 0.15 }]}
+        />
+      </mesh>
+    </group>
   );
 });
 
