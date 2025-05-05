@@ -1,9 +1,7 @@
+import { useEffect, useState } from "react";
 import { Html } from "@react-three/drei";
 import { IconBar, MenuBar } from ".";
 import { Source_Serif_4 } from "next/font/google";
-import { useEffect, useState } from "react";
-import { useLaptopScreenInfo } from "../_providers/LaptopInfoProvider";
-// imp
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -17,7 +15,6 @@ type Props = {
 
 const LaptopScreen = ({ img }: Props) => {
   const [showScreen, setShowScreen] = useState(false);
-  const { iconInfo } = useLaptopScreenInfo();
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,7 +53,7 @@ const LaptopScreen = ({ img }: Props) => {
         {showScreen && (
           <div className="flex h-full w-full flex-col justify-center">
             <MenuBar />
-            <IconBar iconInfo={iconInfo} />
+            <IconBar />
           </div>
         )}
       </div>

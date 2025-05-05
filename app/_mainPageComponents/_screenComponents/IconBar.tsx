@@ -1,15 +1,9 @@
 import React from "react";
 import { Icon } from ".";
+import { useLaptopScreenInfo } from "../../_providers/LaptopInfoProvider";
 
-type Props = {
-  iconInfo: {
-    src: string;
-    alt: string;
-    callback: () => void;
-  }[];
-};
-
-const IconBar = ({ iconInfo }: Props) => {
+const IconBar = () => {
+  const { iconInfo } = useLaptopScreenInfo();
   return (
     <div className="h-1/8 horizontal-lines icon-text-shadow mt-auto flex w-[60%] gap-1 self-center bg-[#a1b2d2] bg-opacity-70 text-4xl text-white">
       {iconInfo.map((icon, index) => (
