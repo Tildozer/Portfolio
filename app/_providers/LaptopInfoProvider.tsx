@@ -110,7 +110,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
 
 export const useLaptopInfo = () => {
   const context = useContext(LaptopScreenContext);
-  console.log(context);
   if (!context) {
     throw new Error("laptop screen info must be used within a Provider");
   }

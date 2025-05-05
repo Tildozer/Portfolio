@@ -50,15 +50,22 @@ const config: Config = {
           "90%": { opacity: "1" },
           "0%": { opacity: "0" },
         },
-        expand: {
+        expandHeight: {
           "0%": {
             height: "0%",
             borderRadius: "0rem",
           },
           "100%": {
             height: "100%",
-            // width: "100%"
             borderRadius: "0.375rem",
+          },
+        },
+        expandWindow: {
+          "0%": {
+            transform: "translate(-50%, -50%) scale(0)",
+          },
+          "100%": {
+            transform: "translate(0%, 0%) scale(1)",
           },
         },
       },
@@ -66,7 +73,8 @@ const config: Config = {
         wiggle: "wiggle 0.5s ease-in-out 2",
         fadeInOnce: "fadeIn 2s 1",
         slowSpin: "spin 1.5s linear infinite",
-        expand: "expand 1.5s ease-in-out 1",
+        expand: "expandHeight 1.5s ease-in-out 1",
+        expandBox: "expandWindow 0.2s ease-in-out 1",
       },
     },
   },

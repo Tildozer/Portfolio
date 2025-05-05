@@ -5,7 +5,6 @@ import Footer from "./_universalComp/Footer";
 import { DarkModeProvider } from "./_providers/DarkModeProvider";
 import { Rock_Salt } from "next/font/google";
 import { IsLoadingProvider } from "./_providers/IsLoadingProvider";
-import { LaptopInfoProvider } from "./_providers/LaptopInfoProvider";
 
 export const metadata: Metadata = {
   title: "Anthony's Portfolio",
@@ -28,11 +27,9 @@ export default function RootLayout({
       <body className={`antialiased ${rockSalt.className}`}>
         <IsLoadingProvider>
           <DarkModeProvider>
-            <LaptopInfoProvider>
-              <Header />
-              {children}
-              <Footer />
-            </LaptopInfoProvider>
+            <Header />
+            {children}
+            <Footer />
           </DarkModeProvider>
         </IsLoadingProvider>
       </body>

@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Html } from "@react-three/drei";
-import { IconBar, MenuBar, Finder, Music, Notes, VLC, Sherlock } from ".";
+// import { IconBar, MenuBar, Finder, Music, Notes, VLC, Sherlock, OS } from ".";
+import { OS } from ".";
 import { Source_Serif_4 } from "next/font/google";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { LaptopInfoProvider } from "../../_providers/LaptopInfoProvider";
+// import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -15,17 +17,17 @@ type Props = {
 };
 
 const LaptopScreen = ({ img }: Props) => {
-  const [showScreen, setShowScreen] = useState(false);
-  const {
-    state: { showFinder, showMusic, showNotes, showSherlock, showVLC },
-    iconInfo,
-  } = useLaptopInfo();
+  // const [showScreen, setShowScreen] = useState(false);
+  // const {
+  //   state: { showFinder, showMusic, showNotes, showSherlock, showVLC },
+  //   iconInfo,
+  // } = useLaptopInfo();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowScreen(true);
-    }, 1600);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowScreen(true);
+  //   }, 1600);
+  // }, []);
 
   return (
     <Html
@@ -46,7 +48,7 @@ const LaptopScreen = ({ img }: Props) => {
         zIndex: 0,
       }}
     >
-      <div
+      {/* <div
         className="relative flex h-full w-full animate-expand justify-center rounded-md"
         style={{
           backgroundImage: `url(${img.src})`,
@@ -68,7 +70,10 @@ const LaptopScreen = ({ img }: Props) => {
             <IconBar iconInfo={iconInfo} />
           </div>
         )}
-      </div>
+      </div> */}
+      <LaptopInfoProvider>
+        <OS img={img} />
+      </LaptopInfoProvider>
     </Html>
   );
 };

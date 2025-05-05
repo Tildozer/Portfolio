@@ -7,3 +7,4 @@ export { default as Finder } from "./Finder";
 export { default as Sherlock } from "./Sherlock";
 export { default as Notes } from "./Notes";
 export { default as VLC } from "./VLC";
+export { default as OS } from "./OS";
