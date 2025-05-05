@@ -7,6 +7,7 @@ import {
   useState,
   Dispatch,
   SetStateAction,
+  useEffect,
 } from "react";
 
 type LaptopScreenProps = {
@@ -100,6 +101,8 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       setMaxZIndex,
     },
   };
+
+  useEffect(() => console.log(maxZIndex), [maxZIndex]);
 
   return (
     <LaptopScreenContext.Provider value={value}>

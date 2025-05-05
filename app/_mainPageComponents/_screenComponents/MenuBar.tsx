@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MenuBar = () => {
   return (
-    <div className="flex h-8 w-full gap-6 bg-[#efeef1] text-2xl text-black">
+    <div className="z-[2147483647] flex h-8 w-full gap-6 bg-[#efeef1] text-2xl text-black">
       <Image
         className="filter-blue"
         src={
