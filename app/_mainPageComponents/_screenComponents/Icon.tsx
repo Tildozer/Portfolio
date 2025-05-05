@@ -45,7 +45,7 @@ export const Icon = ({ iconInfo }: Props) => {
   return (
     <div className="group relative select-none">
       <Image
-        className="z-10 hover:cursor-pointer"
+        className="hover:cursor-pointer"
         onClick={handleClick}
         ref={image}
         src={iconInfo.src}

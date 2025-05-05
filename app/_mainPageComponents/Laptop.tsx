@@ -61,7 +61,7 @@ const Laptop = () => {
         .then(() => {
           setShowScreen(true);
         });
-    }, 1500);
+    }, 500);
 
     return () => setShowScreen(false);
   }, [loadedImg]);
