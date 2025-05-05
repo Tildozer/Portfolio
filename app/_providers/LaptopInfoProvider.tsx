@@ -5,35 +5,9 @@ import {
   useContext,
   createContext,
   useState,
-  Dispatch,
-  SetStateAction,
   useEffect,
 } from "react";
-
-type LaptopScreenProps = {
-  iconInfo: {
-    src: string;
-    alt: string;
-    callback: () => void;
-    state: boolean;
-  }[];
-  state: {
-    showFinder: boolean;
-    showSherlock: boolean;
-    showVLC: boolean;
-    showMusic: boolean;
-    showNotes: boolean;
-    maxZIndex: number;
-  };
-  setters: {
-    setShowFinder: Dispatch<SetStateAction<boolean>>;
-    setShowSherlock: Dispatch<SetStateAction<boolean>>;
-    setShowVLC: Dispatch<SetStateAction<boolean>>;
-    setShowMusic: Dispatch<SetStateAction<boolean>>;
-    setShowNotes: Dispatch<SetStateAction<boolean>>;
-    setMaxZIndex: Dispatch<SetStateAction<number>>;
-  };
-};
+import { LaptopScreenProps } from "@/types";
 
 const LaptopScreenContext = createContext<LaptopScreenProps | undefined>(
   undefined,
@@ -51,7 +25,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
 
   const iconInfo = [
     {
-      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/c79c60e9-ef0b-47de-4d46-22931e476c00/128",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/0231d7e2-28c6-4709-4d00-af6b9da8c100/128",
       alt: "Finder",
       callback: () => setShowFinder(!showFinder),
       state: showFinder,
@@ -75,7 +49,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       state: showMusic,
     },
     {
-      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/5bbe86a1-b6d5-4ab5-c635-ace4a7d65400/48",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/dbf2292c-b9af-4590-6d12-a3db8c568100/128",
       alt: "Notes",
       callback: () => setShowNotes(!showNotes),
       state: showNotes,

@@ -1,10 +1,5 @@
 import { NavLink } from "./";
-
-export interface LinkSettings {
-  id: number;
-  path: string;
-  name: string;
-}
+import { LinkSettings } from "@/types";
 
 const Nav = () => {
   const links: LinkSettings[] = [

@@ -1,4 +1,4 @@
-import { Description } from "../page";
+import { Description } from "@/types";
 import { Recursive } from "next/font/google";
 
 type Props = {

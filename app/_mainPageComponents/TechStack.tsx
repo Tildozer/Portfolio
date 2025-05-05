@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { TechnicalSkill } from "./TechIcon";
+import type { TechnicalSkill } from "@/types";
 import { TechIcon } from ".";
 import axios from "axios";
 

@@ -2,19 +2,7 @@
 import { useEffect, useState } from "react";
 import { ProjectLink } from "./_components";
 import axios from "axios";
-
-export interface Description {
-  id: number;
-  description: string;
-}
-
-export interface Project {
-  id: number;
-  projectUrl: string;
-  githubUrl: string;
-  name: string;
-  ProjectDescription: Description[];
-}
+import { Project } from "@/types";
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);

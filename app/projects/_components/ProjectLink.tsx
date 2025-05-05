@@ -1,7 +1,7 @@
 import Link from "next/link.js";
 import { useEffect, useState } from "react";
 import { Descriptions } from ".";
-import { Project } from "../page";
+import { Project } from "@/types";
 
 type Props = {
   project: Project;

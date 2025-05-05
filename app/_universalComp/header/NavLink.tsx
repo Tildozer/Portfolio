@@ -1,7 +1,7 @@
 "use client";
 import { Underline } from ".";
 import Link from "next/link.js";
-import { LinkSettings } from "./Nav.jsx";
+import { LinkSettings } from "@/types";
 import { usePathname } from "next/navigation.js";
 import { useRef, MutableRefObject, useEffect } from "react";
 import { setHeaderEventListeners } from "../eventListeners";

@@ -13,14 +13,7 @@ import {
   SiDart,
 } from "react-icons/si";
 import Link from "next/link.js";
-
-export type TechnicalSkill = {
-  id: number;
-  name: string;
-  iconName: string;
-  color: string;
-  url: string;
-};
+import { TechnicalSkill } from "@/types";
 
 type Props = {
   tech: TechnicalSkill;
