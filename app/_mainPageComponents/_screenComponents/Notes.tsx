@@ -34,7 +34,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setFirstZIndex)}
       >
         <div
-          className="absolute right-[7%] top-[5%] h-96 w-96 animate-expandBox bg-orange-300"
+          className="absolute right-[7%] top-[5%] h-96 w-96 animate-expandBox bg-orange-300 hover:cursor-grab"
           style={{ zIndex: firstZIndex }}
         >
           1
@@ -46,7 +46,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setSecondZIndex)}
       >
         <div
-          className="absolute right-[2%] top-[15%] h-96 w-96 animate-expandBox bg-orange-400"
+          className="absolute right-[2%] top-[15%] h-96 w-96 animate-expandBox bg-orange-400 hover:cursor-grab"
           style={{ zIndex: secondZIndex }}
         >
           2
@@ -58,7 +58,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setThirdZIndex)}
       >
         <div
-          className="absolute right-[15%] top-[25%] h-96 w-96 animate-expandBox bg-orange-500"
+          className="absolute right-[15%] top-[25%] h-96 w-96 animate-expandBox bg-orange-500 hover:cursor-grab"
           style={{ zIndex: thirdZIndex }}
           onMouseDown={() => handleMouseDown(setThirdZIndex)}
         >

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import Draggable from "react-draggable";
 
 const VLC = () => {
   const [zIndex, setZIndex] = useState(0);
@@ -8,7 +9,7 @@ const VLC = () => {
     setters: { setMaxZIndex },
   } = useLaptopInfo();
 
-  const handleClick = () => {
+  const handleMouseDown = () => {
     setZIndex(maxZIndex + 1);
     setMaxZIndex(maxZIndex + 1);
   };
@@ -20,13 +21,18 @@ const VLC = () => {
   }, []);
 
   return (
-    <div
-      className={`absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-yellow-200 text-6xl`}
-      style={{ zIndex: zIndex }}
-      onClick={handleClick}
+    <Draggable
+      scale={0.4}
+      bounds={{ left: -40, top: -260, right: 595, bottom: 65 }}
+      onMouseDown={handleMouseDown}
     >
-      VLC
-    </div>
+      <div
+        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-yellow-200 text-6xl hover:cursor-grab"
+        style={{ zIndex: zIndex }}
+      >
+        VLC
+      </div>
+    </Draggable>
   );
 };
 

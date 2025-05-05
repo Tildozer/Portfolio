@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import Draggable from "react-draggable";
 
 const Music = () => {
   const [zIndex, setZIndex] = useState(0);
@@ -8,7 +9,7 @@ const Music = () => {
     setters: { setMaxZIndex },
   } = useLaptopInfo();
 
-  const handleClick = () => {
+  const handleMouseDown = () => {
     setZIndex(maxZIndex + 1);
     setMaxZIndex(maxZIndex + 1);
   };
@@ -20,13 +21,18 @@ const Music = () => {
   }, []);
 
   return (
-    <div
-      className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-black text-6xl"
-      style={{ zIndex: zIndex }}
-      onClick={handleClick}
+    <Draggable
+      scale={0.4}
+      bounds={{ left: -30, top: -20, right: 740, bottom: 400 }}
+      onMouseDown={handleMouseDown}
     >
-      Music
-    </div>
+      <div
+        className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-white text-6xl hover:cursor-grab"
+        style={{ zIndex: zIndex }}
+      >
+        Music
+      </div>
+    </Draggable>
   );
 };
 

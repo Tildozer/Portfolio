@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import Draggable from "react-draggable";
 
 const Sherlock = () => {
   const [zIndex, setZIndex] = useState(0);
@@ -9,7 +10,7 @@ const Sherlock = () => {
     setters: { setMaxZIndex },
   } = useLaptopInfo();
 
-  const handleClick = () => {
+  const handleMouseDown = () => {
     setZIndex(maxZIndex + 1);
     setMaxZIndex(maxZIndex + 1);
   };
@@ -21,13 +22,18 @@ const Sherlock = () => {
   }, []);
 
   return (
-    <div
-      className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-green-500 text-6xl"
-      style={{ zIndex: zIndex }}
-      onClick={handleClick}
+    <Draggable
+      scale={0.4}
+      bounds={{ left: -265, top: -180, right: 280, bottom: 145 }}
+      onMouseDown={handleMouseDown}
     >
-      Sherlock
-    </div>
+      <div
+        className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-green-500 text-6xl hover:cursor-grab"
+        style={{ zIndex: zIndex }}
+      >
+        Sherlock
+      </div>
+    </Draggable>
   );
 };
 
