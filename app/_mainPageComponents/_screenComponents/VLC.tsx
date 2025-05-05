@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 import Draggable from "react-draggable";
+import { WindowBar } from ".";
 
 const VLC = () => {
   const [zIndex, setZIndex] = useState(0);
   const {
     state: { maxZIndex },
-    setters: { setMaxZIndex },
+    setters: { setMaxZIndex, setShowVLC },
   } = useLaptopInfo();
 
   const handleMouseDown = () => {
@@ -27,9 +28,10 @@ const VLC = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-yellow-200 text-6xl hover:cursor-grab"
+        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
         style={{ zIndex: zIndex }}
       >
+        <WindowBar callback={() => setShowVLC(false)} />
         VLC
       </div>
     </Draggable>

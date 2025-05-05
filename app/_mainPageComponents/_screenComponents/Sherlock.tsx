@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 import Draggable from "react-draggable";
+import { WindowBar } from ".";
 
 const Sherlock = () => {
   const [zIndex, setZIndex] = useState(0);
 
   const {
     state: { maxZIndex },
-    setters: { setMaxZIndex },
+    setters: { setMaxZIndex, setShowSherlock },
   } = useLaptopInfo();
 
   const handleMouseDown = () => {
@@ -28,9 +29,10 @@ const Sherlock = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-green-500 text-6xl hover:cursor-grab"
+        className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
         style={{ zIndex: zIndex }}
       >
+        <WindowBar callback={() => setShowSherlock(false)} />
         Sherlock
       </div>
     </Draggable>

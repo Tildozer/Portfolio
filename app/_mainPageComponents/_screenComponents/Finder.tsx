@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { WindowBar } from "./";
 import Draggable from "react-draggable";
 
 const Finder = () => {
   const [zIndex, setZIndex] = useState(0);
   const {
     state: { maxZIndex },
-    setters: { setMaxZIndex },
+    setters: { setMaxZIndex, setShowFinder },
   } = useLaptopInfo();
 
   const handleMouseDown = () => {
@@ -27,10 +28,10 @@ const Finder = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute left-[10%] top-[10%] h-[40rem] w-[54rem] animate-expandBox bg-red-500 text-6xl hover:cursor-grab"
+        className="absolute left-[10%] top-[10%] h-[40rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
         style={{ zIndex: zIndex }}
       >
-        Finder
+        <WindowBar callback={() => setShowFinder(false)} />
       </div>
     </Draggable>
   );
