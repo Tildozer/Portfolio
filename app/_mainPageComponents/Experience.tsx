@@ -70,15 +70,15 @@ const Experience = () => {
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
       {/* <OrbitControls /> */}
-      <Float rotationIntensity={0.8}>
-        <Text
-          ref={text}
-          settings={
-            window.innerWidth > 1037 ? largeScreenSettings : smallScreenSettings
-          }
-        />
-        <Laptop />
-      </Float>
+      {/* <Float rotationIntensity={0.8}> */}
+      <Text
+        ref={text}
+        settings={
+          window.innerWidth > 1037 ? largeScreenSettings : smallScreenSettings
+        }
+      />
+      <Laptop />
+      {/* </Float> */}
       <ContactShadows position-y={-3} opacity={0.4} scale={10} blur={1.6} />
     </>
   );

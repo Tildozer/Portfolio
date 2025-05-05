@@ -29,6 +29,9 @@ body {
 .icon-text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
-/* .laptop-screen {
-  z-index: 10 !important;
-} */
+
+.laptop-screen {
+  user-select: "none";
+  height: "60rem";
+  width: "88rem";
+}
