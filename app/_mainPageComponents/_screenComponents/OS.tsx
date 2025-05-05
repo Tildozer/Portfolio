@@ -17,7 +17,7 @@ const OS = ({ img }: Props) => {
       setShowScreen(true);
     }, 1600);
   }, []);
-  
+
   return (
     <div
       className="relative flex h-full w-full animate-expand justify-center rounded-md"

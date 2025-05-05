@@ -74,7 +74,7 @@ const config: Config = {
         fadeInOnce: "fadeIn 2s 1",
         slowSpin: "spin 1.5s linear infinite",
         expand: "expandHeight 1.5s ease-in-out 1",
-        expandBox: "expandWindow 0.2s ease-in-out 1",
+        expandBox: "expandWindow 0.5s 1",
       },
     },
   },
