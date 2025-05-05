@@ -37,7 +37,7 @@ const LaptopScreenContext = createContext<LaptopScreenProps | undefined>(
   undefined,
 );
 
-export const LaptopScreenProvider: FC<{ children: ReactNode }> = ({
+export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [showFinder, setShowFinder] = useState(false);
@@ -102,10 +102,11 @@ export const LaptopScreenProvider: FC<{ children: ReactNode }> = ({
   );
 };
 
-export const useLaptopScreenInfo = () => {
+export const useLaptopInfo = () => {
   const context = useContext(LaptopScreenContext);
+  console.log(context);
   if (!context) {
-    throw new Error("isLoading must be used within a Provider");
+    throw new Error("laptop screen info must be used within a Provider");
   }
   return context;
 };

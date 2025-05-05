@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import gsap from "gsap";
+// import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
 interface Props {
   iconInfo: {
@@ -12,6 +13,7 @@ interface Props {
 
 export const Icon = ({ iconInfo }: Props) => {
   const image = React.useRef<HTMLImageElement>(null);
+  // const context = useLaptopInfo();
   const handleClick = () => {
     gsap
       .fromTo(
