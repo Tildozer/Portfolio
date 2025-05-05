@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
+import { LaptopScreenProvider } from "../_providers/LaptopInfoProvider";
 import gsap from "gsap";
 
 const preloadLaptopScreenImage = () => {
@@ -203,7 +204,9 @@ const Laptop = () => {
       {showScreen && loadedImg && (
         <>
           <ScreenLight />
-          <LaptopScreen img={loadedImg} />
+          <LaptopScreenProvider>
+            <LaptopScreen img={loadedImg} />
+          </LaptopScreenProvider>
         </>
       )}
     </group>
