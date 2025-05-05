@@ -1,22 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import gsap from "gsap";
-// import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
 interface Props {
   iconInfo: {
     src: string;
     alt: string;
     callback: () => void;
+    state: boolean;
   };
 }
 
 export const Icon = ({ iconInfo }: Props) => {
   const image = React.useRef<HTMLImageElement>(null);
-  // const context = useLaptopInfo();
   const handleClick = () => {
-    gsap
-      .fromTo(
+    if (!iconInfo.state) {
+      gsap.fromTo(
         image.current,
         {
           translateY: 0,
@@ -28,17 +27,19 @@ export const Icon = ({ iconInfo }: Props) => {
           repeat: 4,
           yoyo: true,
           onComplete: () => {
-            gsap.to(image.current, {
-              translateY: 0,
-              duration: 0.4,
-              ease: "power1.in",
-            });
+            gsap
+              .to(image.current, {
+                translateY: 0,
+                duration: 0.4,
+                ease: "power1.in",
+              })
+              .then(() => iconInfo.callback());
           },
         },
-      )
-      .then(() => {
-        iconInfo.callback();
-      });
+      );
+    } else {
+      iconInfo.callback();
+    }
   };
 
   return (
@@ -58,6 +59,9 @@ export const Icon = ({ iconInfo }: Props) => {
       <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 whitespace-nowrap rounded px-2 py-1 opacity-0 transition-opacity group-hover:opacity-100">
         {iconInfo.alt}
       </span>
+      {iconInfo.state && (
+        <span className="absolute -bottom-0 left-1/2 h-2 w-2 rounded-full bg-slate-800 opacity-45"></span>
+      )}
     </div>
   );
 };
