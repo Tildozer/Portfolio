@@ -32,7 +32,12 @@ const VLC = () => {
         style={{ zIndex: zIndex }}
       >
         <WindowBar callback={() => setShowVLC(false)} />
-        VLC
+        <iframe
+          className="select-none"
+          height="600"
+          width="768px"
+          src="https://www.youtube.com/embed/6qH46lsU1hs?autoplay=1&mute=1"
+        ></iframe>
       </div>
     </Draggable>
   );

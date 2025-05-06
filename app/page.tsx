@@ -25,7 +25,7 @@ const Main = () => {
             </Canvas>
           </Suspense>
         </div>
-        <TechStack />
+        {/* <TechStack /> */}
       </div>
     </div>
   );

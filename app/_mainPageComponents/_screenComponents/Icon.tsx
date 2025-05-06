@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -41,6 +41,20 @@ export const Icon = ({ iconInfo }: Props) => {
       iconInfo.callback();
     }
   };
+
+  useEffect(() => {
+    if (iconInfo.alt === "Sherlock") {
+      setTimeout(() => {
+        handleClick();
+      }, 400);
+    }
+    if (iconInfo.alt === "Notes") {
+      setTimeout(() => {
+        handleClick();
+      }, 800);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="group relative select-none">
