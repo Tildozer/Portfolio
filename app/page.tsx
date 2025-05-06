@@ -1,15 +1,15 @@
 "use client";
 import { Suspense } from "react";
-import { Experience, TechStack } from "./_mainPageComponents";
+import { Experience } from "./_mainPageComponents";
 import { Canvas } from "@react-three/fiber";
 import Loading from "./_providers/Loading";
 // import gsap from "gsap";
 
 const Main = () => {
   return (
-    <div className="bg-color min-h-screen w-full overflow-x-hidden bg-slate-100 dark:bg-slate-900 dark:text-yellow-500">
+    <div className="bg-color h-[75vh] w-full overflow-hidden bg-slate-100 dark:bg-slate-900 dark:text-yellow-500 md:h-[90vh]">
       <div className="flex animate-fadeInOnce flex-col">
-        <div className="h-[75vh] w-full md:h-[85vh]">
+        <div className="h-[75vh] w-full md:h-[90vh]">
           <Suspense fallback={<Loading />}>
             <Canvas
               shadows

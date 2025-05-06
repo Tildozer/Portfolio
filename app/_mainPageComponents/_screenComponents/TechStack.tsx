@@ -2,7 +2,9 @@ import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 import { TechIcon } from ".";
 
 const TechStack = () => {
-  const {state: {tech}} = useLaptopInfo(); 
+  const {
+    state: { tech },
+  } = useLaptopInfo();
 
   return (
     <div className="mb-20">

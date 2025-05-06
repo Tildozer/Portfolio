@@ -30,7 +30,7 @@ const Sherlock = () => {
       handle=".windowBar"
     >
       <div
-        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox overflow-scroll bg-white text-6xl text-black shadow-xl shadow-black"
+        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox overflow-scroll bg-white text-6xl text-black shadow-xl shadow-black transition-colors duration-300 dark:bg-slate-900 dark:text-white"
         style={{ zIndex: zIndex }}
       >
         <WindowBar

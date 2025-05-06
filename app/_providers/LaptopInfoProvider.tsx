@@ -1,5 +1,12 @@
 "use client";
-import { ReactNode, FC, useContext, createContext, useState, useEffect } from "react";
+import {
+  ReactNode,
+  FC,
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+} from "react";
 import { LaptopScreenProps } from "@/types";
 import { TechStack } from "@prisma/client";
 import axios from "axios";
@@ -62,7 +69,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       showMusic,
       showNotes,
       maxZIndex,
-      tech
+      tech,
     },
     setters: {
       setShowFinder,
@@ -73,7 +80,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       setMaxZIndex,
     },
   };
-  
 
   const getTechStack = async () => {
     try {

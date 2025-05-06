@@ -27,9 +27,10 @@ const Finder = () => {
       scale={0.4}
       bounds={{ left: -143, top: -65, right: 403, bottom: 225 }}
       onMouseDown={handleMouseDown}
+      handle=".windowBar"
     >
       <div
-        className="absolute left-[10%] top-[10%] h-[40rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
+        className="absolute left-[10%] top-[10%] h-[40rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black transition-colors duration-300 dark:bg-slate-900 dark:text-white"
         style={{ zIndex: zIndex }}
       >
         <WindowBar

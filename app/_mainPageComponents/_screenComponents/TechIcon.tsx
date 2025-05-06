@@ -53,7 +53,7 @@ const TechIcon = ({ tech: { id, name, iconName, color, url } }: Props) => {
       className={`flex flex-col items-center break-all`}
     >
       <span
-        className={`text-${color} ${iconName === "TbBrandCpp" ? "bg-black" : ""} text-8xl`}
+        className={`text-${color} ${iconName === "TbBrandCpp" ? "bg-black dark:bg-slate-900" : ""} text-8xl`}
         draggable={false}
       >
         {setIcon(iconName)}
