@@ -8,7 +8,9 @@ type Props = {
 
 const WindowBar = ({ callback, children, className = "" }: Props) => {
   return (
-    <div className={`flex h-[5%] w-full bg-macWindowBar ${className}`}>
+    <div
+      className={`flex h-[5%] w-full border-b-2 border-[#383838] bg-macWindowBar ${className}`}
+    >
       <button className="mb-auto mt-auto flex" onClick={callback}>
         <span className="ml-2 h-5 w-5 rounded-full bg-red-500"> </span>
         <span className="ml-2 h-5 w-5 rounded-full bg-yellow-400"> </span>

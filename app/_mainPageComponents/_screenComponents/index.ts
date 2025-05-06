@@ -9,3 +9,4 @@ export { default as Notes } from "./Notes";
 export { default as VLC } from "./VLC";
 export { default as OS } from "./OS";
 export { default as WindowBar } from "./WindowBar";
+export { default as MainWindowIcons } from "./MainWindowIcons";

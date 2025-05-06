@@ -12,6 +12,7 @@ const MenuBar = () => {
         height={32}
         width={32}
         alt="logo"
+        draggable={false}
       />
       <span>Finder</span>
       <span>File</span>
@@ -27,6 +28,7 @@ const MenuBar = () => {
         height={16}
         width={48}
         alt="Location"
+        draggable={false}
       />
     </div>
   );

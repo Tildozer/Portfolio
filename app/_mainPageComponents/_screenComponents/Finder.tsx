@@ -40,8 +40,9 @@ const Finder = () => {
             <Image
               src="https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/3140dbe2-c934-4a06-1a66-8189f07fb800/128"
               alt="home"
-              height={36}
+              height={24}
               width={36}
+              draggable={false}
             />
             <span className="text-2xl">Finder</span>
           </div>

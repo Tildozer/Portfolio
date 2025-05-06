@@ -1,12 +1,5 @@
 "use client";
-import {
-  ReactNode,
-  FC,
-  useContext,
-  createContext,
-  useState,
-  useEffect,
-} from "react";
+import { ReactNode, FC, useContext, createContext, useState } from "react";
 import { LaptopScreenProps } from "@/types";
 
 const LaptopScreenContext = createContext<LaptopScreenProps | undefined>(
@@ -75,8 +68,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       setMaxZIndex,
     },
   };
-
-  useEffect(() => console.log(maxZIndex), [maxZIndex]);
 
   return (
     <LaptopScreenContext.Provider value={value}>
