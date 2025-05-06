@@ -1,3 +1,4 @@
+import { TechStack } from "@prisma/client";
 import { Dispatch, SetStateAction } from "react";
 
 export type LaptopScreenProps = {
@@ -14,6 +15,7 @@ export type LaptopScreenProps = {
     showMusic: boolean;
     showNotes: boolean;
     maxZIndex: number;
+    tech: TechStack[];
   };
   setters: {
     setShowFinder: Dispatch<SetStateAction<boolean>>;

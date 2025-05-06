@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 import Draggable from "react-draggable";
-import { WindowBar } from ".";
+import { TechStack, WindowBar } from ".";
 
 const Sherlock = () => {
   const [zIndex, setZIndex] = useState(0);
@@ -27,13 +27,22 @@ const Sherlock = () => {
       scale={0.4}
       bounds={{ left: -30, top: -20, right: 515, bottom: 300 }}
       onMouseDown={handleMouseDown}
+      handle=".windowBar"
     >
       <div
-        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
+        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox overflow-scroll bg-white text-6xl text-black shadow-xl shadow-black"
         style={{ zIndex: zIndex }}
       >
-        <WindowBar callback={() => setShowSherlock(false)} />
-        Sherlock
+        <WindowBar
+          callback={() => setShowSherlock(false)}
+          className="justify-between"
+        >
+          <div className="flex">
+            <span className="text-2xl">Sherlock</span>
+          </div>
+          <div className="mb-auto mr-4 mt-auto h-1/2 w-16 rounded-2xl bg-[#cbd0d9]"></div>
+        </WindowBar>
+        <TechStack />
       </div>
     </Draggable>
   );

@@ -1,6 +1,8 @@
 "use client";
-import { ReactNode, FC, useContext, createContext, useState } from "react";
+import { ReactNode, FC, useContext, createContext, useState, useEffect } from "react";
 import { LaptopScreenProps } from "@/types";
+import { TechStack } from "@prisma/client";
+import axios from "axios";
 
 const LaptopScreenContext = createContext<LaptopScreenProps | undefined>(
   undefined,
@@ -15,6 +17,8 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
   const [showMusic, setShowMusic] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [maxZIndex, setMaxZIndex] = useState(0);
+
+  const [tech, setTech] = useState<TechStack[] | []>([]);
 
   const iconInfo = [
     {
@@ -58,6 +62,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       showMusic,
       showNotes,
       maxZIndex,
+      tech
     },
     setters: {
       setShowFinder,
@@ -68,6 +73,21 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       setMaxZIndex,
     },
   };
+  
+
+  const getTechStack = async () => {
+    try {
+      const { data: skills } = await axios.get("/api/techstack");
+
+      setTech(skills);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getTechStack();
+  }, []);
 
   return (
     <LaptopScreenContext.Provider value={value}>

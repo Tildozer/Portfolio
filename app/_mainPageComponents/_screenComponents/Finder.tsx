@@ -43,6 +43,7 @@ const Finder = () => {
               height={24}
               width={36}
               draggable={false}
+              priority
             />
             <span className="text-2xl">Finder</span>
           </div>

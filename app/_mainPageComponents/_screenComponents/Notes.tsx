@@ -9,7 +9,9 @@ const Notes = () => {
 
   const [firstNotes, setFirstNote] = useState("this is a note");
   const [secondNotes, setSecondNote] = useState("this is a second note");
-  const [thirdNotes, setThirdNote] = useState(" this is a third note");
+  const [thirdNotes, setThirdNote] = useState(
+    `All windows on this page are draggable! \n\nAlso most apps can be opened!`,
+  );
 
   const {
     state: { maxZIndex },
@@ -47,9 +49,7 @@ const Notes = () => {
           <textarea
             className="h-[80%] w-full resize-none bg-transparent p-2 text-black outline-none"
             value={firstNotes}
-            onChange={(e) =>
-              e.target.value.length < 101 ? setFirstNote(e.target.value) : null
-            }
+            onChange={(e) => setFirstNote(e.target.value)}
           />
         </div>
       </Draggable>
@@ -67,9 +67,7 @@ const Notes = () => {
           <textarea
             className="h-[80%] w-full resize-none bg-transparent p-2 text-black outline-none"
             value={secondNotes}
-            onChange={(e) =>
-              e.target.value.length < 101 ? setSecondNote(e.target.value) : null
-            }
+            onChange={(e) => setSecondNote(e.target.value)}
           />
         </div>
       </Draggable>
@@ -84,14 +82,12 @@ const Notes = () => {
           style={{ zIndex: thirdZIndex }}
         >
           <h1 className="text-balance text-center text-4xl">
-            All windows can be moved!
+            Tips for using this page
           </h1>
           <textarea
             className="h-[80%] w-full resize-none bg-transparent p-2 text-black outline-none"
             value={thirdNotes}
-            onChange={(e) =>
-              e.target.value.length < 101 ? setThirdNote(e.target.value) : null
-            }
+            onChange={(e) => setThirdNote(e.target.value)}
           />
         </div>
       </Draggable>

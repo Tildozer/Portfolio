@@ -18,19 +18,6 @@ import { TechnicalSkill } from "@/types";
 type Props = {
   tech: TechnicalSkill;
 };
-const giveIconBackground = (name: string): string => {
-  switch (name) {
-    case "Typescript":
-    case "CSS":
-      return "bg-white rounded-lg";
-    case "Dart":
-      return "bg-white rounded-lg p-1";
-    case "Javascript":
-      return "bg-black rounded-lg";
-    default:
-      return "";
-  }
-};
 
 const setIcon = (iconName: string) => {
   switch (iconName) {
@@ -63,18 +50,15 @@ const TechIcon = ({ tech: { id, name, iconName, color, url } }: Props) => {
       href={url}
       target="_blank"
       key={id}
-      className={`group flex h-24 min-w-24 flex-col items-center justify-center break-all rounded-md border-2 border-solid border-slate-600 bg-black p-2 shadow-sm shadow-black transition-all duration-500 hover:-translate-y-3 hover:border-yellow-500 hover:shadow-md hover:shadow-black dark:bg-slate-500 md:h-36`}
+      className={`flex flex-col items-center break-all`}
     >
       <span
-        className={`text-${color} ${giveIconBackground(
-          name,
-        )} transition duration-500 group-hover:animate-wiggle`}
+        className={`text-${color} ${iconName === "TbBrandCpp" ? "bg-black" : ""} text-8xl`}
+        draggable={false}
       >
         {setIcon(iconName)}
       </span>
-      <span className="pt-1 text-xs transition-transform duration-500 group-hover:scale-110 md:text-lg lg:text-xl">
-        {name}
-      </span>
+      <span className="text-2xl">{name}</span>
     </Link>
   );
 };
