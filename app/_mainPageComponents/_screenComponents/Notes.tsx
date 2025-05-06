@@ -34,7 +34,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setFirstZIndex)}
       >
         <div
-          className="absolute right-[7%] top-[5%] h-96 w-96 animate-expandBox bg-[#b2ffa1] text-black shadow-lg shadow-black hover:cursor-grab"
+          className="absolute right-[7%] top-[5%] h-96 w-96 animate-expandBox bg-[#b2ffa1] text-black shadow-lg shadow-black hover:cursor-grab active:cursor-grabbing"
           style={{ zIndex: firstZIndex }}
         ></div>
       </Draggable>
@@ -44,7 +44,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setSecondZIndex)}
       >
         <div
-          className="absolute right-[2%] top-[15%] h-96 w-96 animate-expandBox bg-[#71ffff] text-black shadow-lg shadow-black hover:cursor-grab"
+          className="absolute right-[2%] top-[15%] h-96 w-96 animate-expandBox bg-[#71ffff] text-black shadow-lg shadow-black hover:cursor-grab active:cursor-grabbing"
           style={{ zIndex: secondZIndex }}
         ></div>
       </Draggable>
@@ -54,7 +54,7 @@ const Notes = () => {
         onMouseDown={() => handleMouseDown(setThirdZIndex)}
       >
         <div
-          className="absolute right-[15%] top-[25%] h-96 w-96 animate-expandBox bg-[#ffc7c7] text-black shadow-lg shadow-black hover:cursor-grab"
+          className="absolute right-[15%] top-[25%] h-96 w-96 animate-expandBox bg-[#ffc7c7] text-black shadow-lg shadow-black hover:cursor-grab active:cursor-grabbing"
           style={{ zIndex: thirdZIndex }}
           onMouseDown={() => handleMouseDown(setThirdZIndex)}
         ></div>

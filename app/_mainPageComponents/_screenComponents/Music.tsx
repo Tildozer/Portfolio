@@ -27,7 +27,7 @@ const Music = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
+        className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
         style={{ zIndex: zIndex }}
       >
         <WindowBar callback={() => setShowMusic(false)} />

@@ -29,7 +29,7 @@ const Sherlock = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
+        className="absolute right-[20%] top-[22%] h-[38rem] w-[54rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
         style={{ zIndex: zIndex }}
       >
         <WindowBar callback={() => setShowSherlock(false)} />

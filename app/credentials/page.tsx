@@ -15,7 +15,6 @@ const Credentials = () => {
         "Three.js Journey: Certificate of completion for the Three.js Journey course",
       src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/fecf772e-6628-4d56-5153-f14effc39f00/public",
       alt: "Certificate for completing Three.js Journey",
-      // link: "https://threejs-journey.com/certificate/view/30160"
     },
     {
       description:

@@ -2,29 +2,19 @@ import React from "react";
 
 type Props = {
   callback: () => void;
+  children?: React.ReactNode;
+  className?: string;
 };
 
-const WindowBar = ({ callback }: Props) => {
+const WindowBar = ({ callback, children, className = "" }: Props) => {
   return (
-    <div className="flex h-[5%] w-full bg-macWindowBar">
-      <button
-        onClick={callback}
-        className="mb-auto ml-2 mt-auto h-5 w-5 rounded-full bg-red-500"
-      >
-        {" "}
+    <div className={`flex h-[5%] w-full bg-macWindowBar ${className}`}>
+      <button className="mb-auto mt-auto flex" onClick={callback}>
+        <span className="ml-2 h-5 w-5 rounded-full bg-red-500"> </span>
+        <span className="ml-2 h-5 w-5 rounded-full bg-yellow-400"> </span>
+        <span className="ml-2 h-5 w-5 rounded-full bg-green-500"> </span>
       </button>
-      <button
-        onClick={callback}
-        className="mb-auto ml-2 mt-auto h-5 w-5 rounded-full bg-yellow-400"
-      >
-        {" "}
-      </button>
-      <button
-        onClick={callback}
-        className="mb-auto ml-2 mt-auto h-5 w-5 rounded-full bg-green-500"
-      >
-        {" "}
-      </button>
+      {children}
     </div>
   );
 };

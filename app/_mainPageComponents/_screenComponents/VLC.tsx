@@ -28,7 +28,7 @@ const VLC = () => {
       onMouseDown={handleMouseDown}
     >
       <div
-        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab"
+        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
         style={{ zIndex: zIndex }}
       >
         <WindowBar callback={() => setShowVLC(false)} />
