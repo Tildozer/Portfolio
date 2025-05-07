@@ -24,7 +24,7 @@ const Sherlock = () => {
 
   return (
     <Draggable
-      scale={0.5}
+      scale={0.8}
       bounds={{ left: -28, top: -20, right: 517, bottom: 300 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"

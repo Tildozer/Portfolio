@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { Experience } from "./_mainPageComponents";
 import { Canvas } from "@react-three/fiber";
 import Loading from "./_providers/Loading";
-// import gsap from "gsap";
 
 const Main = () => {
   return (
@@ -25,7 +24,6 @@ const Main = () => {
             </Canvas>
           </Suspense>
         </div>
-        {/* <TechStack /> */}
       </div>
     </div>
   );

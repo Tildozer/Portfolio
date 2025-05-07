@@ -4,12 +4,12 @@ import Draggable from "react-draggable";
 import { WindowBar } from ".";
 
 const VLC = () => {
-  const [zIndex, setZIndex] = useState(0);
-  const [enabledControls, setEnabledControls] = useState(true);
   const {
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowVLC },
   } = useLaptopInfo();
+  const [zIndex, setZIndex] = useState(0);
+  const [enabledControls, setEnabledControls] = useState(true);
 
   const handleMouseDown = () => {
     setZIndex(maxZIndex + 1);
@@ -24,7 +24,7 @@ const VLC = () => {
 
   return (
     <Draggable
-      scale={0.5}
+      scale={0.8}
       bounds={{ left: -40, top: -260, right: 599, bottom: 65 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
