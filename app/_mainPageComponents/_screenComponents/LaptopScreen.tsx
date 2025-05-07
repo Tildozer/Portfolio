@@ -19,7 +19,7 @@ const LaptopScreen = ({ img }: Props) => {
       transform
       wrapperClass={`laptop-screen ${sourceSerif.className}`}
       distanceFactor={4.0}
-      position={[0, 1.51, -1.34]}
+      position={[0, 1.53, -1.25]}
       rotation-x={-15 * (Math.PI / 180)}
       zIndexRange={[0, 1]}
       scale={0.2}

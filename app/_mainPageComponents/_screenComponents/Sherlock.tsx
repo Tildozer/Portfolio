@@ -25,12 +25,12 @@ const Sherlock = () => {
   return (
     <Draggable
       scale={0.4}
-      bounds={{ left: -30, top: -20, right: 515, bottom: 300 }}
+      bounds={{ left: -28, top: -20, right: 517, bottom: 300 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
     >
       <div
-        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox overflow-scroll bg-white text-6xl text-black shadow-xl shadow-black transition-colors duration-300 dark:bg-slate-900 dark:text-white"
+        className="absolute left-[2%] top-[5%] h-[38rem] w-[54rem] animate-expandBox overflow-scroll overflow-x-hidden bg-white text-6xl text-black shadow-xl shadow-black transition-colors duration-300 dark:bg-slate-900 dark:text-white"
         style={{ zIndex: zIndex }}
       >
         <WindowBar

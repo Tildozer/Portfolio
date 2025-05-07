@@ -29,7 +29,7 @@ const OS = ({ img }: Props) => {
 
   return (
     <div
-      className="relative flex h-full w-full animate-expand justify-center rounded-md"
+      className="relative flex h-full w-full animate-expand justify-center rounded-md antialiased"
       style={{
         backgroundImage: `url(${img.src})`,
         backgroundPosition: "center",

@@ -5,6 +5,7 @@ import { WindowBar } from ".";
 
 const VLC = () => {
   const [zIndex, setZIndex] = useState(0);
+  const [enabledControls, setEnabledControls] = useState(true);
   const {
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowVLC },
@@ -24,20 +25,23 @@ const VLC = () => {
   return (
     <Draggable
       scale={0.4}
-      bounds={{ left: -40, top: -260, right: 595, bottom: 65 }}
+      bounds={{ left: -40, top: -260, right: 599, bottom: 65 }}
       onMouseDown={handleMouseDown}
+      handle=".windowBar"
+      onStart={() => setEnabledControls(false)}
+      onStop={() => setEnabledControls(true)}
     >
       <div
-        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black hover:cursor-grab active:cursor-grabbing"
+        className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black"
         style={{ zIndex: zIndex }}
       >
         <WindowBar callback={() => setShowVLC(false)} />
         <iframe
-          className="select-none"
+          className={`select-none ${enabledControls ? "" : "pointer-events-none"}`}
           height="600"
           width="768px"
-          src="https://www.youtube.com/embed/6qH46lsU1hs?autoplay=1&mute=1"
-        ></iframe>
+          src="https://www.youtube.com/embed/6qH46lsU1hs?autoplay=1&mute=1&controls=1"
+        />
       </div>
     </Draggable>
   );
