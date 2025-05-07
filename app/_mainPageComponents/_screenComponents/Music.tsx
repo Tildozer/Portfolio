@@ -22,7 +22,7 @@ const Music = () => {
 
   return (
     <Draggable
-      scale={0.4}
+      scale={0.5}
       bounds={{ left: -30, top: -20, right: 740, bottom: 400 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"

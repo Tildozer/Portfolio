@@ -24,7 +24,7 @@ const Finder = () => {
 
   return (
     <Draggable
-      scale={0.4}
+      scale={0.5}
       bounds={{ left: -143, top: -65, right: 404, bottom: 225 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"

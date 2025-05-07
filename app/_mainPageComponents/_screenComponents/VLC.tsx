@@ -24,7 +24,7 @@ const VLC = () => {
 
   return (
     <Draggable
-      scale={0.4}
+      scale={0.5}
       bounds={{ left: -40, top: -260, right: 599, bottom: 65 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
@@ -41,6 +41,7 @@ const VLC = () => {
           height="600"
           width="768px"
           src="https://www.youtube.com/embed/6qH46lsU1hs?autoplay=1&mute=1&controls=1"
+          onClick={handleMouseDown}
         />
       </div>
     </Draggable>

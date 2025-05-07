@@ -38,7 +38,7 @@ const Notes = () => {
   return (
     <div className="text-2xl">
       <Draggable
-        scale={0.4}
+        scale={0.5}
         bounds={{ left: -925, top: -18, right: 99, bottom: 525 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setFirstZIndex)}
@@ -56,7 +56,7 @@ const Notes = () => {
         </div>
       </Draggable>
       <Draggable
-        scale={0.4}
+        scale={0.5}
         bounds={{ left: -995, top: -115, right: 28, bottom: 430 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setSecondZIndex)}
@@ -76,7 +76,7 @@ const Notes = () => {
         </div>
       </Draggable>
       <Draggable
-        scale={0.4}
+        scale={0.5}
         bounds={{ left: -812, top: -215, right: 212, bottom: 337 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setThirdZIndex)}
