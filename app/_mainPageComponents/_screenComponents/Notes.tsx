@@ -9,7 +9,7 @@ const Notes = () => {
 
   const [firstNotes, setFirstNote] = useState("this is a note");
   const [secondNotes, setSecondNote] = useState(
-    "- Tell them you do anything but play video games. No one wants to hear about your obsessions with Monster Hunter or Pokémon. \n - Tell them about you love camping and hiking, but don't go into details about your 75 mile backpacking trip. you had a week and a half to do it! big deal. \n - Tell them about you constant search for more knowledge about everything you do in life! how you yearn for new information to use for every situation you encounter.",
+    "- Tell them you do anything but play video games. No one wants to hear about your obsessions with Monster Hunter or Pokémon. \n - Tell them about you love camping and hiking, but don't go into details about your 75 mile backpacking trip. you had a week and a half to do it! big deal. \n - Tell them about you constant search for more knowledge for everything you! how you yearn for new information to use in every situation you encounter.",
   );
   const [thirdNotes, setThirdNote] = useState(
     `- If you loose a window do not call support, it can be moved! THEY ARE DRAGGABLE! \n\n - If a window is not responding, try to close it! DO NOT CALL SUPPPORT!`,
@@ -47,7 +47,7 @@ const Notes = () => {
           className="absolute right-[7%] top-[5%] h-96 w-96 animate-expandBox overflow-hidden bg-[#b2ffa1] text-black shadow-lg shadow-black hover:cursor-grab active:cursor-grabbing"
           style={{ zIndex: firstZIndex }}
         >
-          <h1 className="text-4xl">title 1</h1>
+          <h1 className="text-4xl"></h1>
           <textarea
             className="h-[80%] w-[105%] resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
             value={firstNotes}

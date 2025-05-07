@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -13,8 +13,14 @@ interface Props {
 
 export const Icon = ({ iconInfo }: Props) => {
   const image = React.useRef<HTMLImageElement>(null);
+
+  const [inMotion, setInMotion] = useState(false);
+
   const handleClick = () => {
     if (!iconInfo.state) {
+      if (inMotion) return;
+
+      setInMotion(true);
       gsap.fromTo(
         image.current,
         {
@@ -33,7 +39,10 @@ export const Icon = ({ iconInfo }: Props) => {
                 duration: 0.4,
                 ease: "power1.in",
               })
-              .then(() => iconInfo.callback());
+              .then(() => {
+                iconInfo.callback();
+                setInMotion(false);
+              });
           },
         },
       );
