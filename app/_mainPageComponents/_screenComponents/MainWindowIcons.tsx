@@ -33,6 +33,7 @@ const MainWindowIcons = () => {
           height={100}
           width={100}
           draggable={false}
+          priority
         />
         <span>Mac OS X</span>
         <br />
@@ -49,6 +50,7 @@ const MainWindowIcons = () => {
           height={100}
           width={100}
           draggable={false}
+          priority
         />
         <span>Desktop</span>
       </div>
@@ -63,6 +65,7 @@ const MainWindowIcons = () => {
           height={100}
           width={100}
           draggable={false}
+          priority
         />
         <span>USB Drive</span>
       </div>

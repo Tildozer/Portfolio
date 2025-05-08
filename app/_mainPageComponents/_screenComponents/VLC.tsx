@@ -5,6 +5,7 @@ import { WindowBar } from ".";
 
 const VLC = () => {
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowVLC },
   } = useLaptopInfo();
@@ -24,7 +25,7 @@ const VLC = () => {
 
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -40, top: -260, right: 599, bottom: 65 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
