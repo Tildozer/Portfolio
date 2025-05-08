@@ -11,32 +11,13 @@ import {
   SiFlutter,
   SiJest,
   SiDart,
+  SiGodotengine,
 } from "react-icons/si";
 import Link from "next/link.js";
-
-export type TechnicalSkill = {
-  id: number;
-  name: string;
-  iconName: string;
-  color: string;
-  url: string;
-};
+import { TechStack } from "@prisma/client";
 
 type Props = {
-  tech: TechnicalSkill;
-};
-const giveIconBackground = (name: string): string => {
-  switch (name) {
-    case "Typescript":
-    case "CSS":
-      return "bg-white rounded-lg";
-    case "Dart":
-      return "bg-white rounded-lg p-1";
-    case "Javascript":
-      return "bg-black rounded-lg";
-    default:
-      return "";
-  }
+  tech: TechStack;
 };
 
 const setIcon = (iconName: string) => {
@@ -59,6 +40,8 @@ const setIcon = (iconName: string) => {
       return <SiJest />;
     case "SiDart":
       return <SiDart />;
+    case "SiGodotengine":
+      return <SiGodotengine />;
     default:
       return <TbError404Off />;
   }
@@ -70,18 +53,15 @@ const TechIcon = ({ tech: { id, name, iconName, color, url } }: Props) => {
       href={url}
       target="_blank"
       key={id}
-      className={`group flex min-w-[6rem] flex-col items-center justify-center break-all rounded-md border-2 border-solid border-slate-600 bg-black p-2 shadow-sm shadow-black transition-all duration-500 hover:-translate-y-3 hover:border-yellow-500 hover:shadow-md hover:shadow-black dark:bg-slate-500`}
+      className={`flex flex-col items-center break-all`}
     >
       <span
-        className={`text-${color} ${giveIconBackground(
-          name,
-        )} transition duration-500 group-hover:animate-wiggle`}
+        className={`text-${color} ${iconName === "TbBrandCpp" ? "bg-black dark:bg-slate-900" : ""} text-8xl`}
+        draggable={false}
       >
         {setIcon(iconName)}
       </span>
-      <span className="pt-1 text-sm transition-transform duration-500 group-hover:scale-125">
-        {name}
-      </span>
+      <span className="text-2xl">{name}</span>
     </Link>
   );
 };

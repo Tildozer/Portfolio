@@ -26,6 +26,10 @@ body {
   }
 }
 
-.laptop-screen {
-  z-index: 10 !important;
+.icon-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.filter-blue {
+  filter: sepia(50%) saturate(5000%) hue-rotate(190deg) brightness(0.7);
 }

@@ -13,7 +13,6 @@ export async function GET() {
         id: "desc",
       },
     });
-
     return NextResponse.json(projects);
   } catch (error) {
     throw error;

@@ -1,24 +1,77 @@
 import * as THREE from "three";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { LaptopScreen, ScreenLight } from "./";
+import gsap from "gsap";
 
-export default function Model() {
-  const group = useRef<THREE.Group>(null);
+const preloadLaptopScreenImage = () => {
+  const img = new Image();
+  img.src =
+    "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/09735855-eefe-46f9-6831-932a7decd600/public";
+  return new Promise<HTMLImageElement>((resolve) => {
+    if (img.complete) {
+      resolve(img);
+    } else {
+      img.onload = () => resolve(img);
+    }
+  });
+};
+
+const Laptop = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const model: any = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf",
   );
-
   const { nodes, materials } = model;
+
+  const topScreen = useRef<THREE.Group>(null);
+  const [showScreen, setShowScreen] = useState(false);
+  const [loadedImg, setLoadedImg] = useState<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    preloadLaptopScreenImage()
+      .then((img) => {
+        if (isMounted) {
+          setLoadedImg(img);
+        }
+      })
+      .catch((err) =>
+        console.error("Failed to load laptop screen image:", err),
+      );
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loadedImg) return;
+
+    const radian = (180 * Math.PI) / 180;
+    topScreen.current?.rotation.set(radian, 0, 0);
+
+    setTimeout(() => {
+      const newRadian = (75 * Math.PI) / 180;
+      gsap
+        .to(topScreen.current!.rotation, {
+          x: newRadian,
+          duration: 1,
+        })
+        .then(() => {
+          setShowScreen(true);
+        });
+    }, 500);
+
+    return () => setShowScreen(false);
+  }, [loadedImg]);
 
   return (
     <group
-      ref={group}
       dispose={null}
-      rotation-y={0.75}
-      rotation-x={-0.25}
-      position-y={-1.5}
+      rotation={[-0.06, 0.42, 0]}
+      position={[0, -3, -1]}
+      scale={2}
     >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
         <mesh
@@ -48,12 +101,6 @@ export default function Model() {
         <mesh
           geometry={nodes.Circle001_6.geometry}
           material={materials.Keyboard}
-        />
-        <mesh
-          geometry={nodes.FrontCameraRing001.geometry}
-          material={materials["CameraRIngBlack.002"]}
-          position={[-0.15, 19.57, -16.15]}
-          scale={5.8}
         />
         <mesh
           geometry={nodes.KeyboardKeyHole.geometry}
@@ -99,6 +146,7 @@ export default function Model() {
           />
         </group>
         <group
+          ref={topScreen}
           position={[0.01, -0.47, -10.41]}
           rotation={[1.31, 0, 0]}
           scale={5.8}
@@ -152,12 +200,18 @@ export default function Model() {
           />
         </group>
       </group>
-      <ScreenLight />
-      <LaptopScreen />
+      {showScreen && loadedImg && (
+        <>
+          <ScreenLight />
+          <LaptopScreen img={loadedImg} />
+        </>
+      )}
     </group>
   );
-}
+};
 
 useGLTF.preload(
   "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf",
 );
+
+export default Laptop;

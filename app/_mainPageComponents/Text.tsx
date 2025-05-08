@@ -7,10 +7,17 @@ import grechenFuemen from "../../public/fonts/Grechen Fuemen_Regular.json";
 import vertexShader from "./_shaders/holographic/vertex.glsl";
 import fragmentShader from "./_shaders/holographic/fragment.glsl";
 import random2D from "./_shaders/includes/random2D.glsl";
-
 extend({ TextGeometry });
 
-const Text = forwardRef<THREE.Group>((props, ref) => {
+type Props = {
+  settings: {
+    x: number;
+    y: number;
+    scale: number;
+  };
+};
+
+const Text = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
   const { darkMode } = useDarkMode();
   const fontData = {
     ...grechenFuemen,
@@ -48,7 +55,13 @@ const Text = forwardRef<THREE.Group>((props, ref) => {
   });
 
   return (
-    <group ref={ref} position={[-3, 2.2, 0]} rotation={[-0.1, 0.9, -0.1]}>
+    <group
+      renderOrder={2}
+      ref={ref}
+      scale={new THREE.Vector3(settings.scale, settings.scale, settings.scale)}
+      position={[settings.x, settings.y, 2]}
+      rotation={[-15 * (Math.PI / 180), 0.5, 0]}
+    >
       <mesh material={holographicMaterial}>
         <textGeometry
           args={["Discover", { font, size: 0.75, height: 0.1, depth: 0.1 }]}
