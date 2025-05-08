@@ -8,5 +8,6 @@ export interface Project {
   projectUrl: string;
   githubUrl: string;
   name: string;
+  imageUrl: string;
   ProjectDescription: Description[];
 }

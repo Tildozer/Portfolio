@@ -11,12 +11,13 @@ import {
   SiFlutter,
   SiJest,
   SiDart,
+  SiGodotengine,
 } from "react-icons/si";
 import Link from "next/link.js";
-import { TechnicalSkill } from "@/types";
+import { TechStack } from "@prisma/client";
 
 type Props = {
-  tech: TechnicalSkill;
+  tech: TechStack;
 };
 
 const setIcon = (iconName: string) => {
@@ -39,6 +40,8 @@ const setIcon = (iconName: string) => {
       return <SiJest />;
     case "SiDart":
       return <SiDart />;
+    case "SiGodotengine":
+      return <SiGodotengine />;
     default:
       return <TbError404Off />;
   }

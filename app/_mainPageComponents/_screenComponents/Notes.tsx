@@ -11,7 +11,7 @@ const Notes = () => {
     "This page is not complete yet. everything so far is functioning but more it to come in the near future.",
   );
   const [secondNotes, setSecondNote] = useState(
-    "- Tell them you do anything but play video games. No one wants to hear about your obsessions with Monster Hunter or Pokémon. \n - Tell them about you love camping and hiking, but don't go into details about your 75 mile backpacking trip. you had a week and a half to do it! big deal. \n - Tell them about you constant search for more knowledge for everything you! how you yearn for new information to use in every situation you encounter.",
+    "- Share hobbies or interests that showcase your versatility. Maybe skip the part where you’ve spent 500 hours hunting monsters or catching pokémon, keep it light and relatable.  \n\n- Highlight your love for outdoor activities such as camping and hiking. However, there's no need to dive into the specifics of your 75-mile backpacking adventure let the intrigue speak for itself.  \n\n- Emphasize your dedication to lifelong learning and your commitment to approaching every challenge with a mindset of growth and excellence.",
   );
   const [thirdNotes, setThirdNote] = useState(
     `- If you loose a window do not call support, it can be moved! THEY ARE DRAGGABLE! \n\n - If a window is not responding, try to close it! DO NOT CALL SUPPPORT!`,
@@ -51,7 +51,7 @@ const Notes = () => {
         >
           <h1 className="text-4xl">WORK IN PROGRESS</h1>
           <textarea
-            className="h-[80%] w-[105%] resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
+            className="h-[80%] w-full resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
             value={firstNotes}
             onChange={(e) => setFirstNote(e.target.value)}
           />
@@ -71,7 +71,7 @@ const Notes = () => {
             What to tell people if they ask about you:
           </h1>
           <textarea
-            className="h-[80%] w-[105%] resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
+            className="h-[80%] w-full resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
             value={secondNotes}
             onChange={(e) => setSecondNote(e.target.value)}
           />
@@ -89,7 +89,7 @@ const Notes = () => {
         >
           <h1 className="text-4xl">HOW TO USE A COMPUTER</h1>
           <textarea
-            className="h-[80%] w-[105%] resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
+            className="h-[80%] w-full resize-none overflow-y-scroll bg-transparent p-2 text-black outline-none"
             value={thirdNotes}
             onChange={(e) => setThirdNote(e.target.value)}
           />

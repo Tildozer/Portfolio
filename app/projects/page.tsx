@@ -10,6 +10,7 @@ const Projects = () => {
   const getProjects = async () => {
     const { data: projectArr } = await axios.get("/api/projects");
 
+    console.log("projectArr", projectArr);
     setProjects(projectArr);
   };
 

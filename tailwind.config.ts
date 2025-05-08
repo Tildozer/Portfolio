@@ -17,6 +17,7 @@ const config: Config = {
     { pattern: /#e34c26/ },
     { pattern: /#027DFD/ },
     { pattern: /#0175C2/ },
+    { pattern: /#478cbf/ },
   ],
   theme: {
     extend: {
@@ -38,6 +39,7 @@ const config: Config = {
         "#e34c26": "#e34c26",
         "#027DFD": "#027DFD",
         "#0175C2": "#0175C2",
+        "#478cbf": "#478cbf",
         background: "var(--background)",
         foreground: "var(--foreground)",
         macWindowBar: "#e8e8e8",

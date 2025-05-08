@@ -2,6 +2,7 @@ import Link from "next/link.js";
 import { useEffect, useState } from "react";
 import { Descriptions } from ".";
 import { Project } from "@/types";
+import Image from "next/image";
 
 type Props = {
   project: Project;
@@ -9,7 +10,7 @@ type Props = {
 };
 
 const ProjectLink = ({
-  project: { projectUrl, githubUrl, ProjectDescription, name },
+  project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
   i,
 }: Props) => {
   const [mounted, setMounted] = useState(false);
@@ -53,7 +54,16 @@ const ProjectLink = ({
           </Link>
         </span>
       </div>
-      <Descriptions descriptions={ProjectDescription} />
+      <div className="flex justify-between">
+        <Descriptions descriptions={ProjectDescription} />
+        <Image
+          className="mr-4 rounded-b-md"
+          src={imageUrl}
+          height={350}
+          width={350}
+          alt={`preview of ${name}`}
+        />
+      </div>
     </div>
   );
 };

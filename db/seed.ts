@@ -14,6 +14,8 @@ const seedProjects = async () => {
       name: "Connect 4",
       projectUrl: "https://radiant-tiramisu-b23987.netlify.app/",
       githubUrl: "https://github.com/Tildozer/theArcade",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/6813cab6-9e5e-4808-0e30-000e55f71900/public",
     },
   });
   const artCollector = await prisma.projects.create({
@@ -21,6 +23,8 @@ const seedProjects = async () => {
       name: "The Art Collector",
       projectUrl: "https://dainty-scone-cd4407.netlify.app/",
       githubUrl: "https://github.com/Tildozer/UNIV_Art_Collector_React_Starter",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/c0a5c5dd-659d-426c-3da8-1296252b0b00/public",
     },
   });
   const strangersThings = await prisma.projects.create({
@@ -28,6 +32,8 @@ const seedProjects = async () => {
       name: "Strangers Things",
       githubUrl: "https://github.com/Tildozer/strangersThngs",
       projectUrl: "https://strangersproj.netlify.app/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/08c13389-6a99-4c0f-dc2f-8ba8679ecc00/public",
     },
   });
   const reKanstructed = await prisma.projects.create({
@@ -35,6 +41,8 @@ const seedProjects = async () => {
       name: "Re-KANstructed",
       githubUrl: "https://github.com/Team-Kan/Lego-shopper",
       projectUrl: "https://lego-shopper-dd1u.onrender.com/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a399ca32-3f7e-432f-e9f7-021155a17600/public",
     },
   });
   const galaxyGenerator = await prisma.projects.create({
@@ -42,6 +50,18 @@ const seedProjects = async () => {
       name: "Galaxy generator",
       githubUrl: "https://github.com/Tildozer/galaxyGenerator",
       projectUrl: "https://galaxy-generator-opal.vercel.app/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/73c6b258-905a-4e31-13ae-1b7de75a0a00/public",
+    },
+  });
+  const marbleRun = await prisma.projects.create({
+    data: {
+      name: "Marble Run",
+      githubUrl:
+        "https://github.com/Tildozer/ThreeJsJourney/tree/main/Chapter7/FinalProject",
+      projectUrl: "https://marble-run-tawny.vercel.app/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a8a7fb29-3870-4d23-aa5b-57152650ee00/public",
     },
   });
 
@@ -128,6 +148,17 @@ const seedProjects = async () => {
         description:
           "I used a GUI for debugging and figuring out the how I wanted my galaxy to look.",
       },
+      // Marble Run
+      {
+        projectId: marbleRun.id,
+        description:
+          "This was my final project for the Three.js course. integrating all the concepts and techniques I learned to develop a simple game.",
+      },
+      {
+        projectId: marbleRun.id,
+        description:
+          "This project provided an excellent opportunity to incorporate physics into development. I gained experience using Rapier to implement continuous physics simulations for the marble.",
+      },
     ],
   });
 
@@ -208,6 +239,14 @@ const seedTechStack = async () => {
         iconName: "SiDart",
         color: "#0175C2",
         url: "https://dart.dev/guides",
+      },
+    }),
+    prisma.techStack.create({
+      data: {
+        name: "GDScript",
+        iconName: "SiGodotengine",
+        color: "#478cbf",
+        url: "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html",
       },
     }),
   ]);
