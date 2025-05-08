@@ -7,6 +7,7 @@ import Draggable from "react-draggable";
 const Finder = () => {
   const [zIndex, setZIndex] = useState(0);
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowFinder },
   } = useLaptopInfo();
@@ -24,7 +25,7 @@ const Finder = () => {
 
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -143, top: -65, right: 404, bottom: 225 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"

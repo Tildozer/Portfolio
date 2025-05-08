@@ -7,9 +7,11 @@ const Music = () => {
   const [zIndex, setZIndex] = useState(0);
   const [enabledControls, setEnabledControls] = useState(true);
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowMusic },
   } = useLaptopInfo();
+
   const handleMouseDown = () => {
     setZIndex(maxZIndex + 1);
     setMaxZIndex(maxZIndex + 1);
@@ -21,9 +23,11 @@ const Music = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Set scale based on device type
+
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -30, top: -20, right: 740, bottom: 400 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"

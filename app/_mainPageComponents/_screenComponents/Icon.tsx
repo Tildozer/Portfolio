@@ -76,6 +76,7 @@ export const Icon = ({ iconInfo }: Props) => {
         width={128}
         height={128}
         quality={100}
+        priority
         title={iconInfo.alt}
         draggable={false}
       />

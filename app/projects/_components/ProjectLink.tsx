@@ -57,7 +57,7 @@ const ProjectLink = ({
       <div className="flex justify-between">
         <Descriptions descriptions={ProjectDescription} />
         <Image
-          className="mr-4 rounded-b-md"
+          className="h-36 w-36 rounded-b-md sm:mr-4 md:h-fit md:w-fit"
           src={imageUrl}
           height={350}
           width={350}

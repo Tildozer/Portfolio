@@ -2,6 +2,7 @@ import { TechStack } from "@prisma/client";
 import { Dispatch, SetStateAction } from "react";
 
 export type LaptopScreenProps = {
+  scale: number;
   iconInfo: {
     src: string;
     alt: string;

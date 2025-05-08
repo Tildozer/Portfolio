@@ -7,6 +7,7 @@ const Sherlock = () => {
   const [zIndex, setZIndex] = useState(0);
 
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowSherlock },
   } = useLaptopInfo();
@@ -24,7 +25,7 @@ const Sherlock = () => {
 
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -28, top: -20, right: 517, bottom: 300 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
