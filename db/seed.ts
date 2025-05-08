@@ -24,7 +24,7 @@ const seedProjects = async () => {
       projectUrl: "https://dainty-scone-cd4407.netlify.app/",
       githubUrl: "https://github.com/Tildozer/UNIV_Art_Collector_React_Starter",
       imageUrl:
-        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/c0a5c5dd-659d-426c-3da8-1296252b0b00/public",
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/c0a5c5dd-659d-426c-3da8-1296252b0b00/350",
     },
   });
   const strangersThings = await prisma.projects.create({
@@ -33,7 +33,7 @@ const seedProjects = async () => {
       githubUrl: "https://github.com/Tildozer/strangersThngs",
       projectUrl: "https://strangersproj.netlify.app/",
       imageUrl:
-        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/08c13389-6a99-4c0f-dc2f-8ba8679ecc00/public",
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/08c13389-6a99-4c0f-dc2f-8ba8679ecc00/350",
     },
   });
   const reKanstructed = await prisma.projects.create({
@@ -42,7 +42,7 @@ const seedProjects = async () => {
       githubUrl: "https://github.com/Team-Kan/Lego-shopper",
       projectUrl: "https://lego-shopper-dd1u.onrender.com/",
       imageUrl:
-        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a399ca32-3f7e-432f-e9f7-021155a17600/public",
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a399ca32-3f7e-432f-e9f7-021155a17600/350",
     },
   });
   const galaxyGenerator = await prisma.projects.create({
@@ -51,7 +51,7 @@ const seedProjects = async () => {
       githubUrl: "https://github.com/Tildozer/galaxyGenerator",
       projectUrl: "https://galaxy-generator-opal.vercel.app/",
       imageUrl:
-        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/73c6b258-905a-4e31-13ae-1b7de75a0a00/public",
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/73c6b258-905a-4e31-13ae-1b7de75a0a00/350",
     },
   });
   const marbleRun = await prisma.projects.create({
@@ -61,7 +61,7 @@ const seedProjects = async () => {
         "https://github.com/Tildozer/ThreeJsJourney/tree/main/Chapter7/FinalProject",
       projectUrl: "https://marble-run-tawny.vercel.app/",
       imageUrl:
-        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a8a7fb29-3870-4d23-aa5b-57152650ee00/public",
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/a8a7fb29-3870-4d23-aa5b-57152650ee00/350",
     },
   });
 
