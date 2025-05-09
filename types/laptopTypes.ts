@@ -17,6 +17,7 @@ export type LaptopScreenProps = {
     showNotes: boolean;
     maxZIndex: number;
     tech: TechStack[];
+    isMobile: boolean;
   };
   setters: {
     setShowFinder: Dispatch<SetStateAction<boolean>>;

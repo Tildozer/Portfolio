@@ -40,10 +40,10 @@ const Music = () => {
       >
         <WindowBar callback={() => setShowMusic(false)} />
         <iframe
-          className={`select-none ${enabledControls ? "" : "pointer-events-none"}`}
+          className={`select-none ${enabledControls && maxZIndex === zIndex ? "" : "pointer-events-none"}`}
           src="https://open.spotify.com/embed/playlist/60b6PwC0C2V8KId3092rEN?utm_source=generator&theme=0"
           width="100%"
-          height="485"
+          height="100%"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
