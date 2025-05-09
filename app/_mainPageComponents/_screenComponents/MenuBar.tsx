@@ -29,11 +29,8 @@ const MenuBar = () => {
     return () => {
       clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    console.log(timeInfo);
-  }, [timeInfo]);
 
   return (
     <div className="z-[2147483647] flex h-8 w-full justify-between bg-[#efeef1] text-2xl text-black">

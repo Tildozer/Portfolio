@@ -38,10 +38,10 @@ const VLC = () => {
       >
         <WindowBar callback={() => setShowVLC(false)} />
         <iframe
-          className={`select-none ${enabledControls ? "" : "pointer-events-none"}`}
+          className={`select-none ${enabledControls && maxZIndex === zIndex ? "" : "pointer-events-none"}`}
           height="600"
           width="768px"
-          src="https://www.youtube.com/embed/6qH46lsU1hs?autoplay=1&mute=1&controls=1"
+          src="https://www.youtube.com/embed/videoseries?si=G2_XWwFfk2n_Bc-_&amp;list=PLXR02kN_K75LZ2J23-wDY7EfFA5ycUTPZ&autoplay=1&mute=1&controls=1"
           onClick={handleMouseDown}
         />
       </div>

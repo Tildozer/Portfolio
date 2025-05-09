@@ -74,6 +74,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       showNotes,
       maxZIndex,
       tech,
+      isMobile,
     },
     setters: {
       setShowFinder,
