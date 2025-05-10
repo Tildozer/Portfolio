@@ -37,6 +37,7 @@ const Music = () => {
       <div
         className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black transition-colors duration-300 dark:bg-slate-900 dark:text-white"
         style={{ zIndex: zIndex }}
+        id="embed-iframe"
       >
         <WindowBar callback={() => setShowMusic(false)} />
         <iframe
@@ -45,7 +46,7 @@ const Music = () => {
           width="100%"
           height="100%"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
+          loading="eager"
         ></iframe>
       </div>
     </Draggable>
