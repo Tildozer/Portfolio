@@ -7,6 +7,7 @@ import Loading from "./_providers/Loading";
 const Main = () => {
   return (
     <div className="bg-color h-[75vh] w-full overflow-hidden bg-slate-100 dark:bg-slate-900 dark:text-yellow-500 md:h-[90vh]">
+      <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
       <div className="flex animate-fadeInOnce flex-col">
         <div className="h-[75vh] w-full md:h-[90vh]">
           <Suspense fallback={<Loading />}>
