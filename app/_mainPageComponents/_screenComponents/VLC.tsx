@@ -43,6 +43,7 @@ const VLC = () => {
           width="768px"
           src="https://www.youtube.com/embed/videoseries?si=G2_XWwFfk2n_Bc-_&amp;list=PLXR02kN_K75LZ2J23-wDY7EfFA5ycUTPZ&autoplay=1&mute=1&controls=1"
           onClick={handleMouseDown}
+          loading="eager"
         />
       </div>
     </Draggable>
