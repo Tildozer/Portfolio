@@ -18,10 +18,14 @@ const WindowBar = ({ callback, children, className = "" }: Props) => {
         <div
           className={`flex h-[5%] w-full border-b-2 border-[#383838] bg-macWindowBar text-black hover:cursor-grab active:cursor-grabbing ${className}`}
         >
-          <div className="windowBar absolute left-0 top-0 h-20 w-full opacity-0">
-            <div className="h-full w-24"></div>
-          </div>
+          <div className="windowBar absolute left-0 top-0 h-20 w-full opacity-0" />
           <button className="flex h-full" onClick={callback}>
+            <div
+              className="absolute left-0 top-0 z-20 h-10 w-24 opacity-0"
+              onClick={callback}
+            >
+              {" "}
+            </div>
             <span className="mb-auto ml-2 mt-auto h-5 w-5 rounded-full bg-red-500">
               {" "}
             </span>
