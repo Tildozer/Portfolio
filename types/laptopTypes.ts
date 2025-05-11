@@ -2,7 +2,7 @@ import { TechStack } from "@prisma/client";
 import { Dispatch, SetStateAction } from "react";
 
 export type LaptopScreenProps = {
-  scale: number;
+  // scale: number;
   iconInfo: {
     src: string;
     alt: string;
@@ -17,7 +17,7 @@ export type LaptopScreenProps = {
     showNotes: boolean;
     maxZIndex: number;
     tech: TechStack[];
-    isMobile: boolean;
+    // isMobile: boolean;
   };
   setters: {
     setShowFinder: Dispatch<SetStateAction<boolean>>;

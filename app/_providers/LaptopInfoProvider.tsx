@@ -26,7 +26,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
   const [maxZIndex, setMaxZIndex] = useState(0);
 
   const [tech, setTech] = useState<TechStack[] | []>([]);
-  const [isMobile, setIsMobile] = useState(false);
 
   const iconInfo = [
     {
@@ -61,10 +60,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
     },
   ];
 
-  const scale = isMobile ? 0.4 : 0.8;
-
   const value = {
-    scale,
     iconInfo,
     state: {
       showFinder,
@@ -74,7 +70,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       showNotes,
       maxZIndex,
       tech,
-      isMobile,
     },
     setters: {
       setShowFinder,
@@ -95,20 +90,6 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    // Detect if user is on mobile device
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
 
   useEffect(() => {
     getTechStack();

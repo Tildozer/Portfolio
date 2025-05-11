@@ -1,12 +1,12 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { Laptop, Text } from "./";
+import { Laptop, ReactIcon } from "./";
 import { Color, Group } from "three";
 import { ContactShadows, Environment, Float } from "@react-three/drei";
 
 const Experience = () => {
   const background = useRef<Color>(null);
-  const text = useRef<Group>(null);
+  const reactIcon = useRef<Group>(null);
   const smallScreenSettings = { x: -0.6, y: 0.5, scale: 0.18 };
   const largeScreenSettings = { x: -0.65, y: 0.25, scale: 0.2 };
 
@@ -14,13 +14,13 @@ const Experience = () => {
     const handleResize = () => {
       const duration = 0.25;
       if (window.innerWidth > 1037) {
-        if (text.current?.position.x === smallScreenSettings.x) {
-          gsap.to(text.current!.position, {
+        if (reactIcon.current?.position.x === smallScreenSettings.x) {
+          gsap.to(reactIcon.current!.position, {
             x: largeScreenSettings.x,
             y: largeScreenSettings.y,
             duration,
           });
-          gsap.to(text.current!.scale, {
+          gsap.to(reactIcon.current!.scale, {
             x: largeScreenSettings.scale,
             y: largeScreenSettings.scale,
             z: largeScreenSettings.scale,
@@ -28,13 +28,13 @@ const Experience = () => {
           });
         }
       } else if (window.innerWidth <= 1037) {
-        if (text.current?.position.x === largeScreenSettings.x) {
-          gsap.to(text.current!.position, {
+        if (reactIcon.current?.position.x === largeScreenSettings.x) {
+          gsap.to(reactIcon.current!.position, {
             x: smallScreenSettings.x,
             y: smallScreenSettings.y,
             duration,
           });
-          gsap.to(text.current!.scale, {
+          gsap.to(reactIcon.current!.scale, {
             x: smallScreenSettings.scale,
             y: smallScreenSettings.scale,
             z: smallScreenSettings.scale,
@@ -57,8 +57,8 @@ const Experience = () => {
       <color ref={background} attach="background" args={["#1d1f2a"]} />
       {/* <OrbitControls /> */}
       <Float rotationIntensity={0.4}>
-        <Text
-          ref={text}
+        <ReactIcon
+          ref={reactIcon}
           settings={
             window.innerWidth > 1037 ? largeScreenSettings : smallScreenSettings
           }

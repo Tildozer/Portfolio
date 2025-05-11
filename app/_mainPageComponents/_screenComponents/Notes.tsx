@@ -18,7 +18,6 @@ const Notes = () => {
   );
 
   const {
-    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex },
   } = useLaptopInfo();
@@ -41,7 +40,7 @@ const Notes = () => {
   return (
     <div className="text-2xl">
       <Draggable
-        scale={scale}
+        scale={0.8}
         bounds={{ left: -925, top: -18, right: 99, bottom: 525 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setFirstZIndex)}
@@ -59,7 +58,7 @@ const Notes = () => {
         </div>
       </Draggable>
       <Draggable
-        scale={scale}
+        scale={0.8}
         bounds={{ left: -995, top: -115, right: 28, bottom: 430 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setSecondZIndex)}
@@ -79,7 +78,7 @@ const Notes = () => {
         </div>
       </Draggable>
       <Draggable
-        scale={scale}
+        scale={0.8}
         bounds={{ left: -812, top: -215, right: 212, bottom: 337 }}
         handle="h1"
         onMouseDown={() => handleMouseDown(setThirdZIndex)}
