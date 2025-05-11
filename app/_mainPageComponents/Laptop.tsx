@@ -61,7 +61,7 @@ const Laptop = () => {
         .then(() => {
           setShowScreen(true);
         });
-    }, 500);
+    }, 750);
 
     return () => setShowScreen(false);
   }, [loadedImg]);
@@ -70,7 +70,7 @@ const Laptop = () => {
     <group
       dispose={null}
       rotation={[-0.06, 0.42, 0]}
-      position={[0, -3, -1]}
+      position={[-0.2, -3, -1]}
       scale={2}
     >
       <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
