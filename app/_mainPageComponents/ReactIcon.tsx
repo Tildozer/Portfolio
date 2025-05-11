@@ -40,9 +40,9 @@ const ReactIcon = () => {
 
   return (
     <group
-      position={[0, -0.1, 2]}
+      position={[0.4, -0.1, 2]}
       scale={0.35}
-      rotation={[-15 * (Math.PI / 180), 0.5, 0]}
+      rotation={[-15 * (Math.PI / 180), 0.5, 0.1]}
       dispose={null}
     >
       <mesh
