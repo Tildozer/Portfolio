@@ -1,5 +1,4 @@
 import React from "react";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
 type Props = {
   callback: () => void;
@@ -8,13 +7,9 @@ type Props = {
 };
 
 const WindowBar = ({ callback, children, className = "" }: Props) => {
-  const {
-    state: { isMobile },
-  } = useLaptopInfo();
-
   return (
     <>
-      {isMobile ? (
+      {window.innerWidth < 768 ? (
         <div
           className={`flex h-[5%] w-full border-b-2 border-[#383838] bg-macWindowBar text-black hover:cursor-grab active:cursor-grabbing ${className}`}
         >
