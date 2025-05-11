@@ -20,7 +20,7 @@ void main() {
     float fresnel = dot(viewDirection, normal) + 1.0;
     fresnel = pow(fresnel, 2.0);
 
-    float falloff = smoothstep(0.8, 0.0, fresnel);
+    float falloff = smoothstep(2.0, 0.0, fresnel);
 
     float holographic = stripes * fresnel;
     holographic += fresnel * 1.25;
