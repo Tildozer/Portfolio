@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -7,15 +7,7 @@ import vertexShader from "./_shaders/holographic/vertex.glsl";
 import fragmentShader from "./_shaders/holographic/fragment.glsl";
 import random2D from "./_shaders/includes/random2D.glsl";
 
-type Props = {
-  settings: {
-    x: number;
-    y: number;
-    scale: number;
-  };
-};
-
-const ReactIcon = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
+const ReactIcon = () => {
   const { darkMode } = useDarkMode();
   const { nodes } = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/react-logo/model.gltf",
@@ -48,9 +40,8 @@ const ReactIcon = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
 
   return (
     <group
-      ref={ref}
-      position={[settings.x, settings.y, 2]}
-      scale={settings.scale}
+      position={[0, -0.1, 2]}
+      scale={0.35}
       rotation={[-15 * (Math.PI / 180), 0.5, 0]}
       dispose={null}
     >
@@ -93,9 +84,7 @@ const ReactIcon = forwardRef<THREE.Group, Props>(({ settings }, ref) => {
       </mesh>
     </group>
   );
-});
-
-ReactIcon.displayName = "ReactIcon";
+};
 
 useGLTF.preload("/reactIcon.gltf");
 
