@@ -1,17 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Laptop, NodeIcon, ReactIcon } from "./";
 import { Color } from "three";
 import { ContactShadows, Environment, Float } from "@react-three/drei";
+import * as THREE from "three";
+import gsap from "gsap";
 
 const Experience = () => {
   const background = useRef<Color>(null);
+  const iconContainer = useRef<THREE.Group>(null);
+
+  useEffect(() => {
+    gsap.to(iconContainer.current!.position, { y: 0, duration: 1, delay: 0.5 });
+  }, []);
 
   return (
     <>
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
-      <ReactIcon />
-      <NodeIcon />
+      <group ref={iconContainer} position={[0,-10,0]}>
+        <ReactIcon />
+        <NodeIcon />
+      </group>
       <Float rotationIntensity={0.4}>
         <Laptop />
       </Float>
