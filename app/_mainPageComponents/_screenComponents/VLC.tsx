@@ -5,6 +5,7 @@ import { WindowBar } from ".";
 
 const VLC = () => {
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowVLC },
   } = useLaptopInfo();
@@ -24,7 +25,7 @@ const VLC = () => {
 
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -40, top: -260, right: 599, bottom: 65 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
@@ -35,7 +36,9 @@ const VLC = () => {
         className="absolute left-[3%] top-[30%] h-[38rem] w-[48rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black"
         style={{ zIndex: zIndex }}
       >
-        <WindowBar callback={() => setShowVLC(false)} />
+        <WindowBar callback={() => setShowVLC(false)}>
+          <span className="ml-auto mr-auto pr-24 text-2xl">VLC</span>
+        </WindowBar>
         <iframe
           className={`select-none ${enabledControls && maxZIndex === zIndex ? "" : "pointer-events-none"}`}
           height="600"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -8,6 +8,7 @@ import fragmentShader from "./_shaders/holographic/fragment.glsl";
 import random2D from "./_shaders/includes/random2D.glsl";
 
 const ReactIcon = () => {
+  const icon = useRef<THREE.Group>(null);
   const { darkMode } = useDarkMode();
   const { nodes } = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/react-logo/model.gltf",
@@ -33,16 +34,18 @@ const ReactIcon = () => {
     blending: THREE.AdditiveBlending,
   });
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock }, delta) => {
     const elapsedTime = clock.getElapsedTime();
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
+    icon.current!.rotation.y += delta * 0.5;
   });
 
   return (
     <group
+      ref={icon}
       position={[0.4, -0.1, 2]}
       scale={0.35}
-      rotation={[-15 * (Math.PI / 180), 0.5, 0.1]}
+      rotation={[-15 * (Math.PI / 180), 90 * (Math.PI / 180), 0.1]}
       dispose={null}
     >
       <mesh

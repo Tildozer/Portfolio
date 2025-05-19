@@ -8,6 +8,7 @@ import fragmentShader from "./_shaders/holographic/fragment.glsl";
 import random2D from "./_shaders/includes/random2D.glsl";
 
 const NodeIcon = () => {
+  const icon = React.useRef<THREE.Group>(null);
   const { darkMode } = useDarkMode();
   const { nodes } = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/node/model.gltf",
@@ -33,16 +34,18 @@ const NodeIcon = () => {
     blending: THREE.AdditiveBlending,
   });
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock }, delta) => {
     const elapsedTime = clock.getElapsedTime();
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
+    icon.current!.rotation.y -= 0.5 * delta;
   });
   return (
     <group
+      ref={icon}
       dispose={null}
       scale={0.4}
       position={[1.4, 0.5, 1.75]}
-      rotation={[-20 * (Math.PI / 180), 0.5, 0]}
+      rotation={[-20 * (Math.PI / 180), 90 * (Math.PI / 180), 0]}
     >
       <mesh
         castShadow

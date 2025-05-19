@@ -7,6 +7,7 @@ const Music = () => {
   const [zIndex, setZIndex] = useState(0);
   const [enabledControls, setEnabledControls] = useState(true);
   const {
+    scale,
     state: { maxZIndex },
     setters: { setMaxZIndex, setShowMusic },
   } = useLaptopInfo();
@@ -26,7 +27,7 @@ const Music = () => {
 
   return (
     <Draggable
-      scale={0.8}
+      scale={scale}
       bounds={{ left: -30, top: -20, right: 740, bottom: 400 }}
       onMouseDown={handleMouseDown}
       handle=".windowBar"
@@ -34,11 +35,15 @@ const Music = () => {
       onStop={() => setEnabledControls(true)}
     >
       <div
-        className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-white text-6xl text-black shadow-xl shadow-black"
+        className="absolute left-[2%] top-[5%] h-[32rem] w-[40rem] animate-expandBox bg-[#1f1f1f] text-6xl text-black shadow-xl shadow-black"
         style={{ zIndex: zIndex }}
         id="embed-iframe"
       >
-        <WindowBar callback={() => setShowMusic(false)} />
+        <WindowBar callback={() => setShowMusic(false)}>
+          <span className="ml-auto mr-auto h-full pb-2 pr-24 text-start text-2xl">
+            Music
+          </span>
+        </WindowBar>
         <iframe
           className={`select-none ${enabledControls && maxZIndex === zIndex ? "" : "pointer-events-none"}`}
           src="https://open.spotify.com/embed/playlist/60b6PwC0C2V8KId3092rEN?utm_source=generator&theme=0"

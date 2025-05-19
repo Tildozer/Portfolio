@@ -60,8 +60,20 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
     },
   ];
 
+  let scale = window.innerWidth < 768 ? 0.4 : 0.8;
+
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      scale = 0.4;
+    } else {
+      scale = 0.8;
+    }
+  };
+  window.addEventListener("resize", handleResize);
+
   const value = {
     iconInfo,
+    scale,
     state: {
       showFinder,
       showSherlock,
@@ -93,6 +105,11 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     getTechStack();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
