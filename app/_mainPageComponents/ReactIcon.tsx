@@ -37,7 +37,7 @@ const ReactIcon = () => {
   useFrame(({ clock }, delta) => {
     const elapsedTime = clock.getElapsedTime();
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
-    icon.current!.rotation.y += delta * 0.5
+    icon.current!.rotation.y += delta * 0.5;
   });
 
   return (

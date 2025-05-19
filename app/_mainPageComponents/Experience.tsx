@@ -10,14 +10,14 @@ const Experience = () => {
   const iconContainer = useRef<THREE.Group>(null);
 
   useEffect(() => {
-    gsap.to(iconContainer.current!.position, { y: 0, duration: 1, delay: 0.5 });
+    gsap.to(iconContainer.current!.position, { y: 0, duration: 1, delay: 2 });
   }, []);
 
   return (
     <>
       <Environment preset="city" />
       <color ref={background} attach="background" args={["#1d1f2a"]} />
-      <group ref={iconContainer} position={[0,-10,0]}>
+      <group ref={iconContainer} position={[0, -10, 0]}>
         <ReactIcon />
         <NodeIcon />
       </group>
