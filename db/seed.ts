@@ -65,6 +65,26 @@ const seedProjects = async () => {
     },
   });
 
+  const koteMasters = await prisma.projects.create({
+    data: {
+      name: "Kote Masters",
+      githubUrl: "https://github.com/ReactThreeShowroom/frontend",
+      projectUrl: "https://www.kotemasters.com/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/783953ac-ff4d-4441-4cfc-966dec612a00/350",
+    },
+  });
+
+  const foxHouseCoffee = await prisma.projects.create({
+    data: {
+      name: "Fox House Coffee",
+      githubUrl: "",
+      projectUrl: "https://foxHouseCoffee.onrender.com/",
+      imageUrl:
+        "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/8602b008-4785-43bd-9c15-d6fc29121800/350",
+    },
+  });
+
   // const [connect4, artCollector, strangersThings, reKanstructed, galaxyGenerator] = projects;
 
   const aboutProjects = await prisma.projectDescription.createMany({
@@ -158,6 +178,28 @@ const seedProjects = async () => {
         projectId: marbleRun.id,
         description:
           "This project provided an excellent opportunity to incorporate physics into development. I gained experience using Rapier to implement continuous physics simulations for the marble.",
+      },
+      // Kote Masters
+      {
+        projectId: koteMasters.id,
+        description:
+          "This project was a collaboration with a team of 5, where I was responsible for making sure color was accurate, positioning the models and getting model editing fixed.",
+      },
+      {
+        projectId: koteMasters.id,
+        description:
+          "I helped create the manifest for the PWA, ensuring users can download and use this app from any device.",
+      },
+      // Fox House Coffee
+      {
+        projectId: foxHouseCoffee.id,
+        description:
+          "This project is a solo project that I am currently finishing up. This is just a test site and the final product will be up as soon as we can get clover to approve the developer account.",
+      },
+      {
+        projectId: foxHouseCoffee.id,
+        description:
+          "This is for a local coffee shop that I am working with to help them get their online store up and running.",
       },
     ],
   });
