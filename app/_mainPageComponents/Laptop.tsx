@@ -48,9 +48,6 @@ const Laptop = () => {
   useEffect(() => {
     if (!loadedImg) return;
 
-    const radian = (180 * Math.PI) / 180;
-    topScreen.current?.rotation.set(radian, 0, 0);
-
     setTimeout(() => {
       const newRadian = (75 * Math.PI) / 180;
       gsap
@@ -148,7 +145,7 @@ const Laptop = () => {
         <group
           ref={topScreen}
           position={[0.01, -0.47, -10.41]}
-          rotation={[1.31, 0, 0]}
+          rotation={[(180 * Math.PI) / 180, 0, 0]}
           scale={5.8}
         >
           <mesh
