@@ -43,6 +43,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         macWindowBar: "#e8e8e8",
+        macOsWindow: "#e2e6ee",
       },
       keyframes: {
         wiggle: {

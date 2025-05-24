@@ -12,3 +12,4 @@ export { default as WindowBar } from "./WindowBar";
 export { default as MainWindowIcons } from "./MainWindowIcons";
 export { default as TechStack } from "./TechStack";
 export { default as TechIcon } from "./TechIcon";
+export { default as File } from "./File";

@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { File } from ".";
 
 const MenuBar = () => {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const [timeInfo, setTimeInfo] = React.useState({
+  const [timeInfo, setTimeInfo] = useState({
     day: "",
     time: "",
   });
+  const [showFileMenu, setShowFileMenu] = useState(true);
 
   const getCurrentDayAndTime = () => {
     const currentTime = new Date().toLocaleString("en-US", {
@@ -45,7 +47,12 @@ const MenuBar = () => {
           alt="logo"
           draggable={false}
         />
-        <span className="mr-6">File</span>
+        <span
+          onClick={() => setShowFileMenu(!showFileMenu)}
+          className="mr-6 hover:cursor-pointer"
+        >
+          File
+        </span>
         <span className="mr-6">Edit</span>
         <span className="mr-6">Go</span>
         <span className="mr-6">View</span>
@@ -65,6 +72,7 @@ const MenuBar = () => {
       <div className="mr-2 self-end">
         {timeInfo.day} {timeInfo.time}
       </div>
+      {showFileMenu && <File />}
     </div>
   );
 };
