@@ -35,9 +35,8 @@ const AboutFinder = () => {
       >
         <WindowBar
           callback={() => setShowAboutFinder(false)}
-          className="h-[2.5rem]"
         >
-          <span className="mb-auto ml-4 mt-auto text-2xl">
+          <span className="mb-auto ml-8 mt-auto text-xl">
             About this Developer
           </span>
         </WindowBar>

@@ -25,7 +25,7 @@ const File = ({ setShowFileMenu }: Props) => {
     setShowFileMenu(false);
   };
   return (
-    <div className="absolute left-[3.15rem] top-8 w-64 bg-macOsWindow shadow-lg shadow-black">
+    <div className="absolute left-[3.15rem] top-8 w-64 bg-macOsWindow shadow-lg shadow-black z-[2147483647]">
       <div className="h-2">{""}</div>
       <div
         className="h-8 pl-6 hover:cursor-pointer hover:bg-selected"

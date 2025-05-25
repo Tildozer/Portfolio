@@ -36,7 +36,6 @@ const MenuBar = () => {
 
   const handleFileMenuClick = () => {
     if (!showFileMenu) {
-      console.log("File menu clicked");
       setShowFileMenu(true);
       window.addEventListener("mouseup", handleClick);
     } else {
