@@ -8,7 +8,7 @@ const MenuBar = () => {
     day: "",
     time: "",
   });
-  const [showFileMenu, setShowFileMenu] = useState(true);
+  const [showFileMenu, setShowFileMenu] = useState(false);
   const fileMenuRef = useRef<HTMLDivElement>(null);
 
   const getCurrentDayAndTime = () => {

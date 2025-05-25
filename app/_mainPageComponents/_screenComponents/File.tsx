@@ -8,6 +8,11 @@ type Props = {
 const File = ({ setShowFileMenu }: Props) => {
   const { setters } = useLaptopInfo();
 
+  const handleAboutFinder = () => {
+    setters.setShowAboutFinder(true);
+    setShowFileMenu(false);
+  };
+
   const handleAll = (state: boolean) => {
     (Object.keys(setters) as Array<keyof typeof setters>).forEach((setter) => {
       if (setter !== "setMaxZIndex") setters[setter](state);
@@ -22,7 +27,10 @@ const File = ({ setShowFileMenu }: Props) => {
   return (
     <div className="absolute left-[3.15rem] top-8 w-64 bg-macOsWindow shadow-lg shadow-black">
       <div className="h-2">{""}</div>
-      <div className="h-8 pl-6 hover:cursor-pointer hover:bg-selected">
+      <div
+        className="h-8 pl-6 hover:cursor-pointer hover:bg-selected"
+        onClick={handleAboutFinder}
+      >
         About the Finder{" "}
       </div>
       <div className="h-2">{""}</div>
@@ -30,7 +38,7 @@ const File = ({ setShowFileMenu }: Props) => {
       <div className="h-2">{""}</div>
       <div
         className="h-8 pl-6 hover:cursor-pointer hover:bg-selected"
-        onClick={() => handleHideFinder()}
+        onClick={handleHideFinder}
       >
         Hide Finder
       </div>

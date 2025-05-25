@@ -8,6 +8,7 @@ import {
   VLC,
   Sherlock,
   MainWindowIcons,
+  AboutFinder,
 } from ".";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
@@ -18,7 +19,14 @@ interface Props {
 const OS = ({ img }: Props) => {
   const [showScreen, setShowScreen] = useState(false);
   const {
-    state: { showFinder, showMusic, showNotes, showSherlock, showVLC },
+    state: {
+      showFinder,
+      showMusic,
+      showNotes,
+      showSherlock,
+      showVLC,
+      showAboutFinder,
+    },
   } = useLaptopInfo();
 
   useEffect(() => {
@@ -42,6 +50,7 @@ const OS = ({ img }: Props) => {
           <MenuBar />
           <MainWindowIcons />
           <div>
+            {showAboutFinder && <AboutFinder />}
             {showFinder && <Finder />}
             {showMusic && <Music />}
             {showNotes && <Notes />}

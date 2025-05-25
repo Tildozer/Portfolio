@@ -15,6 +15,7 @@ export type LaptopScreenProps = {
     showVLC: boolean;
     showMusic: boolean;
     showNotes: boolean;
+    showAboutFinder: boolean;
     maxZIndex: number;
     tech: TechStack[];
     // isMobile: boolean;
@@ -25,6 +26,7 @@ export type LaptopScreenProps = {
     setShowVLC: Dispatch<SetStateAction<boolean>>;
     setShowMusic: Dispatch<SetStateAction<boolean>>;
     setShowNotes: Dispatch<SetStateAction<boolean>>;
+    setShowAboutFinder: Dispatch<SetStateAction<boolean>>;
     setMaxZIndex: Dispatch<SetStateAction<number>>;
   };
 };
