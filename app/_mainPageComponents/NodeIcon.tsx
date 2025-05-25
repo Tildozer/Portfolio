@@ -34,10 +34,13 @@ const NodeIcon = () => {
     blending: THREE.AdditiveBlending,
   });
 
-  useFrame(({ clock }, delta) => {
+  useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
-    icon.current!.rotation.y -= 0.5 * delta;
+
+    const amplitude = Math.PI / 5;
+    const frequency = 0.5;
+    icon.current!.rotation.y = Math.sin(elapsedTime * frequency) * amplitude;
   });
   return (
     <group
