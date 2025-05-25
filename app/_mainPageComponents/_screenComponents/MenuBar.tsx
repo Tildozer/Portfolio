@@ -23,6 +23,23 @@ const MenuBar = () => {
     setTimeInfo({ day: days[currentDay], time });
   };
 
+  const handleClick = () => {
+    setTimeout(() => {
+      setShowFileMenu(false);
+      window.removeEventListener("mouseup", handleClick);
+    }, 10);
+  };
+
+  const handleFileMenuClick = () => {
+    if (!showFileMenu) {
+      console.log("File menu clicked");
+      setShowFileMenu(true);
+      window.addEventListener("mouseup", handleClick);
+    } else {
+      setShowFileMenu(false);
+    }
+  };
+
   useEffect(() => {
     getCurrentDayAndTime();
 
@@ -48,8 +65,8 @@ const MenuBar = () => {
           draggable={false}
         />
         <span
-          onClick={() => setShowFileMenu(!showFileMenu)}
-          className="mr-6 hover:cursor-pointer"
+          onClick={handleFileMenuClick}
+          className={`mr-4 pl-2 pr-2 hover:cursor-pointer hover:bg-[#346cbe] hover:text-white ${showFileMenu ? "bg-[#346cbe] text-white" : ""}`}
         >
           File
         </span>
