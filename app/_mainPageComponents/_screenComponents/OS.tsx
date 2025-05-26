@@ -8,7 +8,7 @@ import {
   VLC,
   Sherlock,
   MainWindowIcons,
-  AboutFinder,
+  AboutThisMac,
 } from ".";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
 
@@ -50,7 +50,7 @@ const OS = ({ img }: Props) => {
           <MenuBar />
           <MainWindowIcons />
           <div>
-            {showAboutFinder && <AboutFinder />}
+            {showAboutFinder && <AboutThisMac />}
             {showFinder && <Finder />}
             {showMusic && <Music />}
             {showNotes && <Notes />}

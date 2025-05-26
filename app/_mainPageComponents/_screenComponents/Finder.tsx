@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
-import { WindowBar } from "./";
+import { FinderFile, WindowBar } from ".";
 import Image from "next/image";
 import Draggable from "react-draggable";
 
@@ -49,8 +49,29 @@ const Finder = () => {
             />
             <span className="text-2xl">Finder</span>
           </div>
-          <div className="mb-auto mr-4 mt-auto h-1/2 w-16 rounded-2xl bg-[#cbd0d9]"></div>
+          <div className="mb-auto mr-4 mt-auto h-1/2 w-16 flex-wrap rounded-2xl bg-[#cbd0d9]"></div>
         </WindowBar>
+        <div className="ml-4 mr-4 mt-8 grid grid-cols-4 gap-16">
+          {["Applications", "Library", "Users"].map((name, idx) => (
+            <FinderFile key={idx} name={name} />
+          ))}
+          <FinderFile
+            name="Music"
+            src="https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/77616182-f913-4e62-c1f0-713531b92200/128"
+          />
+          <FinderFile
+            name="Pictures"
+            src="https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/3d84f603-2f52-4acf-e9d3-318a7f48b800/128"
+          />
+          <FinderFile
+            name="Videos"
+            src="https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/b061ab29-3404-4dfb-b76e-3ab460c57900/128"
+          />
+          <FinderFile
+            name="Documents"
+            src="https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/aa207ed6-a398-478c-c114-9042b62ee300/128"
+          />
+        </div>
       </div>
     </Draggable>
   );

@@ -13,4 +13,5 @@ export { default as MainWindowIcons } from "./MainWindowIcons";
 export { default as TechStack } from "./TechStack";
 export { default as TechIcon } from "./TechIcon";
 export { default as File } from "./File";
-export { default as AboutFinder } from "./AboutFinder";
+export { default as AboutThisMac } from "./AboutThisMac";
+export { default as FinderFile } from "./FinderFile";
