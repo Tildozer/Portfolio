@@ -34,10 +34,13 @@ const ReactIcon = () => {
     blending: THREE.AdditiveBlending,
   });
 
-  useFrame(({ clock }, delta) => {
+  useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
-    icon.current!.rotation.y += delta * 0.5;
+
+    const amplitude = Math.PI / 5;
+    const frequency = 0.5;
+    icon.current!.rotation.y = Math.sin(elapsedTime * frequency) * amplitude;
   });
 
   return (
@@ -45,7 +48,7 @@ const ReactIcon = () => {
       ref={icon}
       position={[0.4, -0.1, 2]}
       scale={0.35}
-      rotation={[-15 * (Math.PI / 180), 90 * (Math.PI / 180), 0.1]}
+      rotation={[-20 * (Math.PI / 180), 90 * (Math.PI / 180), 0.1]}
       dispose={null}
     >
       <mesh

@@ -23,6 +23,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
   const [showVLC, setShowVLC] = useState(false);
   const [showMusic, setShowMusic] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
+  const [showAboutFinder, setShowAboutFinder] = useState(false);
   const [maxZIndex, setMaxZIndex] = useState(0);
 
   const [tech, setTech] = useState<TechStack[] | []>([]);
@@ -82,6 +83,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       showNotes,
       maxZIndex,
       tech,
+      showAboutFinder,
     },
     setters: {
       setShowFinder,
@@ -90,6 +92,7 @@ export const LaptopInfoProvider: FC<{ children: ReactNode }> = ({
       setShowMusic,
       setShowNotes,
       setMaxZIndex,
+      setShowAboutFinder,
     },
   };
 

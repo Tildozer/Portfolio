@@ -10,7 +10,12 @@ const Experience = () => {
   const iconContainer = useRef<THREE.Group>(null);
 
   useEffect(() => {
-    gsap.to(iconContainer.current!.position, { y: 0, duration: 1, delay: 2 });
+    gsap.to(iconContainer.current!.position, {
+      y: 0,
+      duration: 1,
+      delay: 2,
+      ease: "sine.out",
+    });
   }, []);
 
   return (
