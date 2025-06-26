@@ -12,6 +12,12 @@ const Credentials = () => {
     },
     {
       description:
+        "CompTIA Network+: Certificate of completion for the CompTIA Network+ Test",
+      src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/f2ba4dbd-47cf-4121-afd1-3eb72ad6a600/public",
+      alt: "Certificate for completing CompTIA Network+",
+    },
+    {
+      description:
         "Three.js Journey: Certificate of completion for the Three.js Journey course",
       src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/fecf772e-6628-4d56-5153-f14effc39f00/public",
       alt: "Certificate for completing Three.js Journey",
