@@ -15,7 +15,7 @@
     "schema": "./db/prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "^6.8.2",
+    "@prisma/client": "^6.10.1",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "@types/three": "^0.173.0",
@@ -48,7 +48,7 @@
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "prisma": "^6.8.2",
+    "prisma": "^6.10.1",
     "raw-loader": "^4.0.2",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"

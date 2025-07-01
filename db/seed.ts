@@ -297,10 +297,42 @@ const seedTechStack = async () => {
   console.log(techStack);
 };
 
+const seedCertifications = async () => {
+  await prisma.certification.createMany({
+    data: [
+      {
+        description:
+          "FullstackAcademy: Certificate of completion for the FullstackAcademy bootcamp",
+        src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/dea8f8d4-5064-4af3-d81f-5bb72c6fa600/public",
+        alt: "Certificate for completing FullstackAcademy",
+      },
+      {
+        description:
+          "CompTIA Network+: Certificate of completion for the CompTIA Network+ Test",
+        src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/f2ba4dbd-47cf-4121-afd1-3eb72ad6a600/public",
+        alt: "Certificate for completing CompTIA Network+",
+      },
+      {
+        description:
+          "Three.js Journey: Certificate of completion for the Three.js Journey course",
+        src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/fecf772e-6628-4d56-5153-f14effc39f00/public",
+        alt: "Certificate for completing Three.js Journey",
+      },
+      {
+        description:
+          "AlgoExpert: Certificate of completion for 100 critical tech interview algorithms",
+        src: "https://imagedelivery.net/A4ZvRQOLleqfJLUSOG_L1w/d7dd8e53-fe5e-4da4-ffae-96772577ae00/public",
+        alt: "Certificate for completing 100 of the top tech interview algorithms",
+      },
+    ],
+  });
+};
+
 const seedAndSync = async () => {
   await deleteTables();
   await seedProjects();
   await seedTechStack();
+  await seedCertifications();
 };
 
 seedAndSync();

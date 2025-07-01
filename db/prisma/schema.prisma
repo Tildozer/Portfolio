@@ -30,3 +30,10 @@ model ProjectDescription {
   projectId   Int
   project     Projects @relation(fields: [projectId], references: [id])
 }
+
+model Certification {
+  id          Int      @id @default(autoincrement())
+  description String @db.VarChar(255)
+  src         String @db.VarChar(510)
+  alt         String @db.VarChar(100)
+}
