@@ -1,5 +1,4 @@
 import Link from "next/link.js";
-import { useEffect, useState } from "react";
 import { Descriptions } from ".";
 import { Project } from "@/types";
 import Image from "next/image";
@@ -11,22 +10,14 @@ type Props = {
 
 const ProjectLink = ({
   project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
-  i,
+  // i,
 }: Props) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setTimeout(
-      () => {
-        setMounted(true);
-      },
-      750 * i + 200,
-    );
-  }, [i]);
+  // const animationDelay = `${1000 * i + 200}ms`;
 
   return (
     <div
-      className={`mb-16 animate-fadeInOnce text-sm text-black transition-all duration-500 dark:text-yellow-500 sm:text-lg md:text-xl ${mounted ? "" : "hidden"}`}
+      className={`mb-16 animate-fadeInOnce text-sm text-black transition-all duration-500 dark:text-yellow-500 sm:text-lg md:text-xl`}
+      // style={{ animationDelay }}
     >
       <div className="flex flex-col justify-between border-b-2 border-slate-500 bg-black p-4 transition-all duration-500 dark:bg-blue-900 xs:flex-row sm:rounded-l-lg">
         <h1 className="text-xl text-orange-200 dark:text-yellow-300 sm:text-3xl">
