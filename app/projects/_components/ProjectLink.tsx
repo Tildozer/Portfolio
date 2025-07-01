@@ -12,12 +12,18 @@ const ProjectLink = ({
   project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
   // i,
 }: Props) => {
-  // const animationDelay = `${1000 * i + 200}ms`;
+  // const animationDelay = 1000 * i + 200;
+  // let mounted = false;
+
+  // setTimeout(() => {
+  //   mounted = true;
+  // }, animationDelay);
+
 
   return (
     <div
       className={`mb-16 animate-fadeInOnce text-sm text-black transition-all duration-500 dark:text-yellow-500 sm:text-lg md:text-xl`}
-      // style={{ animationDelay }}
+      // style={{ animationDelay: `${animationDelay}ms` }}
     >
       <div className="flex flex-col justify-between border-b-2 border-slate-500 bg-black p-4 transition-all duration-500 dark:bg-blue-900 xs:flex-row sm:rounded-l-lg">
         <h1 className="text-xl text-orange-200 dark:text-yellow-300 sm:text-3xl">

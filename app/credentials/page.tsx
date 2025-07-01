@@ -6,7 +6,7 @@ const Credentials = async () => {
   const certificates = await prisma.certification.findMany();
 
   return (
-    <div className="mt-4 flex animate-fadeInOnce flex-col items-center bg-slate-200 pb-32 text-black dark:bg-slate-900 dark:text-yellow-500">
+    <div className="mt-4 flex animate-fadeInOnce flex-col items-center bg-slate-200 pb-32 text-black dark:bg-slate-900 dark:text-yellow-500 transition-all duration-500">
       <span className="self-start text-3xl md:ml-6 lg:ml-24 xl:ml-0 xl:self-center">
         Certificates:{" "}
       </span>
