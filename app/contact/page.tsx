@@ -1,5 +1,5 @@
 "use client";
-import { EmailForm, Toast, Experience } from "./_components";
+import { EmailForm, Toast, Experience } from "@/components/contact";
 import { Canvas } from "@react-three/fiber";
 import { Recursive } from "next/font/google";
 
