@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from ".";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 
 const IconBar = () => {
   const { iconInfo } = useLaptopInfo();

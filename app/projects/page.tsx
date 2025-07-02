@@ -1,7 +1,7 @@
-import { ProjectLink } from "./_components";
+import { ProjectLink } from "@/components/projects";
 import { PrismaClient } from "@prisma/client";
 
-const Projects = async () => {
+export default async function Projects() {
   const prisma = new PrismaClient();
   const projects = await prisma.projects.findMany({
     include: {
@@ -25,6 +25,6 @@ const Projects = async () => {
       </div>
     </div>
   );
-};
+}
 
-export default Projects;
+// export default Projects;

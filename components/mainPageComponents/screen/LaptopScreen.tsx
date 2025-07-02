@@ -1,7 +1,7 @@
 import { Html } from "@react-three/drei";
 import { OS } from ".";
 import { Source_Serif_4 } from "next/font/google";
-import { LaptopInfoProvider } from "../../_providers/LaptopInfoProvider";
+import { LaptopInfoProvider } from "@/components/providers/LaptopInfoProvider";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],

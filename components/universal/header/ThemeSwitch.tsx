@@ -1,4 +1,4 @@
-import { useDarkMode } from "../../_providers/DarkModeProvider";
+import { useDarkMode } from "../../providers/DarkModeProvider";
 import { PiSunBold, PiMoonBold } from "react-icons/pi";
 
 const ThemeSwitch = () => {

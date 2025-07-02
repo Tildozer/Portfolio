@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 import Draggable from "react-draggable";
-import { WindowBar } from "./";
+import { WindowBar } from ".";
 
 const Music = () => {
   const [zIndex, setZIndex] = useState(0);

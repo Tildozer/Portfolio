@@ -1,8 +1,8 @@
 "use client";
 import { Suspense } from "react";
-import { Experience } from "./_mainPageComponents";
+import { default as Experience } from "@/components/mainPageComponents/Experience";
 import { Canvas } from "@react-three/fiber";
-import Loading from "./_providers/Loading";
+import Loading from "../components/providers/Loading";
 
 const Main = () => {
   return (

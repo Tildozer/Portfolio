@@ -1,5 +1,5 @@
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 import Draggable from "react-draggable";
 
 const Notes = () => {

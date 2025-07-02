@@ -1,13 +1,13 @@
-import { Description } from "@/types";
+import { ProjectDescription } from "@prisma/client";
 import { Recursive } from "next/font/google";
 
 type Props = {
-  descriptions: Description[];
+  descriptions: ProjectDescription[];
 };
 
 const recursive = Recursive({ subsets: ["latin"] });
 
-const Descriptions = ({ descriptions }: Props) => {
+export default function Descriptions({ descriptions }: Props) {
   return (
     <ul className="">
       {descriptions.map(({ description, id }) => {
@@ -22,6 +22,6 @@ const Descriptions = ({ descriptions }: Props) => {
       })}
     </ul>
   );
-};
+}
 
-export default Descriptions;
+// export default Descriptions;

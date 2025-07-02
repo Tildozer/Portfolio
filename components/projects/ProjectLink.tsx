@@ -7,9 +7,9 @@ type Props = {
   project: Project;
 };
 
-const ProjectLink = ({
+export default function ProjectLink({
   project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
-}: Props) => {
+}: Props) {
   return (
     <div
       className={`mb-16 animate-fadeInOnce text-sm text-black transition-all duration-500 dark:text-yellow-500 sm:text-lg md:text-xl`}
@@ -52,6 +52,6 @@ const ProjectLink = ({
       </div>
     </div>
   );
-};
+}
 
-export default ProjectLink;
+// export default ProjectLink;

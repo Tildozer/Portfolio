@@ -1,4 +1,4 @@
-import { CertContainer } from "./_components";
+import { default as CertContainer } from "@/components/credentials/CertContainer";
 import { PrismaClient } from "@prisma/client";
 
 const Credentials = async () => {

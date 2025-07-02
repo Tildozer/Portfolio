@@ -10,7 +10,7 @@ import {
   MainWindowIcons,
   AboutThisMac,
 } from ".";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 
 interface Props {
   img: HTMLImageElement;

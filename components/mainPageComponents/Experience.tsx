@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Laptop, NodeIcon, ReactIcon } from "./";
+import { Laptop, NodeIcon, ReactIcon } from ".";
 import { Color } from "three";
 import { ContactShadows, Environment, Float } from "@react-three/drei";
 import * as THREE from "three";

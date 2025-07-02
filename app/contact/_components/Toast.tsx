@@ -1,5 +1,5 @@
 "use client";
-import { useDarkMode } from "../../_providers/DarkModeProvider";
+import { useDarkMode } from "../../../components/providers/DarkModeProvider";
 import { ToastContainer, Bounce } from "react-toastify";
 
 const Toast = () => {

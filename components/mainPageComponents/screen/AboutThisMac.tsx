@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLaptopInfo } from "../../_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 import { WindowBar } from ".";
 import Image from "next/image";
 import Draggable from "react-draggable";

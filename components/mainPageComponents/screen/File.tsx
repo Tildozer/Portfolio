@@ -1,4 +1,4 @@
-import { useLaptopInfo } from "@/app/_providers/LaptopInfoProvider";
+import { useLaptopInfo } from "@/components/providers/LaptopInfoProvider";
 import React from "react";
 
 type Props = {

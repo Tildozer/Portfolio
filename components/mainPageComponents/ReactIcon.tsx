@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-import { useDarkMode } from "../_providers/DarkModeProvider";
-import vertexShader from "./_shaders/holographic/vertex.glsl";
-import fragmentShader from "./_shaders/holographic/fragment.glsl";
-import random2D from "./_shaders/includes/random2D.glsl";
+import { useDarkMode } from "../providers/DarkModeProvider";
+import vertexShader from "./shaders/holographic/vertex.glsl";
+import fragmentShader from "./shaders/holographic/fragment.glsl";
+import random2D from "./shaders/includes/random2D.glsl";
 
 const ReactIcon = () => {
   const icon = useRef<THREE.Group>(null);

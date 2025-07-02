@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
-import { LaptopScreen, ScreenLight } from "./";
+import { LaptopScreen, ScreenLight } from ".";
 import gsap from "gsap";
 
 const preloadLaptopScreenImage = () => {

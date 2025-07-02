@@ -1,4 +1,4 @@
-import { NavLink } from "./";
+import { NavLink } from ".";
 import { LinkSettings } from "@/types";
 
 const Nav = () => {
