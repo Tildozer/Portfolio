@@ -1,13 +1,5 @@
-export interface Description {
-  id: number;
-  description: string;
-}
+import { Projects, ProjectDescription } from "@prisma/client";
 
-export interface Project {
-  id: number;
-  projectUrl: string;
-  githubUrl: string;
-  name: string;
-  imageUrl: string;
-  ProjectDescription: Description[];
-}
+export type Project = Projects & {
+  ProjectDescription: ProjectDescription[];
+};

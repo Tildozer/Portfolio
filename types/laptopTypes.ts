@@ -18,7 +18,6 @@ export type LaptopScreenProps = {
     showAboutFinder: boolean;
     maxZIndex: number;
     tech: TechStack[];
-    // isMobile: boolean;
   };
   setters: {
     setShowFinder: Dispatch<SetStateAction<boolean>>;

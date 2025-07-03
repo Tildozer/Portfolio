@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "./_universalComp/header/";
-import Footer from "./_universalComp/Footer";
-import { DarkModeProvider } from "./_providers/DarkModeProvider";
+import { Header } from "@/components/universal/header";
+import Footer from "@/components/universal/Footer";
+import { DarkModeProvider } from "@/components/providers/DarkModeProvider";
 import { Rock_Salt } from "next/font/google";
-import { IsLoadingProvider } from "./_providers/IsLoadingProvider";
+import { IsLoadingProvider } from "@/components/providers/IsLoadingProvider";
 
 export const metadata: Metadata = {
   title: "Anthony's Portfolio",
