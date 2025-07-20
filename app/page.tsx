@@ -2,7 +2,6 @@
 import { Suspense } from "react";
 import { default as Experience } from "@/components/mainPageComponents/Experience";
 import { Canvas } from "@react-three/fiber";
-import Loading from "../components/providers/Loading";
 
 const Main = () => {
   return (
@@ -10,7 +9,7 @@ const Main = () => {
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
       <div className="flex animate-fadeInOnce flex-col">
         <div className="h-[75vh] w-full md:h-[90vh]">
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={null}>
             <Canvas
               shadows
               camera={{
