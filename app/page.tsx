@@ -1,29 +1,16 @@
-"use client";
-import { Suspense } from "react";
 // import { default as Experience } from "@/components/mainPageComponents/Experience";
-import { Canvas } from "@react-three/fiber";
+import { Projects } from "@/components/projects";
+import { Wave } from "@/components/waveBanner";
 
 const Main = () => {
   return (
     <div className="bg-color h-[75vh] w-full overflow-hidden bg-slate-100 dark:bg-slate-900 dark:text-yellow-500 md:h-[90vh]">
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
       <div className="flex animate-fadeInOnce flex-col">
-        <div className="h-[75vh] w-full md:h-[90vh]">
-          <Suspense fallback={null}>
-            <Canvas
-              shadows
-              camera={{
-                fov: 45,
-                near: 0.1,
-                far: 200,
-                position: [2.5, 4, 6],
-              }}
-              className="touch-none bg-slate-100 dark:bg-black"
-            >
-              {/* <Experience /> */}
-            </Canvas>
-          </Suspense>
+        <div className="fade-bottom relative h-[20vh] w-full bg-slate-100 dark:bg-slate-900">
+          <Wave />
         </div>
+        <Projects />
       </div>
     </div>
   );

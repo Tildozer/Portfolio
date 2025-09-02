@@ -1,5 +1,5 @@
 "use client";
-import { EmailForm, Toast, Experience } from "@/components/contact";
+import { EmailForm, Toast } from "@/components/contact";
 import { Canvas } from "@react-three/fiber";
 import { Recursive } from "next/font/google";
 
@@ -20,9 +20,7 @@ const Contact = () => {
           <EmailForm />
         </div>
         <div className="mb-24 h-[60vh] w-full">
-          <Canvas>
-            <Experience />
-          </Canvas>
+          <Canvas></Canvas>
         </div>
         <Toast />
       </div>

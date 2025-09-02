@@ -24,7 +24,7 @@ const NavLink = ({ link: { name, path } }: Props) => {
     <Link
       href={path}
       ref={container}
-      className={`${pathname === path ? "text-orange-200 dark:text-blue-300" : "text-yellow-500 hover:text-orange-600 hover:dark:text-blue-500"} `}
+      className={`${pathname === path ? "text-orange-200 dark:text-blue-300" : "text-yellow-500 hover:text-orange-600 hover:dark:text-blue-500"} max-w-36`}
     >
       {name}
       <Underline underline={underline} />

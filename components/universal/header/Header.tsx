@@ -4,7 +4,7 @@ import { Nav, ThemeSwitch, Links } from ".";
 const Header = () => {
   return (
     <>
-      <div className="flex min-h-20 w-52 flex-col text-orange-600 dark:text-yellow-500 md:w-full md:flex-row md:justify-between md:text-lg">
+      <div className="flex min-h-20 w-screen flex-col bg-slate-900 text-orange-200 dark:bg-black dark:text-blue-300 md:w-full md:flex-row md:justify-between md:text-lg">
         <div className="flex flex-row md:flex-col">
           <ThemeSwitch />
           <Links />

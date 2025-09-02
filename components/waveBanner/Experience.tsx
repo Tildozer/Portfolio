@@ -1,3 +1,4 @@
+"use client";
 import {
   PerspectiveCamera,
   useGLTF,
@@ -53,7 +54,7 @@ const Experience = () => {
       <PerspectiveCamera
         makeDefault
         fov={60}
-        position-x={2.1}
+        position={[1, 0.7, 0]}
         rotation-y={y90DegRotation}
         near={0.1}
         far={200}

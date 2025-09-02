@@ -23,7 +23,7 @@ const ThemeSwitch = () => {
           {darkMode ? <PiMoonBold /> : <PiSunBold />}
         </div>
       </label>
-      <span className="ml-2 mt-1 w-20 select-none pt-1.5 text-[.65rem] text-orange-200 dark:text-yellow-500 md:pt-0">
+      <span className="ml-2 mt-1 w-20 select-none pt-1.5 text-[.65rem] text-orange-200 dark:text-blue-300 md:pt-0">
         {darkMode ? "Dark" : "Light"} mode
       </span>
     </div>

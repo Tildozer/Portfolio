@@ -1,4 +1,5 @@
-import { ProjectLink } from "@/components/projects";
+"use server";
+import { ProjectLink } from ".";
 import { PrismaClient } from "@prisma/client";
 
 export default async function Projects() {
@@ -13,8 +14,8 @@ export default async function Projects() {
   });
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-slate-100 dark:bg-slate-900">
-      <div className="flex flex-col items-stretch pb-20 pt-10 sm:pl-3">
+    <div className="">
+      <div className="">
         {projects.map((project) => (
           <ProjectLink key={project.id} project={project} />
         ))}
@@ -22,5 +23,3 @@ export default async function Projects() {
     </div>
   );
 }
-
-// export default Projects;
