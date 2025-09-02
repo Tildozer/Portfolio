@@ -11,9 +11,20 @@ export default function ProjectLink({
   project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
 }: Props) {
   return (
-    <div className="">
+    <div className="min-w-96 mr-4">
       <div className="">
         <h1 className="">{name}</h1>
+      </div>
+      <div className="">
+        <Descriptions descriptions={ProjectDescription} />
+        <Image
+          className=""
+          src={imageUrl}
+          height={350}
+          width={350}
+          alt={`preview of ${name}`}
+        />
+      </div>
         <span className="">
           {githubUrl ? (
             <>
@@ -27,17 +38,6 @@ export default function ProjectLink({
             Website
           </Link>
         </span>
-      </div>
-      <div className="">
-        <Descriptions descriptions={ProjectDescription} />
-        <Image
-          className=""
-          src={imageUrl}
-          height={350}
-          width={350}
-          alt={`preview of ${name}`}
-        />
-      </div>
     </div>
   );
 }

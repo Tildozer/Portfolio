@@ -14,8 +14,8 @@ export default async function Projects() {
   });
 
   return (
-    <div className="">
-      <div className="">
+    <div className="text-black dark:text-yellow-500">
+      <div className="flex flex-row overflow-x-auto">
         {projects.map((project) => (
           <ProjectLink key={project.id} project={project} />
         ))}
