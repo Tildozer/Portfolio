@@ -12,9 +12,9 @@ export default function ProjectLink({
 }: Props) {
   return (
     <div
-      className={`mb-16 animate-fadeInOnce text-sm text-black transition-all duration-500 dark:text-yellow-500 sm:text-lg md:text-xl`}
+      className={`text-sm text-black dark:text-yellow-500 sm:text-lg md:text-xl`}
     >
-      <div className="flex flex-col justify-between border-b-2 border-slate-500 bg-black p-4 transition-all duration-500 dark:bg-blue-900 xs:flex-row sm:rounded-l-lg">
+      <div className="flex flex-col justify-between border-b-2 border-slate-500 bg-black p-4 dark:bg-blue-900 xs:flex-row sm:rounded-l-lg">
         <h1 className="text-xl text-orange-200 dark:text-yellow-300 sm:text-3xl">
           {name}
         </h1>

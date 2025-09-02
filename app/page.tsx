@@ -1,6 +1,6 @@
 "use client";
 import { Suspense } from "react";
-import { default as Experience } from "@/components/mainPageComponents/Experience";
+// import { default as Experience } from "@/components/mainPageComponents/Experience";
 import { Canvas } from "@react-three/fiber";
 
 const Main = () => {
@@ -18,9 +18,9 @@ const Main = () => {
                 far: 200,
                 position: [2.5, 4, 6],
               }}
-              className="touch-none bg-slate-100 transition-all duration-500 dark:bg-black"
+              className="touch-none bg-slate-100 dark:bg-black"
             >
-              <Experience />
+              {/* <Experience /> */}
             </Canvas>
           </Suspense>
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/universal/header";
-import Footer from "@/components/universal/Footer";
+// import Footer from "@/components/universal/Footer";
 import { DarkModeProvider } from "@/components/providers/DarkModeProvider";
 import { Rock_Salt } from "next/font/google";
 import { IsLoadingProvider } from "@/components/providers/IsLoadingProvider";
@@ -29,7 +29,7 @@ export default function RootLayout({
           <DarkModeProvider>
             <Header />
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </DarkModeProvider>
         </IsLoadingProvider>
       </body>
