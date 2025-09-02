@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Laptop, NodeIcon, ReactIcon } from ".";
+import { Laptop } from ".";
 import { ContactShadows, Environment, Float } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -53,8 +53,6 @@ const Experience = () => {
       <Environment preset="city" />
       <color attach="background" args={["#1d1f2a"]} />
       <group ref={iconContainer} position={[0, -10, 0]}>
-        <ReactIcon holographicMaterial={holographicMaterial} />
-        <NodeIcon holographicMaterial={holographicMaterial} />
       </group>
       <Float rotationIntensity={0.4}>
         <Laptop />
