@@ -8,6 +8,7 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import * as THREE from "three";
+import {IconContainer} from ".";
 
 const Experience = () => {
   const { scene, animations } = useGLTF("/models/letTildozerAnimations.glb");
@@ -69,6 +70,7 @@ const Experience = () => {
       <Center>
         <primitive object={scene} rotation-y={y90DegRotation} />
       </Center>
+        <IconContainer />
     </>
   );
 };

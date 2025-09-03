@@ -14,20 +14,22 @@ const NodeIcon = ({ holographicMaterial }: Props) => {
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/node/model.gltf",
   );
 
+  const y90DegRotation = 90 * (Math.PI / 180);
+
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
 
     const amplitude = Math.PI / 5;
     const frequency = 0.5;
     icon.current!.rotation.y = Math.sin(elapsedTime * frequency) * amplitude;
+    icon.current!.rotation.y += y90DegRotation;
   });
   return (
     <group
       ref={icon}
       dispose={null}
-      scale={0.4}
-      position={[1.4, 0.5, 1.75]}
-      rotation={[-20 * (Math.PI / 180), 90 * (Math.PI / 180), 0]}
+      scale={0.15}
+      position={[-0.1, 0.8, 0.5]}
     >
       <mesh
         castShadow
