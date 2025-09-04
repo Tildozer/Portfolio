@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import * as THREE from "three";
-// import gsap from "gsap";
+import gsap from "gsap";
 import { useFrame } from "@react-three/fiber";
-// import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 import vertexShader from "./shaders/holographic/vertex.glsl";
 import fragmentShader from "./shaders/holographic/fragment.glsl";
 import random2D from "./shaders/includes/random2D.glsl";
 import { useDarkMode } from "../providers/DarkModeProvider";
-import { NodeIcon, ReactIcon} from "."
+import { NodeIcon, ReactIcon } from ".";
 
 const IconContainer = () => {
   const { darkMode } = useDarkMode();
@@ -38,14 +38,14 @@ const IconContainer = () => {
     holographicMaterial.uniforms.uTime.value = elapsedTime * 0.75;
   });
 
-//   useGSAP(() => {
-//     gsap.to(iconContainer.current!.position, {
-//       y: 0,
-//       duration: 1,
-//       delay: 2,
-//       ease: "sine.out",
-//     });
-//   });
+  useGSAP(() => {
+    gsap.to(iconContainer.current!.position, {
+      y: 0.8,
+      duration: 1,
+      delay: 2,
+      ease: "sine.out",
+    });
+  });
 
   return (
     <group ref={iconContainer} position={[0, 0, 0]}>

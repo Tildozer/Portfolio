@@ -27,7 +27,7 @@ const ReactIcon = ({ holographicMaterial }: Props) => {
   return (
     <group
       ref={icon}
-      position={[-0.1, 0.65, -0.45]}
+      position={[-0.1, -0.15, -0.45]}
       scale={0.12}
       dispose={null}
     >

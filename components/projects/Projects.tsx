@@ -14,11 +14,13 @@ export default async function Projects() {
   });
 
   return (
-    <div className="text-black dark:text-yellow-500">
-      <div className="flex flex-row overflow-x-auto overflow-y-hidden">
-        {projects.map((project) => (
-          <ProjectLink key={project.id} project={project} />
-        ))}
+    <div className="pl-6 text-black dark:text-yellow-500">
+      <div className="">
+        <ul className="">
+          {projects.map((project) => (
+            <ProjectLink key={project.id} project={project} />
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -24,13 +24,9 @@ const NodeIcon = ({ holographicMaterial }: Props) => {
     icon.current!.rotation.y = Math.sin(elapsedTime * frequency) * amplitude;
     icon.current!.rotation.y += y90DegRotation;
   });
+
   return (
-    <group
-      ref={icon}
-      dispose={null}
-      scale={0.15}
-      position={[-0.1, 0.8, 0.5]}
-    >
+    <group ref={icon} dispose={null} scale={0.15} position={[-0.1, 0, 0.5]}>
       <mesh
         castShadow
         receiveShadow
