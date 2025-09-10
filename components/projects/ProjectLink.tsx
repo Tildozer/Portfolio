@@ -8,18 +8,18 @@ type Props = {
 };
 
 export default function ProjectLink({
-  project: { projectUrl, githubUrl, ProjectDescription, name, imageUrl },
+  project: { id, projectUrl, githubUrl, ProjectDescription, name, imageUrl },
 }: Props) {
   return (
-    <li className="mr-4 min-w-96">
-      <div className="">
-        <h1 className="">{name}</h1>
+    <div className="embla__slide mr-4 min-w-96" key={id}>
+      <div>
+        <h1>{name}</h1>
       </div>
-      <div className="">
-        <span className="">
+      <div>
+        <span>
           {githubUrl ? (
             <>
-              <Link href={githubUrl} target="_blank" className="">
+              <Link href={githubUrl} target="_blank">
                 Repository
               </Link>
               <span> | </span>
@@ -33,14 +33,14 @@ export default function ProjectLink({
           <Image
             className="h-auto"
             src={imageUrl}
-            height={350}
-            width={250}
+            height={450}
+            width={450}
             alt={`preview of ${name}`}
           />
           <Descriptions descriptions={ProjectDescription} />
         </span>
       </div>
-    </li>
+    </div>
   );
 }
 
