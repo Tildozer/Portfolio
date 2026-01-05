@@ -17,9 +17,9 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@prisma/client": "^6.10.1",
-    "@react-three/drei": "^9.122.0",
-    "@react-three/fiber": "^8.18.0",
-    "@types/three": "^0.173.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@types/three": "0.173.0",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
     "embla-carousel-autoplay": "^8.6.0",
