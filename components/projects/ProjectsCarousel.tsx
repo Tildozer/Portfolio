@@ -45,7 +45,7 @@ const ProjectsCarousel = ({ projects }: Props) => {
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
   return (
-    <section className="embla select-none text-xs md:text-lg">
+    <section className="embla text-xs select-none md:text-lg">
       <div className="embla__controls">
         <div className="embla__buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />

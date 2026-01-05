@@ -9,7 +9,7 @@ const recursive = Recursive({ subsets: ["latin"] });
 
 export default function Descriptions({ descriptions }: Props) {
   return (
-    <ul className="relative left-0 -top-40 w-80 bg-slate-200 bg-opacity-30 dark:bg-slate-950 dark:bg-opacity-25">
+    <ul className="bg-opacity-30 dark:bg-opacity-25 relative -top-40 left-0 w-80 bg-slate-200 dark:bg-slate-950">
       {descriptions.map(({ description, id }) => {
         return (
           <li key={id} className={`${recursive.className}`}>

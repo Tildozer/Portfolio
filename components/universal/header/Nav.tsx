@@ -26,7 +26,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="order-2 mb-4 flex select-none flex-col justify-around pl-4 md:-order-none md:flex-row md:gap-4 md:pl-0">
+    <nav className="md:-order-none order-2 mb-4 flex flex-col justify-around pl-4 select-none md:flex-row md:gap-4 md:pl-0">
       {links.map((linkInfo) => (
         <NavLink key={linkInfo.id} link={linkInfo} />
       ))}
