@@ -4,7 +4,7 @@ import { setFooterEventListeners } from "./eventListeners";
 import Links from "./Links";
 
 const Footer = () => {
-  const footerContainer = useRef<HTMLDivElement>(null);
+  const footerContainer = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
     setFooterEventListeners(footerContainer);
