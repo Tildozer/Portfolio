@@ -27,15 +27,15 @@ export default function ProjectLink({
             Website
           </Link>
         </span>
-          <Image
-            className="h-auto"
-            src={imageUrl}
-            height={450}
-            width={450}
-            alt={`preview of ${name}`}
-          />
+        <Image
+          className="h-auto"
+          src={imageUrl}
+          height={450}
+          width={450}
+          alt={`preview of ${name}`}
+        />
       </div>
-          <Descriptions descriptions={ProjectDescription} />
+      <Descriptions descriptions={ProjectDescription} />
     </div>
   );
 }
