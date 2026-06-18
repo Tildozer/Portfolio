@@ -7,18 +7,6 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: [
-    { pattern: /#32CD32/ },
-    { pattern: /#FFFFFF/ },
-    { pattern: /#f7df1e/ },
-    { pattern: /#007acc/ },
-    { pattern: /#264de4/ },
-    { pattern: /#06b6d4/ },
-    { pattern: /#e34c26/ },
-    { pattern: /#027DFD/ },
-    { pattern: /#0175C2/ },
-    { pattern: /#478cbf/ },
-  ],
   theme: {
     extend: {
       fontFamily: {
